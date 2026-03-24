@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "title": "E-Commerce Platform",
+    "description": "A full-stack e-commerce platform built with Next.js, Stripe, and PostgreSQL.",
+    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=A+modern+e-commerce+website+dashboard+with+charts+and+product+listings&image_size=landscape_16_9",
+    "technologies": ["Next.js", "Stripe", "Tailwind CSS", "PostgreSQL"],
+    "link": "https://example-ecommerce.com",
+    "github": "https://github.com/aoki/ecommerce"
+  },
+  {
+    "id": "2",
+    "title": "SaaS Dashboard",
+    "description": "A sleek dashboard for a SaaS product with real-time analytics and user management.",
+    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=A+minimalist+SaaS+dashboard+with+clean+UI+and+data+visualizations&image_size=landscape_16_9",
+    "technologies": ["React", "Zustand", "Recharts", "Tailwind CSS"],
+    "link": "https://example-saas.com",
+    "github": "https://github.com/aoki/saas-dashboard"
+  },
+  {
+    "id": "3",
+    "title": "Personal Blog",
+    "description": "A high-performance blog platform with Markdown support and static site generation.",
+    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=A+clean+and+modern+blog+website+layout+with+typography+and+images&image_size=landscape_16_9",
+    "technologies": ["Next.js", "MDX", "Tailwind CSS"],
+    "link": "https://example-blog.com",
+    "github": "https://github.com/aoki/blog"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "name": "Aoki",
+  "title": "Senior Frontend Developer",
+  "bio": "I am a passionate frontend developer with 5+ years of experience in building modern web applications. I love creating beautiful and functional user interfaces using React, Next.js, and Tailwind CSS.",
+  "avatar": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=A+professional+portrait+of+a+friendly+male+developer+in+a+minimalist+office+setting&image_size=square",
+  "email": "contact@aoki.com",
+  "socials": {
+    "github": "https://github.com/aoki",
+    "linkedin": "https://linkedin.com/in/aoki",
+    "twitter": "https://twitter.com/aoki"
+  },
+  "education": [
+    {
+      "school": "University of Technology",
+      "degree": "Bachelor of Computer Science",
+      "duration": "2015 - 2019"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Tech Solutions Inc.",
+      "position": "Frontend Lead",
+      "duration": "2021 - Present",
+      "description": "Leading the frontend development team and architecting scalable web applications."
+    },
+    {
+      "company": "Creative Agency",
+      "position": "Frontend Developer",
+      "duration": "2019 - 2021",
+      "description": "Developed interactive user interfaces for various clients using React and Vue."
+    }
+  ]
+}
