@@ -1,0 +1,71 @@
+.fadeInUp {
+  animation: fadeInUp 0.5s ease-in;
+}
+
+.slideDown {
+  animation: slideDown 0.5s ease-in;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar {
+  position: relative;
+}
+
+.navbar a {
+  text-decoration: none;
+  position: relative;
+}
+
+.navbar a:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+input[type="text"], input[type="email"], textarea {
+  transition: border-color 0.3s ease;
+}
+
+input[type="text":focus], input[type="email":focus], textarea:focus {
+  border-color: #007bff;
+}
+
+.button {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
