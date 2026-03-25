@@ -3,15 +3,37 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 30, 58, 138;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 243, 244, 246;
+  --foreground-rgb: 26, 26, 26;
+  --background-start-rgb: 248, 249, 250;
+  --background-end-rgb: 255, 255, 255;
+  --brand-purple: 216, 180, 254;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
+  background: radial-gradient(circle at 50% 0%, rgba(var(--brand-purple), 0.15) 0%, transparent 50%),
+              linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  background-attachment: fixed;
   scroll-behavior: smooth;
+  @apply font-sans;
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-xl border border-white/40 shadow-xl;
+  }
+  
+  .glass-nav {
+    @apply bg-white/20 backdrop-blur-md border-b border-white/10;
+  }
+  
+  .glass-button {
+    @apply bg-white/30 backdrop-blur-md border border-white/30 hover:bg-white/50 transition-all duration-300;
+  }
+  
+  .vision-button {
+    @apply bg-black/5 hover:bg-black/10 backdrop-blur-sm border border-black/5 transition-all duration-300;
+  }
 }
 
 @layer components {

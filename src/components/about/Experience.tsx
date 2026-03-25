@@ -1,14 +1,20 @@
+'use client';
+
 import React from 'react';
 import personalData from '../../data/personal.json';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Experience: React.FC = () => {
+  const { language } = useLanguage();
+  const data = language === 'en' ? (personalData as any).en : (personalData as any).cn;
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-5xl font-bold text-blue-900 mb-16 text-center">Work Experience</h2>
         
         <div className="max-w-4xl mx-auto">
-          {personalData.experience.map((exp, index) => (
+          {data.experience.map((exp: any, index: number) => (
             <div key={index} className="relative pl-8 pb-12 last:pb-0 border-l-2 border-orange-500">
               <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-orange-500"></div>
               <div className="bg-white p-8 rounded-3xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1">

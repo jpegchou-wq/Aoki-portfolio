@@ -1,33 +1,170 @@
 {
-  "name": "Aoki",
-  "title": "Senior Frontend Developer",
-  "bio": "I am a passionate frontend developer with 5+ years of experience in building modern web applications. I love creating beautiful and functional user interfaces using React, Next.js, and Tailwind CSS.",
-  "avatar": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=A+professional+portrait+of+a+friendly+male+developer+in+a+minimalist+office+setting&image_size=square",
-  "email": "contact@aoki.com",
-  "socials": {
-    "github": "https://github.com/aoki",
-    "linkedin": "https://linkedin.com/in/aoki",
-    "twitter": "https://twitter.com/aoki"
+  "en": {
+    "name": "Zhou Wenjing",
+    "title": "Full-stack Visual Designer",
+    "bio": "Focused on combining design thinking with engineering, creating digital experiences that are both beautiful and functional from pixel to code.",
+    "email": "jpegchou@gmail.com",
+    "phone": "+86 136 8682 1335",
+    "wechat_qr": "/images/we.png",
+    "whatsapp_qr": "/images/WhatsAp.png",
+    "education": [
+      {
+        "school": "Yunnan Arts University",
+        "degree": "B.A. in Visual Communication Design",
+        "duration": "2013 - 2017"
+      }
+    ],
+    "experience": [
+      {
+        "company": "Shenzhen Weichu Technology Co., Ltd.",
+        "position": "Visual Designer · Brand Marketing",
+        "duration": "2017.07 – Present",
+        "description": "Achievements:\n• Built and iterated brand identity management from 0 to 1.\n• Redesigned and upgraded mini-program campaign pages.\n• Ensured timely delivery of fan merchandise and collateral.\n• Supported official account operations.\n• Photo/video shooting.\n• Coordinated and delivered store interior decoration implementation.\n\nScope:\nVisual Design · Art Direction · Campaign Execution · New Media Design · UI Design · Brand Identity Management",
+        "tags": ["Graphic Design", "Visual", "UI"]
+      },
+      {
+        "company": "Yunnan Publishing Group",
+        "position": "Graphic Designer · New Media",
+        "duration": "2016.10 – 2017.04",
+        "description": "Achievements:\n• Executed multiple campaigns end-to-end, such as full-process execution for Kunming Marathon and on-site furniture mall livestream events.\n\nScope:\nNew Media Design · Graphic Design · Illustration · Motion Design · Outdoor Event Execution",
+        "tags": ["Media", "Art Direction", "Multimedia"]
+      },
+      {
+        "company": "Kunming Jinde Packaging Engineering",
+        "position": "Graphic Designer · Packaging (Intern)",
+        "duration": "2015.09 – 2016.09",
+        "description": "Achievements:\n• Packaging design for Yunhai Tianxia tendon product line.\n• Packaging design for Yuxi cigarettes.\n• Learned packaging materials and production processes.\n• Shortlisted award: Milan International Biennial.\n• Supported collateral design for the graduation exhibition.\n\nScope:\nNew Media Operations · Copywriting Planning · Packaging Design",
+        "tags": ["Offline Events", "Visual", "New Media"]
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "brand-visual",
+        "title": "Brand & Visual Communication",
+        "core": "Core: multi-market brand mindshare and end-to-end delivery.",
+        "items": [
+          "Brand Visual Identity (VI): 0→1 brand system development, leading global marketing assets across Singapore, US, Europe, and Japan. Build and manage product 3D libraries with C4D to ensure consistency.",
+          "Photography & Post-production: product shooting (scriptwriting) and video production (PR/AE/Jianying). Use motion storytelling to elevate perceived tech value for B2B and B2C products.",
+          "Online ops & offline campaigns: social media ads / Google Ads, app banners, ordering screens, and digital posters.",
+          "Exhibition design: experience in domestic and large international shows (Asia FLA/FHA, NAMA Show, NRA Show, Smart Retail Tech Expo 2025 ExCeL London), covering planning → layout/print → booth visuals." 
+        ]
+      },
+      {
+        "id": "product-design",
+        "title": "UI/UX & Digital Product Design",
+        "core": "Core: component-based architecture and cross-platform experience.",
+        "items": [
+          "Design system: led Figma-based Design System (component library), standardized UI architecture for multi-brand collaboration, improving delivery efficiency.",
+          "Interaction & UX: end-to-end interaction design for smart terminals (vending/auto-cooking machines) and mobile apps, optimizing ordering flows.",
+          "Cross-platform adaptation: responsive design for Web, iOS, Android, and touch terminals to keep visual consistency across hardware and mobile devices." 
+        ]
+      },
+      {
+        "id": "growth-marketing",
+        "title": "Growth & Marketing Intelligence",
+        "core": "Core: SEM optimization and media strategy.",
+        "items": [
+          "SEM: Google Ads (PMax / Search) setup and optimization; use cost/ROI monitoring to drive Landing Page optimization and maximize B2B acquisition efficiency.",
+          "Data-driven insights: use AI tools to analyze user journeys, translate growth goals into executable visual solutions." 
+        ]
+      },
+      {
+        "id": "ai-tech",
+        "title": "AI-Driven & Tech",
+        "core": "Core: workflow evolution, frontend understanding, and cost efficiency.",
+        "items": [
+          "AIGC workflow: integrate GPT / Midjourney / Claude Code / Doubao / Gemini to enhance ideation, visuals, copywriting, and design iteration.",
+          "Automation engineering: build automated reporting (e.g., Google Ads → Lark bot + AI analysis) with Claude Code / Python / GitHub.",
+          "Tech collaboration: work as PM+Designer to collaborate with engineering teams; can implement frontend pages in VS Code to reduce communication cost and deliver clean UI/UX." 
+        ]
+      }
+    ]
   },
-  "education": [
-    {
-      "school": "University of Technology",
-      "degree": "Bachelor of Computer Science",
-      "duration": "2015 - 2019"
-    }
-  ],
-  "experience": [
-    {
-      "company": "Tech Solutions Inc.",
-      "position": "Frontend Lead",
-      "duration": "2021 - Present",
-      "description": "Leading the frontend development team and architecting scalable web applications."
-    },
-    {
-      "company": "Creative Agency",
-      "position": "Frontend Developer",
-      "duration": "2019 - 2021",
-      "description": "Developed interactive user interfaces for various clients using React and Vue."
-    }
-  ]
+  "cn": {
+    "name": "周文静",
+    "title": "全栈视觉设计师",
+    "bio": "专注于设计思维与工程落地的结合，从像素到代码，打造兼具美感与功能的数字体验。",
+    "email": "jpegchou@gmail.com",
+    "phone": "+86 136 8682 1335",
+    "wechat_qr": "/images/we.png",
+    "whatsapp_qr": "/images/WhatsAp.png",
+    "education": [
+      {
+        "school": "云南艺术学院",
+        "degree": "视觉传达专业本科学士学位",
+        "duration": "2013-2017"
+      }
+    ],
+    "experience": [
+      {
+        "company": "深圳微厨科技有限公司",
+        "position": "品牌视觉设计经理",
+        "duration": "2017.07–至今",
+        "description": "业绩：\n• 品牌形象管理从无到有，升级迭代。\n• 小程序专题新升级设计。\n• 保证粉丝周边及时出街落地。\n• 公众号运营协助。\n• 视频图片拍摄。\n• 对接店面装修落地。\n\n内容：\n视觉设计 美术设计 活动执行 新媒体设计 UI设计 品牌形象管理",
+        "tags": ["品牌VIS", "UIUX", "WEB", "产品设计", "市场营销"]
+      },
+      {
+        "company": "云南出版集团",
+        "position": "平面设计师·新媒体",
+        "duration": "2016.10–2017.04",
+        "description": "业绩：\n• 多项活动落地执行完落实：例如昆明马拉松比赛全程执行落地。家具城直播活动现场。\n\n内容：\n新媒体设计 平面设计 插画设计 动效设计 户外活动落地执行",
+        "tags": ["平面设计", "插画", "新媒体设计"]
+      },
+      {
+        "company": "昆明金德包装工程",
+        "position": "平面设计师·平面设计（实习）",
+        "duration": "2015.09–2016.09",
+        "description": "业绩：\n• 云海天下筋肌腱带包装设计。\n• 玉溪烟包装设计。\n• 包装材质学习。\n• 米兰国际双年展入围奖。\n• 设计学院毕业展物料设计支持。\n\n内容：\n新媒体运营、文案策划与包装设计",
+        "tags": ["平面设计", "包装设计", "插画设计", "新媒体运营"]
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "brand-visual",
+        "title": "品牌视觉与多媒体叙事 (Brand & Visual Communication)",
+        "core": "核心点：多个国家品牌心智、全案落地。",
+        "items": [
+          "品牌视觉体系 (VI)：具备 0-1 的品牌视觉开发能力，熟练使用（AI/PS）主导过覆盖新加坡、美国、欧洲、日本等市场的品牌形象建设，应用 C4D 建立管理产品库，确保全球化营销物料的统一。",
+          "摄影与后期剪辑：具备产品拍摄（撰写脚本）与视频制作能力（PR/AE/剪映），擅长通过动态影像叙事提升 B2B 和 B2C 产品的科技感与溢价力。",
+          "线上运营线下活动：不限于社交媒体广告/Google 广告、App Banner/点餐屏幕等电子广告海报设计。",
+          "展会设计：拥有国内展会和大型国际展会（亚洲 FLA）（亚洲 FHA）（美国 NAMA Show）（美国 NRA Show）（Smart Retail Tech Expo 2025 ExCeL London）策划参与设计经验，涵盖从内容策划到排版印刷到展位视觉的闭环落地。"
+        ]
+      },
+      {
+        "id": "product-design",
+        "title": "UI/UX 与数字化产品设计 (Core Product Design)",
+        "core": "核心点：组件化架构、跨端体验。",
+        "items": [
+          "UI/UX 体系构建：主导搭建基于（Figma）的 Design System（组件库），建立标准化的 UI 组件架构（多品牌协同），提升跨部门研发交付效率。",
+          "交互逻辑与用户体验：专注于智能终端（自动售餐机/炒菜机）与移动端 App 的全链路交互设计，优化用户下单路径。",
+          "跨端适配力：适配 Web、iOS、Android 及触控终端的响应式设计，确保产品在物理硬件与移动设备间的视觉一致性。"
+        ]
+      },
+      {
+        "id": "growth-marketing",
+        "title": "增长营销与数据驱动 (Growth & Marketing Intelligence)",
+        "core": "核心点：SEM 优化、投放策略。",
+        "items": [
+          "SEM 营销：Google Ads（PMax）（Search）投放与优化，通过数据监测（成本/回报）倒推 Landing Page 优化策略，实现 B2B 获客效率最大化。",
+          "数据分析洞察：运用 AI 工具分析用户行为路径，以业务增长为终极目标，将营销目标拆解为可落地的视觉方案。"
+        ]
+      },
+      {
+        "id": "ai-tech",
+        "title": "AI 协同与自动化开发 (AI-Driven & Tech)",
+        "core": "核心点：工作流进化、前端理解、降本增效。",
+        "items": [
+          "AIGC 工作流集成：集成 GPT/Midjourney/Claude Code/豆包/Gemini 提升创意产出上限，将 AI 辅助出图、文案生成与设计重绘无缝融入日常工作流。",
+          "自动化工程能力：利用 Claude Code / Python / GitHub 搭建自动化汇报（如 Google Ads 自动汇报至 Lark 机器人结合 AI 分析数据），具备技术自驱动力。",
+          "技术协同：以“产品经理 + 设计师”的双重视角与开发团队高效对接，甚至通过 VS Code 参与前端页面实现，降低沟通损耗，输出可视化简洁明了的 UI/UX 设计。"
+        ]
+      }
+    ]
+  },
+  "avatar": "/images/aoki.png",
+  "socials": {
+    "github": "https://github.com/zhouwenjing",
+    "linkedin": "https://linkedin.com/in/zhouwenjing",
+    "twitter": "https://twitter.com/zhouwenjing"
+  }
 }

@@ -8,20 +8,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Poppins', 'AlibabaPuHuiTi', 'Noto Sans SC', 'sans-serif'],
+      },
       colors: {
-        blue: {
-          900: '#1e3a8a',
-          400: '#60a5fa',
-        },
-        orange: {
-          500: '#f97316',
-          600: '#ea580c',
+        brand: {
+          light: '#f8f9fa',
+          dark: '#1a1a1a',
+          purple: '#d8b4fe',
+          "purple-dark": '#a855f7',
         },
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
+        'vision-gradient': 'linear-gradient(to bottom, #f3f4f6, #ffffff, #f3e8ff)',
+      },
+      backdropBlur: {
+        'xs': '2px',
       },
       animation: {
         fadeIn: 'fadeIn 0.5s ease-out forwards',

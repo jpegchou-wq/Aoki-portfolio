@@ -1,29 +1,156 @@
 [
   {
     "id": "1",
-    "title": "E-Commerce Platform",
-    "description": "A full-stack e-commerce platform built with Next.js, Stripe, and PostgreSQL.",
-    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=A+modern+e-commerce+website+dashboard+with+charts+and+product+listings&image_size=landscape_16_9",
-    "technologies": ["Next.js", "Stripe", "Tailwind CSS", "PostgreSQL"],
-    "link": "https://example-ecommerce.com",
-    "github": "https://github.com/aoki/ecommerce"
+    "category": "B2C UI/UX",
+    "en": {
+      "title": "Nourish Health App",
+      "description": "A comprehensive health tracking application focused on intuitive nutrition logging and personalized wellness goals.",
+      "detail": {
+        "intro": "A concept project showcasing end-to-end UI/UX for a health product, from information architecture to key flows.",
+        "role": "UI/UX · Visual Design · Prototype",
+        "highlights": [
+          "Defined core user flows and onboarding experience",
+          "Designed a lightweight visual system for mobile",
+          "Created interactive prototypes for stakeholder reviews"
+        ],
+        "process": [
+          "Research & problem framing",
+          "IA & wireframes",
+          "High-fidelity UI and prototyping"
+        ]
+      }
+    },
+    "cn": {
+      "title": "Nourish 健康应用",
+      "description": "一款专注于直观营养记录和个性化健康目标的综合健康追踪应用。",
+      "detail": {
+        "intro": "这是一个用于展示端到端 UI/UX 能力的概念项目：从信息架构到关键路径设计，强调可用性与视觉一致性。",
+        "role": "UI/UX · 视觉设计 · 原型",
+        "highlights": [
+          "定义核心用户路径与新手引导体验",
+          "建立轻量级移动端视觉系统",
+          "制作可交互原型用于评审与对齐"
+        ],
+        "process": [
+          "研究与问题定义",
+          "信息架构与线框",
+          "高保真 UI 与原型"
+        ]
+      }
+    },
+    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Modern+mobile+app+UI+design+for+health+and+nutrition+tracking+with+vibrant+colors&image_size=landscape_16_9",
+    "link": "#",
+    "github": "#",
+    "technologies": ["Figma", "UI Design", "UX Research"],
+    "media": [
+      {
+        "type": "video",
+        "provider": "youtube",
+        "src": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        "title": "Prototype walkthrough"
+      }
+    ]
   },
   {
     "id": "2",
-    "title": "SaaS Dashboard",
-    "description": "A sleek dashboard for a SaaS product with real-time analytics and user management.",
-    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=A+minimalist+SaaS+dashboard+with+clean+UI+and+data+visualizations&image_size=landscape_16_9",
-    "technologies": ["React", "Zustand", "Recharts", "Tailwind CSS"],
-    "link": "https://example-saas.com",
-    "github": "https://github.com/aoki/saas-dashboard"
+    "category": "B2B UI/UX",
+    "en": {
+      "title": "Horizon Enterprise Dashboard",
+      "description": "Complex data visualization and management system designed for large-scale enterprise logistics."
+    },
+    "cn": {
+      "title": "Horizon 企业级仪表盘",
+      "description": "为大规模企业物流设计的复杂数据可视化和管理系统。"
+    },
+    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Professional+enterprise+B2B+dashboard+UI+design+with+complex+charts+and+data&image_size=landscape_16_9",
+    "link": "#",
+    "github": "#",
+    "technologies": ["SaaS", "Data Visualization", "Design System"],
+    "media": []
   },
   {
     "id": "3",
-    "title": "Personal Blog",
-    "description": "A high-performance blog platform with Markdown support and static site generation.",
-    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=A+clean+and+modern+blog+website+layout+with+typography+and+images&image_size=landscape_16_9",
-    "technologies": ["Next.js", "MDX", "Tailwind CSS"],
-    "link": "https://example-blog.com",
-    "github": "https://github.com/aoki/blog"
+    "category": "插画设计",
+    "en": {
+      "title": "Cyber City Illustration Series",
+      "description": "A series of digital illustrations exploring the intersection of traditional ink styles and futuristic cyberpunk aesthetics."
+    },
+    "cn": {
+      "title": "赛博城市插画系列",
+      "description": "一系列探索传统水墨风格与未来赛博朋克美学交汇的数字插画。"
+    },
+    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Futuristic+cyberpunk+city+illustration+with+traditional+ink+brush+strokes&image_size=landscape_16_9",
+    "link": "#",
+    "github": "#",
+    "technologies": ["Procreate", "Digital Art", "Visual Design"],
+    "media": []
+  },
+  {
+    "id": "4",
+    "category": "品牌 VIS",
+    "en": {
+      "title": "Luminary Brand Identity",
+      "description": "Complete visual identity system for a sustainable energy startup, including logo, typography, and brand guidelines."
+    },
+    "cn": {
+      "title": "Luminary 品牌视觉识别系统",
+      "description": "为一家可持续能源初创公司打造的完整视觉识别系统，包括 Logo、字体和品牌规范。"
+    },
+    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Minimalist+clean+brand+identity+design+with+logo+and+stationery&image_size=landscape_16_9",
+    "link": "#",
+    "github": "#",
+    "technologies": ["Branding", "Logo Design", "Typography"],
+    "media": []
+  },
+  {
+    "id": "5",
+    "category": "WEB",
+    "en": {
+      "title": "Aura Portfolio Website",
+      "description": "High-performance, immersive web experience for an architectural firm showcasing spatial designs through motion."
+    },
+    "cn": {
+      "title": "Aura 建筑作品集网站",
+      "description": "为一家建筑事务所打造的高性能沉浸式 Web 体验，通过动效展示空间设计。"
+    },
+    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Modern+minimalist+architecture+website+design+with+immersive+layouts&image_size=landscape_16_9",
+    "link": "#",
+    "github": "#",
+    "technologies": ["Next.js", "Framer Motion", "GSAP"],
+    "media": []
+  },
+  {
+    "id": "6",
+    "category": "市场运营",
+    "en": {
+      "title": "Summer Campaign Visuals",
+      "description": "Marketing campaign assets including social media templates, posters, and interactive web banners."
+    },
+    "cn": {
+      "title": "夏季大促视觉设计",
+      "description": "营销活动素材，包括社交媒体模板、海报和交互式网页横幅。"
+    },
+    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Vibrant+summer+marketing+campaign+visuals+with+playful+typography&image_size=landscape_16_9",
+    "link": "#",
+    "github": "#",
+    "technologies": ["Graphic Design", "Social Media", "Advertising"],
+    "media": []
+  },
+  {
+    "id": "7",
+    "category": "摄影摄像",
+    "en": {
+      "title": "Urban Silence Photography",
+      "description": "A photography project capturing the quiet moments within bustling metropolitan landscapes."
+    },
+    "cn": {
+      "title": "城市寂静摄影",
+      "description": "一个捕捉繁华大都市景观中安静瞬间的摄影项目。"
+    },
+    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Moody+cinematic+urban+photography+capturing+quiet+city+moments&image_size=landscape_16_9",
+    "link": "#",
+    "github": "#",
+    "technologies": ["Photography", "Editing", "Cinematography"],
+    "media": []
   }
 ]

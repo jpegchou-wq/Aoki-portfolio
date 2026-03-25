@@ -1,27 +1,45 @@
 [
   {
-    "category": "Frontend",
+    "category": "视觉与多媒体设计 (Creative Suite)",
     "items": [
-      { "name": "React", "level": 90 },
-      { "name": "Next.js", "level": 85 },
-      { "name": "TypeScript", "level": 80 },
-      { "name": "Tailwind CSS", "level": 95 }
+      { "name": "Adobe Illustrator (AI)", "level": 90 },
+      { "name": "Adobe Photoshop (PS)", "level": 90 },
+      { "name": "Cinema 4D (C4D)", "level": 75 },
+      { "name": "Premiere Pro (PR)", "level": 80 },
+      { "name": "After Effects (AE)", "level": 80 },
+      { "name": "剪映", "level": 75 }
     ]
   },
   {
-    "category": "Backend",
+    "category": "UI/UX 与产品设计 (Digital Product)",
     "items": [
-      { "name": "Node.js", "level": 75 },
-      { "name": "Express", "level": 70 },
-      { "name": "PostgreSQL", "level": 65 }
+      { "name": "Figma", "level": 95 },
+      { "name": "Design System / 组件库", "level": 90 },
+      { "name": "iOS", "level": 80 },
+      { "name": "Android", "level": 80 },
+      { "name": "Web", "level": 90 },
+      { "name": "IoT 触控终端", "level": 70 }
     ]
   },
   {
-    "category": "Tools",
+    "category": "增长营销与数据分析 (Marketing & Data)",
     "items": [
-      { "name": "Git", "level": 90 },
-      { "name": "Docker", "level": 60 },
-      { "name": "Figma", "level": 70 }
+      { "name": "Google Ads (PMax / Search)", "level": 75 },
+      { "name": "Social Media Ads (Global)", "level": 70 },
+      { "name": "飞书 (Lark)", "level": 85 }
+    ]
+  },
+  {
+    "category": "AI 协同与自动化开发 (AI & Engineering)",
+    "items": [
+      { "name": "GPT", "level": 80 },
+      { "name": "Claude (Claude Code)", "level": 80 },
+      { "name": "Midjourney", "level": 75 },
+      { "name": "Gemini", "level": 75 },
+      { "name": "豆包", "level": 70 },
+      { "name": "Python", "level": 65 },
+      { "name": "VS Code", "level": 85 },
+      { "name": "GitHub", "level": 85 }
     ]
   }
 ]

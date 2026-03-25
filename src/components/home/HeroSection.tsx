@@ -4,78 +4,107 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import personalData from '../../data/personal.json';
+import { useLanguage } from '@/context/LanguageContext';
 
 const HeroSection: React.FC = () => {
+  const { language, t } = useLanguage();
+  const data = language === 'en' ? personalData.en : personalData.cn;
+
   return (
-    <section className="relative h-screen flex items-center justify-center bg-blue-900 overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      {/* Vision Pro style blurred background elements */}
+      <div className="absolute inset-0 z-0">
+        <motion.div 
+          animate={{ 
+            x: [0, 50, 0],
+            y: [0, 30, 0],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute top-[10%] left-[15%] w-[40vw] h-[40vw] bg-purple-200/20 rounded-full blur-[120px]" 
+        />
+        <motion.div 
+          animate={{ 
+            x: [0, -40, 0],
+            y: [0, 60, 0],
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-[10%] right-[10%] w-[35vw] h-[35vw] bg-blue-100/30 rounded-full blur-[100px]" 
+        />
       </div>
 
       <div className="container mx-auto px-6 z-10 flex flex-col items-center text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="relative w-40 h-40 md:w-56 md:h-56 mb-8 rounded-full border-4 border-orange-500 overflow-hidden shadow-2xl"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
+          className="relative w-32 h-32 md:w-48 md:h-48 mb-10 rounded-[1.75rem] p-1 glass-card overflow-hidden group"
         >
-          <Image
-            src={personalData.avatar}
-            alt={personalData.name}
-            fill
-            className="object-cover"
-            priority
-          />
+          <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden">
+            <Image
+              src={personalData.avatar}
+              alt={data.name}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              priority
+            />
+          </div>
         </motion.div>
 
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl md:text-7xl font-bold text-white mb-4"
         >
-          Hi, I&apos;m <span className="text-orange-500">{personalData.name}</span>
-        </motion.h1>
+          <h2 className="text-sm md:text-base font-medium tracking-[0.2em] uppercase text-black/40 mb-4">
+            {t('hero.greeting')}
+          </h2>
+          <h1 className="text-5xl md:text-8xl font-bold tracking-tight text-black/90 mb-6">
+            {data.name}
+          </h1>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl"
+          className="text-lg md:text-2xl text-black/50 mb-12 max-w-2xl font-light leading-relaxed"
         >
-          {personalData.title}
+          {data.title}
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex space-x-4"
+          className="flex flex-col sm:flex-row gap-4"
         >
           <a
             href="/projects"
-            className="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full transition-all hover:shadow-lg transform hover:-translate-y-1"
+            className="px-10 py-4 glass-button rounded-full text-black font-medium shadow-sm hover:shadow-md hover:-translate-y-0.5"
           >
-            View My Work
+            {t('hero.cta')}
           </a>
           <a
             href="/contact"
-            className="px-8 py-3 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-blue-900 transition-all transform hover:-translate-y-1"
+            className="px-10 py-4 vision-button rounded-full text-black/70 font-medium hover:text-black hover:-translate-y-0.5"
           >
-            Contact Me
+            {t('hero.contact')}
           </a>
         </motion.div>
       </div>
 
       <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-10 text-white opacity-50"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2"
       >
-        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-          <div className="w-1 h-2 bg-white rounded-full mt-2"></div>
+        <div className="w-6 h-10 rounded-full border border-black/10 flex justify-center p-1">
+          <motion.div 
+            animate={{ y: [0, 16, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="w-1 h-2 bg-black/20 rounded-full"
+          />
         </div>
       </motion.div>
     </section>
