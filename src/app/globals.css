@@ -3,36 +3,41 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 26, 26, 26;
-  --background-start-rgb: 248, 249, 250;
+  --foreground-rgb: 16, 20, 31;
+  --background-start-rgb: 245, 249, 255;
   --background-end-rgb: 255, 255, 255;
-  --brand-purple: 216, 180, 254;
+  --brand-cyan: 71, 186, 255;
+  --brand-pink: 255, 92, 188;
+  --brand-indigo: 108, 136, 255;
 }
 
 body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Segoe UI", sans-serif;
   color: rgb(var(--foreground-rgb));
-  background: radial-gradient(circle at 50% 0%, rgba(var(--brand-purple), 0.15) 0%, transparent 50%),
-              linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
-  background-attachment: fixed;
+  background:
+    radial-gradient(circle at 14% 10%, rgba(var(--brand-cyan), 0.18), transparent 34%),
+    radial-gradient(circle at 84% 22%, rgba(var(--brand-pink), 0.14), transparent 38%),
+    radial-gradient(circle at 50% 110%, rgba(var(--brand-indigo), 0.14), transparent 35%),
+    linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
   scroll-behavior: smooth;
-  @apply font-sans;
+  @apply font-sans antialiased;
 }
 
 @layer components {
   .glass-card {
-    @apply bg-white/40 backdrop-blur-xl border border-white/40 shadow-xl;
+    @apply bg-white/45 backdrop-blur-2xl border border-white/55 shadow-[0_12px_40px_rgba(18,28,56,0.14)];
   }
   
   .glass-nav {
-    @apply bg-white/20 backdrop-blur-md border-b border-white/10;
+    @apply bg-white/35 backdrop-blur-xl border-b border-white/35;
   }
   
   .glass-button {
-    @apply bg-white/30 backdrop-blur-md border border-white/30 hover:bg-white/50 transition-all duration-300;
+    @apply bg-white/50 backdrop-blur-lg border border-white/60 hover:bg-white/70 transition-all duration-300;
   }
   
   .vision-button {
-    @apply bg-black/5 hover:bg-black/10 backdrop-blur-sm border border-black/5 transition-all duration-300;
+    @apply bg-black/5 hover:bg-black/10 backdrop-blur-sm border border-black/10 transition-all duration-300;
   }
 }
 
@@ -50,5 +55,24 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

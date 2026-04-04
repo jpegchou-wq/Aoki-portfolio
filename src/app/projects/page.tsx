@@ -20,7 +20,7 @@ const ProjectCard = ({ project, language }: { project: any, language: string }) 
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9 }}
         transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-        className="group glass-card rounded-[1.75rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+        className="group glass-card rounded-[1.75rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border-white/60"
       >
         <div className="relative aspect-[16/10] overflow-hidden m-3 rounded-[1.5rem]">
           <Image
@@ -32,17 +32,17 @@ const ProjectCard = ({ project, language }: { project: any, language: string }) 
         </div>
         <div className="p-8 pt-2">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-purple-500/60 bg-purple-500/5 px-3 py-1 rounded-full border border-purple-500/10">
+            <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-sky-700/70 bg-sky-100/55 px-3 py-1 rounded-full border border-white/60">
               {project.category}
             </span>
           </div>
-          <h3 className="text-xl font-semibold text-black/80 mb-3 group-hover:text-black transition-colors">{data.title}</h3>
-          <p className="text-black/40 text-sm mb-6 line-clamp-2 font-light leading-relaxed">{data.description}</p>
+          <h3 className="text-xl font-semibold text-black/85 mb-3 group-hover:text-black transition-colors">{data.title}</h3>
+          <p className="text-black/60 text-sm mb-6 line-clamp-2 font-light leading-relaxed">{data.description}</p>
           <div className="flex flex-wrap gap-1.5">
             {project.technologies.map((tech: string) => (
               <span
                 key={tech}
-                className="px-3 py-1.5 bg-black/[0.02] text-black/40 text-[10px] font-medium rounded-lg border border-black/[0.01]"
+                className="px-3 py-1.5 bg-white/65 text-black/65 text-[10px] font-medium rounded-lg border border-white/60"
               >
                 {tech}
               </span>
@@ -76,33 +76,37 @@ export default function Projects() {
 
   return (
     <Layout>
-      <div className="pt-32 pb-24 min-h-screen">
+      <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_8%_16%,rgba(71,186,255,0.16),transparent_30%),radial-gradient(circle_at_86%_12%,rgba(255,92,188,0.14),transparent_35%),radial-gradient(circle_at_45%_98%,rgba(108,136,255,0.12),transparent_40%)]" />
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-14"
           >
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-black/5 border border-black/5 text-xs font-medium text-black/40 uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-button text-xs font-semibold text-black/70 uppercase tracking-widest mb-6">
               <Sparkles size={12} />
               <span>Archive</span>
             </div>
-            <h1 className="text-5xl md:text-8xl font-bold tracking-tight text-black/90 mb-6">
+            <h1 className="text-5xl md:text-8xl font-semibold tracking-[-0.04em] text-black mb-6">
               {t('nav.projects')}
             </h1>
+            <p className="max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-black/70 leading-relaxed">
+              {t('projects.subtitle')}
+            </p>
           </motion.div>
 
           {/* Filter Bar */}
-          <div className="flex flex-wrap justify-center gap-2 mb-16">
+          <div className="flex flex-wrap justify-center gap-2 mb-14 p-2 rounded-[1.5rem] glass-card">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setFilter(cat.id)}
-                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35 ${
                   filter === cat.id 
                     ? 'bg-black text-white shadow-lg' 
-                    : 'bg-black/5 text-black/40 hover:bg-black/10 hover:text-black'
+                    : 'bg-white/55 text-black/70 border border-white/60 hover:bg-white/75 hover:text-black'
                 }`}
               >
                 {cat.label}
@@ -130,7 +134,7 @@ export default function Projects() {
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-center py-24 text-black/20 font-light italic"
+              className="text-center py-16 text-black/40 font-light italic glass-card rounded-[1.75rem]"
             >
               {language === 'en' ? 'No projects found in this category.' : '该分类下暂无项目。'}
             </motion.div>

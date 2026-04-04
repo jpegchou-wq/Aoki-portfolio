@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EDF2FF"/>
+      <stop offset="0.45" stop-color="#EAF8FF"/>
+      <stop offset="1" stop-color="#F9EEFF"/>
+    </linearGradient>
+    <radialGradient id="c1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(490 360) rotate(22) scale(420 260)">
+      <stop stop-color="#5E88FF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#5E88FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="c2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1130 320) rotate(-12) scale(360 240)">
+      <stop stop-color="#24D0FF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#24D0FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#c1)"/>
+  <rect width="1600" height="900" fill="url(#c2)"/>
+  <g opacity="0.78">
+    <rect x="220" y="170" width="1160" height="560" rx="40" fill="white" fill-opacity="0.48" stroke="white" stroke-opacity="0.72"/>
+    <circle cx="510" cy="450" r="140" fill="#4C7DFF" fill-opacity="0.28"/>
+    <circle cx="820" cy="450" r="140" fill="#24D0FF" fill-opacity="0.28"/>
+    <circle cx="1130" cy="450" r="140" fill="#FF77CD" fill-opacity="0.24"/>
+  </g>
+  <text x="800" y="790" text-anchor="middle" fill="#1F2840" fill-opacity="0.55" font-family="Arial, sans-serif" font-size="36" letter-spacing="4">LOCAL LAB PREVIEW</text>
+</svg>

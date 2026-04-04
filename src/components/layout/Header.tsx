@@ -51,7 +51,7 @@ const Header: React.FC = () => {
             <Link
               key={link.href}
               href={link.href}
-              className="px-4 py-2 text-sm font-medium text-black/60 hover:text-black hover:bg-black/5 rounded-full transition-all duration-300"
+              className="px-4 py-2 text-sm font-medium text-black/80 hover:text-black hover:bg-black/5 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35"
             >
               {link.name}
             </Link>
@@ -61,7 +61,7 @@ const Header: React.FC = () => {
           
           <button
             onClick={toggleLanguage}
-            className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-black/60 hover:text-black hover:bg-black/5 rounded-full transition-all duration-300"
+            className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-black/80 hover:text-black hover:bg-black/5 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35"
           >
             <Globe size={14} />
             <span>{language === 'en' ? '中文' : 'EN'}</span>
@@ -72,12 +72,12 @@ const Header: React.FC = () => {
         <div className="md:hidden flex items-center space-x-2">
            <button
             onClick={toggleLanguage}
-            className="p-2 text-black/60 hover:text-black transition-colors"
+            className="p-2 text-black/80 hover:text-black transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35 rounded-lg"
           >
             <Globe size={20} />
           </button>
           <button
-            className="p-2 text-black/60 hover:text-black focus:outline-none"
+            className="p-2 text-black/80 hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35 rounded-lg"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -98,7 +98,7 @@ const Header: React.FC = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="w-full text-center py-3 text-lg font-medium text-black/70 hover:text-black hover:bg-black/5 rounded-2xl transition-all"
+                className="w-full text-center py-3 text-lg font-medium text-black/80 hover:text-black hover:bg-black/5 rounded-2xl transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}

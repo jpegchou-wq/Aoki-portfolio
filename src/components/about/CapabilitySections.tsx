@@ -40,14 +40,14 @@ export default function CapabilitySections() {
                 transition={{ duration: 0.8, delay: index * 0.06, ease: [0.23, 1, 0.32, 1] }}
                 viewport={{ once: true }}
                 whileHover={{ y: -6 }}
-                className="glass-card text-left w-full rounded-[2rem] p-10 md:p-12 transition-all duration-500"
+                className="glass-card text-left w-full rounded-[2rem] p-8 md:p-10 transition-all duration-500 border-white/65"
               >
                 <div className="flex items-start justify-between gap-6">
                   <div className="space-y-4">
-                    <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500">
+                    <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-indigo-600 to-pink-600">
                       {cap.title}
                     </h3>
-                    <p className="text-black/45 font-light leading-relaxed">
+                    <p className="text-black/65 font-light leading-relaxed">
                       {cap.core}
                     </p>
                   </div>
@@ -55,7 +55,7 @@ export default function CapabilitySections() {
                   <motion.div
                     animate={{ rotate: isActive ? 45 : 0, opacity: isActive ? 1 : 0.5 }}
                     transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
-                    className="shrink-0 w-12 h-12 rounded-2xl bg-black/[0.03] border border-black/[0.04] flex items-center justify-center"
+                    className="shrink-0 w-12 h-12 rounded-2xl bg-white/65 border border-white/70 flex items-center justify-center"
                   >
                     <ArrowUpRight size={18} className="text-black/60" />
                   </motion.div>
@@ -74,7 +74,7 @@ export default function CapabilitySections() {
                         {cap.items.map((text, i) => (
                           <div
                             key={`${cap.id}-${i}`}
-                            className="rounded-[1.5rem] bg-white/30 border border-white/30 backdrop-blur-md px-6 py-5 text-black/60 font-light leading-relaxed"
+                            className="rounded-[1.5rem] bg-white/55 border border-white/65 backdrop-blur-md px-6 py-5 text-black/75 font-light leading-relaxed"
                           >
                             {text}
                           </div>

@@ -38,16 +38,15 @@
         ]
       }
     },
-    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Modern+mobile+app+UI+design+for+health+and+nutrition+tracking+with+vibrant+colors&image_size=landscape_16_9",
+    "thumbnail": "/images/placeholders/project-cover.svg",
     "link": "#",
     "github": "#",
     "technologies": ["Figma", "UI Design", "UX Research"],
     "media": [
       {
-        "type": "video",
-        "provider": "youtube",
-        "src": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        "title": "Prototype walkthrough"
+        "type": "image",
+        "src": "/images/placeholders/video-cover.svg",
+        "alt": "Prototype walkthrough preview"
       }
     ]
   },
@@ -62,7 +61,7 @@
       "title": "Horizon 企业级仪表盘",
       "description": "为大规模企业物流设计的复杂数据可视化和管理系统。"
     },
-    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Professional+enterprise+B2B+dashboard+UI+design+with+complex+charts+and+data&image_size=landscape_16_9",
+    "thumbnail": "/images/placeholders/project-cover.svg",
     "link": "#",
     "github": "#",
     "technologies": ["SaaS", "Data Visualization", "Design System"],
@@ -79,7 +78,7 @@
       "title": "赛博城市插画系列",
       "description": "一系列探索传统水墨风格与未来赛博朋克美学交汇的数字插画。"
     },
-    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Futuristic+cyberpunk+city+illustration+with+traditional+ink+brush+strokes&image_size=landscape_16_9",
+    "thumbnail": "/images/placeholders/project-cover.svg",
     "link": "#",
     "github": "#",
     "technologies": ["Procreate", "Digital Art", "Visual Design"],
@@ -96,7 +95,7 @@
       "title": "Luminary 品牌视觉识别系统",
       "description": "为一家可持续能源初创公司打造的完整视觉识别系统，包括 Logo、字体和品牌规范。"
     },
-    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Minimalist+clean+brand+identity+design+with+logo+and+stationery&image_size=landscape_16_9",
+    "thumbnail": "/images/placeholders/project-cover.svg",
     "link": "#",
     "github": "#",
     "technologies": ["Branding", "Logo Design", "Typography"],
@@ -113,7 +112,7 @@
       "title": "Aura 建筑作品集网站",
       "description": "为一家建筑事务所打造的高性能沉浸式 Web 体验，通过动效展示空间设计。"
     },
-    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Modern+minimalist+architecture+website+design+with+immersive+layouts&image_size=landscape_16_9",
+    "thumbnail": "/images/placeholders/project-cover.svg",
     "link": "#",
     "github": "#",
     "technologies": ["Next.js", "Framer Motion", "GSAP"],
@@ -130,7 +129,7 @@
       "title": "夏季大促视觉设计",
       "description": "营销活动素材，包括社交媒体模板、海报和交互式网页横幅。"
     },
-    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Vibrant+summer+marketing+campaign+visuals+with+playful+typography&image_size=landscape_16_9",
+    "thumbnail": "/images/placeholders/project-cover.svg",
     "link": "#",
     "github": "#",
     "technologies": ["Graphic Design", "Social Media", "Advertising"],
@@ -147,7 +146,7 @@
       "title": "城市寂静摄影",
       "description": "一个捕捉繁华大都市景观中安静瞬间的摄影项目。"
     },
-    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Moody+cinematic+urban+photography+capturing+quiet+city+moments&image_size=landscape_16_9",
+    "thumbnail": "/images/placeholders/project-cover.svg",
     "link": "#",
     "github": "#",
     "technologies": ["Photography", "Editing", "Cinematography"],

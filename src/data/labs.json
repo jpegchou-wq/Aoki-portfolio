@@ -25,7 +25,7 @@
         ]
       }
     },
-    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Futuristic+abstract+UI+with+glowing+particles+and+fluid+motion+patterns&image_size=landscape_16_9",
+    "thumbnail": "/images/placeholders/lab-cover.svg",
     "technologies": ["Figma", "Three.js", "Generative Art"],
     "media": []
   },
@@ -39,7 +39,7 @@
       "title": "神经突触 OS",
       "description": "专注于神经连接导航和空间意识的概念操作系统设计。"
     },
-    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Conceptual+OS+interface+with+neural+patterns+and+spatial+layout&image_size=landscape_16_9",
+    "thumbnail": "/images/placeholders/lab-cover.svg",
     "technologies": ["UI Design", "Motion Design", "AI"],
     "media": []
   },
@@ -53,7 +53,7 @@
       "title": "虚空交互",
       "description": "探索极简互动空间，由光和声定义用户体验。"
     },
-    "thumbnail": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Minimalist+dark+space+with+abstract+light+and+shadow+patterns&image_size=landscape_16_9",
+    "thumbnail": "/images/placeholders/lab-cover.svg",
     "technologies": ["Experience Design", "Sound Design"],
     "media": []
   }

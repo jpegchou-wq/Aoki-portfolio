@@ -8,6 +8,8 @@ import CareerTimeline from '@/components/about/CareerTimeline';
 import SkillsOverview from '@/components/home/SkillsOverview';
 import personalData from '@/data/personal.json';
 import { useLanguage } from '@/context/LanguageContext';
+import { motion } from 'framer-motion';
+import { Sparkles } from 'lucide-react';
 
 export default function About() {
   const { language, t } = useLanguage();
@@ -15,8 +17,25 @@ export default function About() {
 
   return (
     <Layout>
-      <div className="pt-32 pb-12 overflow-hidden">
-        
+      <div className="pt-32 pb-16 min-h-screen overflow-hidden relative">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_14%_8%,rgba(71,186,255,0.14),transparent_34%),radial-gradient(circle_at_88%_20%,rgba(255,92,188,0.12),transparent_40%)]" />
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75 }}
+            className="text-center mb-6"
+          >
+            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-button text-xs font-semibold text-black/70 uppercase tracking-widest mb-6">
+              <Sparkles size={12} />
+              <span>Profile</span>
+            </div>
+            <h1 className="text-5xl md:text-8xl font-semibold tracking-[-0.04em] text-black mb-6">
+              {t('nav.me')}
+            </h1>
+          </motion.div>
+        </div>
+
         <PersonalIntro />
 
         <CapabilitySections />
@@ -46,7 +65,7 @@ export default function About() {
           </div>
         </section>
 
-        <div className="bg-black/[0.02] py-12">
+        <div className="bg-white/25 py-12 border-y border-white/45 backdrop-blur-md">
           <SkillsOverview />
         </div>
       </div>

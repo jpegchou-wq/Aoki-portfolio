@@ -51,8 +51,8 @@ const ContactForm: React.FC = () => {
             <div className="w-20 h-20 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mb-6">
               <CheckCircle2 size={40} />
             </div>
-            <h3 className="text-2xl font-semibold text-black/80 mb-2">{t('contact.success')}</h3>
-            <p className="text-black/40 font-light">I will get back to you as soon as possible.</p>
+            <h3 className="text-2xl font-semibold text-black/85 mb-2">{t('contact.success')}</h3>
+            <p className="text-black/65 font-light">I will get back to you as soon as possible.</p>
           </motion.div>
         ) : (
           <motion.form 
@@ -65,8 +65,8 @@ const ContactForm: React.FC = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-xs font-semibold tracking-widest uppercase text-black/30 ml-4">
-                  {t('contact.name')} <span className="text-purple-500/50">*</span>
+                <label htmlFor="name" className="text-xs font-semibold tracking-widest uppercase text-black/50 ml-4">
+                  {t('contact.name')} <span className="text-rose-500/70">*</span>
                 </label>
                 <input
                   type="text"
@@ -75,13 +75,13 @@ const ContactForm: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-4 bg-black/[0.03] border border-black/[0.05] focus:border-black/10 focus:bg-white rounded-3xl outline-none transition-all duration-300 text-black/70 placeholder:text-black/20"
+                  className="w-full px-6 py-4 bg-white/65 border border-white/70 focus:border-black/20 focus:bg-white rounded-3xl outline-none transition-all duration-300 text-black/85 placeholder:text-black/40 focus-visible:ring-2 focus-visible:ring-black/25"
                   placeholder={t('contact.name')}
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="phone" className="text-xs font-semibold tracking-widest uppercase text-black/30 ml-4">
-                  {t('contact.phone')} <span className="text-purple-500/50">*</span>
+                <label htmlFor="phone" className="text-xs font-semibold tracking-widest uppercase text-black/50 ml-4">
+                  {t('contact.phone')} <span className="text-rose-500/70">*</span>
                 </label>
                 <input
                   type="tel"
@@ -90,15 +90,15 @@ const ContactForm: React.FC = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-4 bg-black/[0.03] border border-black/[0.05] focus:border-black/10 focus:bg-white rounded-3xl outline-none transition-all duration-300 text-black/70 placeholder:text-black/20"
+                  className="w-full px-6 py-4 bg-white/65 border border-white/70 focus:border-black/20 focus:bg-white rounded-3xl outline-none transition-all duration-300 text-black/85 placeholder:text-black/40 focus-visible:ring-2 focus-visible:ring-black/25"
                   placeholder={t('contact.phone')}
                 />
               </div>
             </div>
             
             <div className="space-y-2">
-              <label htmlFor="inquiry" className="text-xs font-semibold tracking-widest uppercase text-black/30 ml-4">
-                {t('contact.inquiry')} <span className="text-purple-500/50">*</span>
+              <label htmlFor="inquiry" className="text-xs font-semibold tracking-widest uppercase text-black/50 ml-4">
+                {t('contact.inquiry')} <span className="text-rose-500/70">*</span>
               </label>
               <textarea
                 id="inquiry"
@@ -107,7 +107,7 @@ const ContactForm: React.FC = () => {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full px-6 py-4 bg-black/[0.03] border border-black/[0.05] focus:border-black/10 focus:bg-white rounded-[1.5rem] outline-none transition-all duration-300 text-black/70 placeholder:text-black/20 resize-none"
+                className="w-full px-6 py-4 bg-white/65 border border-white/70 focus:border-black/20 focus:bg-white rounded-[1.5rem] outline-none transition-all duration-300 text-black/85 placeholder:text-black/40 resize-none focus-visible:ring-2 focus-visible:ring-black/25"
                 placeholder={t('contact.inquiry')}
               ></textarea>
             </div>
@@ -115,7 +115,7 @@ const ContactForm: React.FC = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="group w-full py-5 bg-black text-white font-medium rounded-full transition-all duration-500 flex items-center justify-center space-x-3 shadow-xl hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100"
+              className="group w-full py-5 bg-black text-white font-medium rounded-full transition-all duration-500 flex items-center justify-center space-x-3 shadow-xl hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white/40"
             >
               <span className="tracking-widest uppercase text-sm">
                 {isSubmitting ? 'Sending...' : t('contact.send')}
