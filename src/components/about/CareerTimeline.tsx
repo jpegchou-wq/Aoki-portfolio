@@ -51,7 +51,7 @@ export default function CareerTimeline({
                   onClick={() => setOpenIndex(hasDetail ? (isOpen ? null : index) : null)}
                   className="w-full text-left rounded-[1.75rem] bg-white/55 border border-white/70 backdrop-blur-md px-6 sm:px-7 py-6 transition-all duration-500 hover:bg-white/70 hover:-translate-y-1"
                 >
-                  <div className="flex items-start justify-between gap-6">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-5 sm:gap-6">
                     <div className="min-w-0">
                       <div className="text-xl font-semibold text-black/90 leading-snug">{item.title}</div>
                       {item.subtitle && (
@@ -71,7 +71,7 @@ export default function CareerTimeline({
                       )}
                     </div>
 
-                    <div className="flex items-center gap-3 shrink-0">
+                    <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0">
                       {item.duration && (
                         <div className="text-[11px] text-black/45 font-semibold tracking-widest uppercase">{item.duration}</div>
                       )}

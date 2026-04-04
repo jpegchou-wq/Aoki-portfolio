@@ -17,20 +17,20 @@ export default function About() {
 
   return (
     <Layout>
-      <div className="pt-32 pb-16 min-h-screen overflow-hidden relative">
+      <div className="pt-24 md:pt-32 pb-14 md:pb-16 min-h-screen overflow-hidden relative">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_14%_8%,rgba(71,186,255,0.14),transparent_34%),radial-gradient(circle_at_88%_20%,rgba(255,92,188,0.12),transparent_40%)]" />
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75 }}
-            className="text-center mb-6"
+            className="text-center mb-4 sm:mb-6"
           >
             <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-button text-xs font-semibold text-black/70 uppercase tracking-widest mb-6">
               <Sparkles size={12} />
               <span>Profile</span>
             </div>
-            <h1 className="text-5xl md:text-8xl font-semibold tracking-[-0.04em] text-black mb-6">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-semibold tracking-[-0.04em] text-black mb-4 sm:mb-6">
               {t('nav.me')}
             </h1>
           </motion.div>
@@ -40,8 +40,8 @@ export default function About() {
 
         <CapabilitySections />
 
-        <section className="py-24">
-          <div className="container mx-auto px-6">
+        <section className="py-16 sm:py-24">
+          <div className="container mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               <CareerTimeline
                 title={t('about.education')}
@@ -59,6 +59,7 @@ export default function About() {
                   subtitle: exp.company,
                   duration: exp.duration,
                   description: exp.description,
+                  tags: exp.tags,
                 }))}
               />
             </div>
