@@ -52,7 +52,7 @@ const HeroSection: React.FC = () => {
       ref={sectionRef}
       onMouseMove={handlePointerMove}
       onMouseLeave={handlePointerLeave}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-14 md:pt-32 md:pb-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-12 md:pt-32 md:pb-20"
     >
       <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_20%,rgba(38,173,255,0.2),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(255,74,163,0.18),transparent_42%),radial-gradient(circle_at_50%_100%,rgba(95,130,255,0.14),transparent_40%)]" />
 
@@ -86,7 +86,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 sm:gap-10 lg:gap-8 items-center">
           <div className="text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -108,7 +108,7 @@ const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.1 }}
-              className="text-5xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-8xl font-semibold tracking-[-0.04em] text-black mb-5"
+              className="text-4xl leading-[0.98] sm:text-6xl md:text-7xl lg:text-8xl font-semibold tracking-[-0.04em] text-black mb-4 sm:mb-5"
             >
               {data.name}
             </motion.h1>
@@ -117,7 +117,7 @@ const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
-              className="text-xl sm:text-2xl md:text-3xl text-black/85 max-w-2xl leading-tight mb-8"
+              className="text-lg sm:text-2xl md:text-3xl text-black/85 max-w-2xl leading-snug mb-6 sm:mb-8"
             >
               {data.title}
             </motion.p>
@@ -126,9 +126,9 @@ const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="text-base sm:text-lg text-black/70 max-w-xl leading-relaxed mb-10"
+              className="text-sm sm:text-lg text-black/70 max-w-xl leading-relaxed mb-8 sm:mb-10"
             >
-              UI/UX, visual storytelling, and brand systems with a soft, high-fidelity glass aesthetic.
+              构建一个流动的品牌生态，凭借在视觉美学与市场洞察中的沉淀，能将静态的品牌基因，通过视觉设计，转化为用户可感知、可触摸的数字体验。追求思考到平面到屏幕像素的无损美学输出。
             </motion.p>
 
             <motion.div
@@ -156,7 +156,7 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0, y: 26 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2 }}
-            className="relative mx-auto w-full max-w-xl lg:max-w-none"
+            className="relative mx-auto w-full max-w-xl lg:max-w-none mt-2 sm:mt-0"
           >
             <div className="glass-card rounded-[2rem] p-4 md:p-5 border-white/60 shadow-[0_20px_55px_rgba(22,30,60,0.18)]">
               <div className="relative overflow-hidden rounded-[1.45rem] h-[250px] sm:h-[330px] md:h-[380px] bg-[linear-gradient(140deg,rgba(255,255,255,0.65),rgba(255,255,255,0.18))]">
@@ -183,7 +183,7 @@ const HeroSection: React.FC = () => {
             <motion.div
               animate={reduceMotion ? {} : { y: [0, -8, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -bottom-4 -right-1 sm:-right-6 w-[150px] sm:w-[190px] md:w-[220px] glass-card rounded-[1.6rem] p-3 md:p-4 border-white/60 shadow-[0_12px_28px_rgba(14,24,48,0.18)]"
+              className="hidden sm:block absolute -bottom-4 -right-1 sm:-right-6 w-[150px] sm:w-[190px] md:w-[220px] glass-card rounded-[1.6rem] p-3 md:p-4 border-white/60 shadow-[0_12px_28px_rgba(14,24,48,0.18)]"
               style={{ transform: `translate3d(${offsetX * -0.15}px, ${offsetY * -0.15}px, 0)` }}
             >
               <div className="rounded-[1.1rem] h-[210px] sm:h-[250px] md:h-[280px] border border-white/50 bg-[linear-gradient(160deg,rgba(255,255,255,0.65),rgba(255,255,255,0.18))] p-3">
