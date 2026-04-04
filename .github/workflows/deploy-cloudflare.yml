@@ -30,5 +30,5 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
-          npx wrangler pages project create aoki-portfolio-pages --production-branch main || true
-          npx wrangler pages deploy out --project-name aoki-portfolio-pages
+          npx wrangler pages project create aokiportfolio --production-branch main || true
+          npx wrangler pages deploy out --project-name aokiportfolio
