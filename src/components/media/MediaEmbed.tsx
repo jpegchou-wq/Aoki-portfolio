@@ -58,7 +58,14 @@ export default function MediaEmbed({ item }: { item: MediaItem }) {
   if (item.type === 'image' || item.type === 'gif') {
     return (
       <div className="overflow-hidden rounded-[1.5rem] bg-black/5 border border-black/[0.04]">
-        <img src={item.src} alt={item.alt ?? ''} className="w-full h-auto object-contain object-top" loading="lazy" />
+        <img
+          src={item.src}
+          alt={item.alt ?? ''}
+          className="w-full h-auto object-contain object-top"
+          loading="lazy"
+          decoding="async"
+          fetchPriority="low"
+        />
       </div>
     );
   }
@@ -92,10 +99,10 @@ export default function MediaEmbed({ item }: { item: MediaItem }) {
           }
         >
           {item.images.map((image, index) => (
-            
             <div
               key={`${image.src}-${index}`}
               className={`${useRowLayout ? '' : 'break-inside-avoid mb-3 sm:mb-4'} overflow-hidden rounded-[1.25rem] bg-black/5 border border-black/[0.04]`}
+              style={{ contentVisibility: 'auto', containIntrinsicSize: '320px' }}
             >
               <img
                 src={image.src}
@@ -109,6 +116,8 @@ export default function MediaEmbed({ item }: { item: MediaItem }) {
                   typeof image.widthRatio === 'number' && image.widthRatio > 0 && image.widthRatio < 1 ? ' mx-auto' : ''
                 }`}
                 loading="lazy"
+                decoding="async"
+                fetchPriority="low"
               />
             </div>
           ))}

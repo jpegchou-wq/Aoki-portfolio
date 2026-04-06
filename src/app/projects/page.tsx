@@ -15,13 +15,17 @@ const ProjectCard = ({ project, language }: { project: any; language: string }) 
   
   return (
     <Link href={project.href ?? `/projects/${project.id}`} className="block">
-      <div className="group glass-card rounded-[1.75rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border-white/60">
+      <div
+        className="group glass-card rounded-[1.75rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border-white/60"
+        style={{ contentVisibility: 'auto', containIntrinsicSize: '560px' }}
+      >
         <div className="relative aspect-[16/10] overflow-hidden m-3 rounded-[1.5rem]">
           <Image
             src={project.thumbnail}
             alt={data.title}
             fill
             className="object-cover object-top group-hover:scale-110 transition-transform duration-1000 ease-out"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
         <div className="p-5 sm:p-8 pt-2">
@@ -51,6 +55,16 @@ const ProjectCard = ({ project, language }: { project: any; language: string }) 
 export default function Projects() {
   const { language, t } = useLanguage();
   const [filter, setFilter] = useState('All');
+  const [isMobile, setIsMobile] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(0);
+
+  React.useEffect(() => {
+    const mq = window.matchMedia('(max-width: 640px)');
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
 
   const projectItems = projectsData.map((item) => ({
     ...item,
@@ -98,6 +112,13 @@ export default function Projects() {
       ? [...filteredProjects].sort((a, b) => Number(a.id === '6') - Number(b.id === '6'))
       : filteredProjects;
 
+  React.useEffect(() => {
+    setVisibleCount(isMobile ? 9 : 18);
+  }, [filter, isMobile]);
+
+  const visibleItems = displayedProjects.slice(0, visibleCount);
+  const canLoadMore = visibleCount < displayedProjects.length;
+
   return (
     <Layout>
       <div className="pt-24 md:pt-32 pb-16 md:pb-24 min-h-screen relative overflow-hidden">
@@ -142,24 +163,41 @@ export default function Projects() {
 
           {/* Projects Grid */}
           <motion.div 
-            layout
+            layout={!isMobile}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8"
           >
             <AnimatePresence mode="popLayout">
-              {displayedProjects.map((project) => (
+              {visibleItems.map((project) => (
                 <motion.div
                   key={project._key ?? project.id}
-                  layout
-                  initial={{ opacity: 0, y: 20 }}
+                  layout={!isMobile}
+                  initial={isMobile ? false : { opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+                  transition={{ duration: isMobile ? 0.35 : 0.6, ease: [0.23, 1, 0.32, 1] }}
                 >
                   <ProjectCard project={project} language={language} />
                 </motion.div>
               ))}
             </AnimatePresence>
           </motion.div>
+
+          {canLoadMore && (
+            <div className="flex justify-center mt-10">
+              <button
+                type="button"
+                onClick={() =>
+                  setVisibleCount((prev) => {
+                    const step = isMobile ? 6 : 9;
+                    return Math.min(displayedProjects.length, prev + step);
+                  })
+                }
+                className="px-6 py-3 rounded-full glass-button text-black/80 font-medium hover:-translate-y-0.5 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35"
+              >
+                {language === 'en' ? 'Load more' : '加载更多'}
+              </button>
+            </div>
+          )}
 
           {filteredProjects.length === 0 && (
             <motion.div 
