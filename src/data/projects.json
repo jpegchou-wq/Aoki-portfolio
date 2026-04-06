@@ -1299,35 +1299,6 @@
         ]
       }
     ]
-  }
-
-  ,
-  {
-    "id": "33",
-    "category": "B2B UI/UX",
-    "en": {
-      "title": "B2B | SHUO Visual",
-      "description": "B2B interface / visual design exploration."
-    },
-    "cn": {
-      "title": "B2B｜SHUO 视觉方案",
-      "description": "B2B 界面与视觉方案展示"
-    },
-    "thumbnail": "/images/B2B1/SHUO.png",
-    "link": "#",
-    "github": "#",
-    "technologies": [
-      "B2B UX",
-      "Visual Design",
-      "Interface"
-    ],
-    "media": [
-      {
-        "type": "image",
-        "src": "/images/B2B1/SHUO.png",
-        "alt": "B2B SHUO 视觉方案"
-      }
-    ]
   },
   {
     "id": "34",
