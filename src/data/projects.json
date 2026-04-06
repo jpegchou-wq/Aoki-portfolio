@@ -1399,5 +1399,44 @@
         ]
       }
     ]
+  },
+  {
+    "id": "35",
+    "category": "B2B UI/UX",
+    "en": {
+      "title": "B2B | Device UI Showcase",
+      "description": "B2B device interface and visual showcase."
+    },
+    "cn": {
+      "title": "B2B｜设备界面展示",
+      "description": "B2B 设备界面与视觉展示"
+    },
+    "thumbnail": "/images/B2B3/B2B3FENG.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "B2B UX",
+      "HMI",
+      "Visual Design"
+    ],
+    "media": [
+      {
+        "type": "gallery",
+        "title": "作品图集",
+        "layout": "row",
+        "columns": 2,
+        "compact": true,
+        "images": [
+          {
+            "src": "/images/B2B3/B2B3FENG.png",
+            "alt": "B2B 设备界面展示 1"
+          },
+          {
+            "src": "/images/B2B3/12chenie.jpg",
+            "alt": "B2B 设备界面展示 2"
+          }
+        ]
+      }
+    ]
   }
 ]
