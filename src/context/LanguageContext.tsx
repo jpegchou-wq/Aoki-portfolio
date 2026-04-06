@@ -29,7 +29,7 @@ const translations = {
       title: 'Me',
       education: 'Education',
       experience: 'Experience',
-      location: 'Remote / Global',
+      location: 'Shenzhen',
       email: 'Email',
       phone: 'Phone'
     },
@@ -91,8 +91,8 @@ const translations = {
     about: {
       title: '我',
       education: '教育背景',
-      experience: '工作经历',
-      location: '远程 / 全球',
+      experience: '经历',
+      location: '深圳',
       email: '邮箱',
       phone: '电话'
     },
@@ -102,7 +102,7 @@ const translations = {
     },
     projects: {
       title: '精选项目',
-      subtitle: '我最近的项目集，专注于用户体验、性能和整洁的代码。',
+      subtitle: '设计不只是像素的堆砌，而是情感与逻辑的博弈。我致力于在复杂的用户需求中，寻找最简洁的叙事方式。',
       viewAll: '查看所有项目',
       viewCode: '源码',
       viewDemo: '演示',

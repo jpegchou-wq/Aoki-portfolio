@@ -11,7 +11,6 @@ type LocalizedDetail = {
   intro?: string;
   role?: string;
   highlights?: string[];
-  process?: string[];
 };
 
 export type ProjectData = {
@@ -49,7 +48,7 @@ export default function ProjectDetailClient({ project }: { project: ProjectData 
         >
           <div className="glass-card rounded-[2rem] p-3 overflow-hidden">
             <div className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem]">
-              <Image src={project.thumbnail} alt={content.title} fill className="object-cover" priority />
+              <Image src={project.thumbnail} alt={content.title} fill className="object-cover object-top" priority />
             </div>
           </div>
 
@@ -86,61 +85,21 @@ export default function ProjectDetailClient({ project }: { project: ProjectData 
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
-          <div className="lg:col-span-2 space-y-8">
-            {detail?.intro && (
-              <section className="glass-card rounded-[2rem] p-10">
-                <h2 className="text-xl font-semibold text-black/80 mb-4">{t('projectDetail.overview')}</h2>
-                <p className="text-black/55 font-light leading-relaxed whitespace-pre-line">{detail.intro}</p>
-              </section>
-            )}
-
-            {Array.isArray(detail?.process) && detail.process.length > 0 && (
-              <section className="glass-card rounded-[2rem] p-10">
-                <h2 className="text-xl font-semibold text-black/80 mb-4">{t('projectDetail.process')}</h2>
-                <div className="space-y-3">
-                  {detail.process.map((line, idx) => (
-                    <div
-                      key={idx}
-                      className="rounded-[1.5rem] bg-white/30 border border-white/30 backdrop-blur-md px-6 py-5 text-black/60 font-light leading-relaxed"
-                    >
-                      {line}
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
-          </div>
-
-          <div className="space-y-8">
-            {detail?.role && (
-              <section className="glass-card rounded-[2rem] p-10">
-                <h2 className="text-xl font-semibold text-black/80 mb-4">{t('projectDetail.role')}</h2>
-                <p className="text-black/55 font-light leading-relaxed whitespace-pre-line">{detail.role}</p>
-              </section>
-            )}
-
-            {Array.isArray(detail?.highlights) && detail.highlights.length > 0 && (
-              <section className="glass-card rounded-[2rem] p-10">
-                <h2 className="text-xl font-semibold text-black/80 mb-4">{t('projectDetail.highlights')}</h2>
-                <ul className="space-y-3">
-                  {detail.highlights.map((text, idx) => (
-                    <li key={idx} className="text-black/55 font-light leading-relaxed">
-                      {text}
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            )}
-          </div>
-        </div>
+        {detail?.role && (
+          <section className="glass-card rounded-[2rem] p-10 mt-12">
+            <h2 className="text-xl font-semibold text-black/80 mb-4">{t('projectDetail.role')}</h2>
+            <p className="text-black/55 font-light leading-relaxed whitespace-pre-line">{detail.role}</p>
+          </section>
+        )}
 
         {Array.isArray(project.media) && project.media.length > 0 && (
           <section className="mt-12">
             <div className="flex items-end justify-between mb-6">
-              <h2 className="text-2xl font-semibold text-black/80">{t('projectDetail.media')}</h2>
+              <h2 className="text-2xl font-semibold text-black/80">
+                {language === 'en' ? 'Project Outcomes' : '项目成果'}
+              </h2>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 gap-8">
               {project.media.map((item, idx) => (
                 <MediaEmbed key={idx} item={item} />
               ))}
@@ -151,4 +110,3 @@ export default function ProjectDetailClient({ project }: { project: ProjectData 
     </div>
   );
 }
-

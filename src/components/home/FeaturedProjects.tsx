@@ -63,7 +63,7 @@ const FeaturedProjects: React.FC = () => {
                       src={project.thumbnail}
                       alt={data.title}
                       fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
+                      className="object-cover object-top group-hover:scale-110 transition-transform duration-1000 ease-out"
                     />
                   </div>
                   <div className="p-10 pt-4">

@@ -1,60 +1,22 @@
 [
   {
-    "id": "1",
+    "id": "4",
     "en": {
-      "title": "Quantum Flow UI",
-      "description": "An experimental interface concept exploring quantum computing visualization and fluid motion patterns.",
-      "detail": {
-        "intro": "A lab project exploring motion language, abstract data visualization, and glass-like surfaces.",
-        "highlights": [
-          "Motion-first UI exploration",
-          "Conceptual data visualization",
-          "Prototype interactions"
-        ]
+      "title": "Exhibition Visual Experiment",
+      "description": "An experimental visual exploration for exhibition scenarios."
+    },
+    "cn": {
+      "title": "展会视觉实验",
+      "description": "展会场景视觉探索项目。"
+    },
+    "thumbnail": "/images/shiyan/zhanhui.png",
+    "technologies": ["Visual Design", "Exhibition", "Art Direction"],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/shiyan/zhanhui.png",
+        "alt": "展会视觉实验成果"
       }
-    },
-    "cn": {
-      "title": "量子流 UI",
-      "description": "探索量子计算可视化和流体运动模式的实验性界面概念。",
-      "detail": {
-        "intro": "实验性探索：以动效为核心，结合抽象数据可视化与玻璃质感界面语言。",
-        "highlights": [
-          "以动效驱动的界面探索",
-          "概念数据可视化",
-          "交互原型验证"
-        ]
-      }
-    },
-    "thumbnail": "/images/placeholders/lab-cover.svg",
-    "technologies": ["Figma", "Three.js", "Generative Art"],
-    "media": []
-  },
-  {
-    "id": "2",
-    "en": {
-      "title": "Synapse OS",
-      "description": "A conceptual operating system design focused on neural-link navigation and spatial awareness."
-    },
-    "cn": {
-      "title": "神经突触 OS",
-      "description": "专注于神经连接导航和空间意识的概念操作系统设计。"
-    },
-    "thumbnail": "/images/placeholders/lab-cover.svg",
-    "technologies": ["UI Design", "Motion Design", "AI"],
-    "media": []
-  },
-  {
-    "id": "3",
-    "en": {
-      "title": "Void Interactive",
-      "description": "Exploring minimalist interactive spaces where light and sound define the user experience."
-    },
-    "cn": {
-      "title": "虚空交互",
-      "description": "探索极简互动空间，由光和声定义用户体验。"
-    },
-    "thumbnail": "/images/placeholders/lab-cover.svg",
-    "technologies": ["Experience Design", "Sound Design"],
-    "media": []
+    ]
   }
 ]

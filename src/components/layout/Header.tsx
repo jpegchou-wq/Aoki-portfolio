@@ -21,8 +21,7 @@ const Header: React.FC = () => {
 
   const navLinks = [
     { name: t('nav.projects'), href: '/projects' },
-    { name: t('nav.labs'), href: '/labs' },
-    { name: t('nav.me'), href: '/' },
+    { name: t('nav.me'), href: '/about' },
     { name: t('nav.contact'), href: '/contact' },
   ];
 
@@ -31,17 +30,17 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="fixed w-full z-50 flex justify-center px-4 pt-4 md:pt-6">
+    <header className="fixed w-full z-50 flex justify-center px-3 sm:px-4 pt-3 md:pt-6">
       <motion.nav 
         initial={false}
         animate={{
           width: scrolled ? 'auto' : '100%',
           backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.4)' : 'rgba(255, 255, 255, 0.1)',
-          padding: scrolled ? '10px 24px' : '16px 32px',
+          padding: scrolled ? '10px 14px' : '12px 16px',
         }}
         className={`max-w-7xl flex justify-between items-center rounded-full backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]`}
       >
-        <Link href="/projects" className="text-xl font-semibold tracking-tight mr-8 bg-black/80 bg-clip-text text-transparent">
+        <Link href="/projects" className="text-lg sm:text-xl font-semibold tracking-tight mr-3 sm:mr-8 bg-black/80 bg-clip-text text-transparent">
           AOKI
         </Link>
 

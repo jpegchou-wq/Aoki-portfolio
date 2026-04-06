@@ -21,8 +21,8 @@
       }
     },
     "cn": {
-      "title": "Nourish 健康应用",
-      "description": "一款专注于直观营养记录和个性化健康目标的综合健康追踪应用。",
+      "title": "Fitness 健康应用",
+      "description": "随时随地｜互动健身｜科学指导的健身产品",
       "detail": {
         "intro": "这是一个用于展示端到端 UI/UX 能力的概念项目：从信息架构到关键路径设计，强调可用性与视觉一致性。",
         "role": "UI/UX · 视觉设计 · 原型",
@@ -38,51 +38,28 @@
         ]
       }
     },
-    "thumbnail": "/images/placeholders/project-cover.svg",
+    "thumbnail": "/images/fitness.png",
     "link": "#",
     "github": "#",
-    "technologies": ["Figma", "UI Design", "UX Research"],
+    "technologies": [
+      "Figma",
+      "UI Design",
+      "UX Research"
+    ],
     "media": [
       {
         "type": "image",
-        "src": "/images/placeholders/video-cover.svg",
-        "alt": "Prototype walkthrough preview"
+        "src": "/images/fitness.png",
+        "alt": "Fitness app key visual",
+        "sizeMB": 0.8
+      },
+      {
+        "type": "gif",
+        "src": "/images/fitness.png",
+        "alt": "Fitness app interaction demo GIF",
+        "sizeMB": 1.2
       }
     ]
-  },
-  {
-    "id": "2",
-    "category": "B2B UI/UX",
-    "en": {
-      "title": "Horizon Enterprise Dashboard",
-      "description": "Complex data visualization and management system designed for large-scale enterprise logistics."
-    },
-    "cn": {
-      "title": "Horizon 企业级仪表盘",
-      "description": "为大规模企业物流设计的复杂数据可视化和管理系统。"
-    },
-    "thumbnail": "/images/placeholders/project-cover.svg",
-    "link": "#",
-    "github": "#",
-    "technologies": ["SaaS", "Data Visualization", "Design System"],
-    "media": []
-  },
-  {
-    "id": "3",
-    "category": "插画设计",
-    "en": {
-      "title": "Cyber City Illustration Series",
-      "description": "A series of digital illustrations exploring the intersection of traditional ink styles and futuristic cyberpunk aesthetics."
-    },
-    "cn": {
-      "title": "赛博城市插画系列",
-      "description": "一系列探索传统水墨风格与未来赛博朋克美学交汇的数字插画。"
-    },
-    "thumbnail": "/images/placeholders/project-cover.svg",
-    "link": "#",
-    "github": "#",
-    "technologies": ["Procreate", "Digital Art", "Visual Design"],
-    "media": []
   },
   {
     "id": "4",
@@ -92,31 +69,342 @@
       "description": "Complete visual identity system for a sustainable energy startup, including logo, typography, and brand guidelines."
     },
     "cn": {
-      "title": "Luminary 品牌视觉识别系统",
-      "description": "为一家可持续能源初创公司打造的完整视觉识别系统，包括 Logo、字体和品牌规范。"
+      "title": "Fncenarc品牌logo设计",
+      "description": "为一家耳机硬件制造初创公司打造Logo设计。"
     },
-    "thumbnail": "/images/placeholders/project-cover.svg",
+    "thumbnail": "/images/ting2.png",
     "link": "#",
     "github": "#",
-    "technologies": ["Branding", "Logo Design", "Typography"],
-    "media": []
+    "technologies": [
+      "Branding",
+      "Logo Design",
+      "Typography"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/ting.png",
+        "alt": "Fncenarc brand logo design long image"
+      }
+    ]
   },
   {
-    "id": "5",
-    "category": "WEB",
+    "id": "8",
+    "category": "品牌 VIS",
     "en": {
-      "title": "Aura Portfolio Website",
-      "description": "High-performance, immersive web experience for an architectural firm showcasing spatial designs through motion."
+      "title": "Aitok Brand Visual Design",
+      "description": "Brand logo and visual identity exploration for Aitok."
     },
     "cn": {
-      "title": "Aura 建筑作品集网站",
-      "description": "为一家建筑事务所打造的高性能沉浸式 Web 体验，通过动效展示空间设计。"
+      "title": "Aitok 品牌视觉设计",
+      "description": "Aitok 品牌 Logo 与视觉识别设计。"
     },
-    "thumbnail": "/images/placeholders/project-cover.svg",
+    "thumbnail": "/images/aitokfeng.png",
     "link": "#",
     "github": "#",
-    "technologies": ["Next.js", "Framer Motion", "GSAP"],
-    "media": []
+    "technologies": [
+      "Branding",
+      "Logo Design",
+      "Visual Identity"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/aitok.jpg",
+        "alt": "Aitok brand visual long image"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "category": "品牌 VIS",
+    "en": {
+      "title": "Shouwu Brand Visual Design",
+      "description": "Brand logo and visual identity exploration for Shouwu."
+    },
+    "cn": {
+      "title": "首物sooowo供应链品牌设计",
+      "description": "首物sooowo品牌 Logo 与视觉识别设计"
+    },
+    "thumbnail": "/images/shouwu.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Branding",
+      "Logo Design",
+      "Visual Identity"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/shouwu.jpg",
+        "alt": "Shouwu brand visual long image"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "category": "品牌 VIS",
+    "en": {
+      "title": "Kuhe Brand Visual Design",
+      "description": "Brand logo and visual identity exploration for Kuhe."
+    },
+    "cn": {
+      "title": "COOKHERE品牌设计",
+      "description": "COOKHERE品牌视觉识别系统设计，完整版请联系Aoki"
+    },
+    "thumbnail": "/images/kuhe.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Branding",
+      "Logo Design",
+      "Visual Identity"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/kuhe.jpg",
+        "alt": "Kuhe brand visual long image"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "category": "品牌 VIS",
+    "en": {
+      "title": "IP Brand Visual Design",
+      "description": "Brand logo and visual identity exploration for IP."
+    },
+    "cn": {
+      "title": "库盒品牌ip设计",
+      "description": "kuku-ip设计"
+    },
+    "thumbnail": "/images/ip.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "IP Design"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/ip.png",
+        "alt": "IP brand visual long image"
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "category": "品牌 VIS",
+    "en": {
+      "title": "Qingying Logo Design",
+      "description": "Logo design exploration for Qingying health drink brand."
+    },
+    "cn": {
+      "title": "轻赢健康饮logo设计",
+      "description": "轻赢健康饮logo设计。"
+    },
+    "thumbnail": "/images/qingying.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Branding",
+      "Logo Design"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/qingying.jpg",
+        "alt": "轻赢健康饮logo设计成果"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "category": "插画设计",
+    "en": {
+      "title": "Illustration Project 012",
+      "description": "Digital illustration artwork collection."
+    },
+    "cn": {
+      "title": "Web插图设计",
+      "description": "插画设计作品展示。"
+    },
+    "thumbnail": "/images/chahua012.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Illustration",
+      "Visual Design",
+      "Digital Art"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/chahua012.jpg",
+        "alt": "Web插图设计长图成果"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "category": "插画设计",
+    "en": {
+      "title": "Enterprise Illustration Design",
+      "description": "Illustration design for enterprise visual communication."
+    },
+    "cn": {
+      "title": "企业插图设计",
+      "description": "企业场景插图设计展示。"
+    },
+    "thumbnail": "/images/chahua93.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Illustration",
+      "Visual Design",
+      "Digital Art"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/chahua93.jpg",
+        "alt": "企业插图设计长图成果"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "category": "插画设计",
+    "en": {
+      "title": "Solar Terms Poster Illustration",
+      "description": "Poster series illustration design inspired by seasonal rhythms."
+    },
+    "cn": {
+      "title": "节气插图设计",
+      "description": "节气主题海报系列插图设计。"
+    },
+    "thumbnail": "/images/jieqihaibao/fengmian.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Illustration",
+      "Poster Design",
+      "Visual Design"
+    ],
+    "media": [
+      {
+        "type": "gallery",
+        "title": "海报系列",
+        "images": [
+          {
+            "src": "/images/jieqihaibao/3423542.png",
+            "alt": "节气海报 1"
+          },
+          {
+            "src": "/images/jieqihaibao/234354653.png",
+            "alt": "节气海报 2"
+          },
+          {
+            "src": "/images/jieqihaibao/24354.png",
+            "alt": "节气海报 3"
+          },
+          {
+            "src": "/images/jieqihaibao/234543.png",
+            "alt": "节气海报 4"
+          },
+          {
+            "src": "/images/jieqihaibao/4532.png",
+            "alt": "节气海报 5"
+          },
+          {
+            "src": "/images/jieqihaibao/2345.png",
+            "alt": "节气海报 6"
+          },
+          {
+            "src": "/images/jieqihaibao/3245434.png",
+            "alt": "节气海报 7"
+          },
+          {
+            "src": "/images/jieqihaibao/23455.png",
+            "alt": "节气海报 8"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "category": "WEB",
+    "en": {
+      "title": "SWUSH Web Project",
+      "description": "Web visual design and motion showcase."
+    },
+    "cn": {
+      "title": "SWUSH网页设计",
+      "description": "swush smoothie果昔品牌网站设计"
+    },
+    "thumbnail": "/images/swush000.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Web Design",
+      "Motion",
+      "Visual"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/swush000.jpg",
+        "alt": "SWUSH 长图成果"
+      },
+      {
+        "type": "videoCarousel",
+        "videos": [
+          {
+            "src": "/videos/swush01.mp4",
+            "title": "SWUSH 视频 1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "category": "WEB",
+    "en": {
+      "title": "COOKHERE Web Project",
+      "description": "Web visual design and video showcase."
+    },
+    "cn": {
+      "title": "COOKHERE网页设计",
+      "description": "商用后厨设备售卖官网"
+    },
+    "thumbnail": "/images/cookhere.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Web Design",
+      "Motion",
+      "Visual"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/cookhere.jpg",
+        "alt": "COOKHERE 长图成果"
+      },
+      {
+        "type": "videoCarousel",
+        "videos": [
+          {
+            "src": "/videos/cookhere01.mp4",
+            "title": "COOKHERE 视频 1"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "6",
@@ -126,30 +414,990 @@
       "description": "Marketing campaign assets including social media templates, posters, and interactive web banners."
     },
     "cn": {
-      "title": "夏季大促视觉设计",
-      "description": "营销活动素材，包括社交媒体模板、海报和交互式网页横幅。"
+      "title": "亚瑟文化活动",
+      "description": "2017南方科技大学开学典礼活动策划与执行"
     },
-    "thumbnail": "/images/placeholders/project-cover.svg",
+    "thumbnail": "/images/IMG_1792.jpg",
     "link": "#",
     "github": "#",
-    "technologies": ["Graphic Design", "Social Media", "Advertising"],
-    "media": []
+    "technologies": [
+      "Graphic Design",
+      "Social Media",
+      "Advertising"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/yase.png",
+        "alt": "亚瑟文化活动长图成果"
+      }
+    ]
   },
   {
-    "id": "7",
+    "id": "18",
     "category": "摄影摄像",
     "en": {
-      "title": "Urban Silence Photography",
-      "description": "A photography project capturing the quiet moments within bustling metropolitan landscapes."
+      "title": "Absurd Things",
+      "description": "Experimental video project."
     },
     "cn": {
-      "title": "城市寂静摄影",
-      "description": "一个捕捉繁华大都市景观中安静瞬间的摄影项目。"
+      "title": "荒诞事",
+      "description": "实验影像项目。"
     },
-    "thumbnail": "/images/placeholders/project-cover.svg",
+    "thumbnail": "/videos/sheyingshexiang/shiyan01feng.png",
     "link": "#",
     "github": "#",
-    "technologies": ["Photography", "Editing", "Cinematography"],
-    "media": []
+    "technologies": [
+      "Photography",
+      "Videography",
+      "Editing"
+    ],
+    "media": [
+      {
+        "type": "video",
+        "provider": "mp4",
+        "src": "/videos/sheyingshexiang/shiyan01.mp4",
+        "title": "荒诞事"
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "category": "插画设计",
+    "en": {
+      "title": "Overseas Illustration Project",
+      "description": "Illustration works collection presented as a gallery."
+    },
+    "cn": {
+      "title": "海外插画项目",
+      "description": "插画设计作品"
+    },
+    "thumbnail": "/images/haiwaichatu/haiwaifengmian.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Illustration",
+      "Visual Design",
+      "Digital Art"
+    ],
+    "media": [
+      {
+        "type": "gallery",
+        "title": "设计作品",
+        "images": [
+          {
+            "src": "/images/haiwaichatu/IMG_1765.JPG",
+            "alt": "海外插画作品 1"
+          },
+          {
+            "src": "/images/haiwaichatu/IMG_1766.JPG",
+            "alt": "海外插画作品 2"
+          },
+          {
+            "src": "/images/haiwaichatu/IMG_1767.JPG",
+            "alt": "海外插画作品 3"
+          },
+          {
+            "src": "/images/haiwaichatu/IMG_1768.JPG",
+            "alt": "海外插画作品 4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "20",
+    "category": "摄影摄像",
+    "en": {
+      "title": "Partial Photography",
+      "description": "Selected photography works presented in gallery format."
+    },
+    "cn": {
+      "title": "少部分Photography",
+      "description": "摄影摄像作品"
+    },
+    "thumbnail": "/videos/sheyingshexiang/tuji/IMG_1778.JPG",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Photography",
+      "Cinematography",
+      "Editing"
+    ],
+    "media": [
+      {
+        "type": "gallery",
+        "title": "作品图集",
+        "images": [
+          {
+            "src": "/videos/sheyingshexiang/tuji/08208da764a9885de14d7c00f908fd.JPG",
+            "alt": "少部分Photography 作品 1"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/12342.png",
+            "alt": "少部分Photography 作品 2"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/12343.png",
+            "alt": "少部分Photography 作品 3"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/123453.png",
+            "alt": "少部分Photography 作品 4"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/1343.png",
+            "alt": "少部分Photography 作品 5"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/21324.png",
+            "alt": "少部分Photography 作品 6"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/341.png",
+            "alt": "少部分Photography 作品 7"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/d131eaba5f12042f127bddf907aa14.JPG",
+            "alt": "少部分Photography 作品 8"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1760.JPG",
+            "alt": "少部分Photography 作品 9"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1761.JPG",
+            "alt": "少部分Photography 作品 10"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1762.JPG",
+            "alt": "少部分Photography 作品 11"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1763.JPG",
+            "alt": "少部分Photography 作品 12"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1764.JPG",
+            "alt": "少部分Photography 作品 13"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1769.JPG",
+            "alt": "少部分Photography 作品 14"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1770.JPG",
+            "alt": "少部分Photography 作品 15"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1771.JPG",
+            "alt": "少部分Photography 作品 16"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1772.JPG",
+            "alt": "少部分Photography 作品 17"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1773.JPG",
+            "alt": "少部分Photography 作品 18"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1774.JPG",
+            "alt": "少部分Photography 作品 19"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1775.JPG",
+            "alt": "少部分Photography 作品 20"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1776.JPG",
+            "alt": "少部分Photography 作品 21"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1777.JPG",
+            "alt": "少部分Photography 作品 22"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1778.JPG",
+            "alt": "少部分Photography 作品 23"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1779.JPG",
+            "alt": "少部分Photography 作品 24"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1780.JPG",
+            "alt": "少部分Photography 作品 25"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1781.JPG",
+            "alt": "少部分Photography 作品 26"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1782.JPG",
+            "alt": "少部分Photography 作品 27"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1783.JPG",
+            "alt": "少部分Photography 作品 28"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1784.JPG",
+            "alt": "少部分Photography 作品 29"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1785.JPG",
+            "alt": "少部分Photography 作品 30"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1786.JPG",
+            "alt": "少部分Photography 作品 31"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1790.jpg",
+            "alt": "少部分Photography 作品 32"
+          },
+          {
+            "src": "/videos/sheyingshexiang/tuji/IMG_1791.jpg",
+            "alt": "少部分Photography 作品 33"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "21",
+    "category": "市场运营",
+    "en": {
+      "title": "Partial Poster Design",
+      "description": "Poster series presented in gallery format."
+    },
+    "cn": {
+      "title": "部分海报设计",
+      "description": "海报设计作品"
+    },
+    "thumbnail": "/images/pingmian/193.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Poster Design",
+      "Graphic Design",
+      "Visual Communication"
+    ],
+    "media": [
+      {
+        "type": "gallery",
+        "title": "作品图集",
+        "images": [
+          {
+            "src": "/images/pingmian/012.jpg",
+            "alt": "部分海报设计 作品 1"
+          },
+          {
+            "src": "/images/pingmian/0202.jpg",
+            "alt": "部分海报设计 作品 2"
+          },
+          {
+            "src": "/images/pingmian/0303.jpg",
+            "alt": "部分海报设计 作品 3"
+          },
+          {
+            "src": "/images/pingmian/040404.jpg",
+            "alt": "部分海报设计 作品 4"
+          },
+          {
+            "src": "/images/pingmian/1233.png",
+            "alt": "部分海报设计 作品 5"
+          },
+          {
+            "src": "/images/pingmian/134.png",
+            "alt": "部分海报设计 作品 6"
+          },
+          {
+            "src": "/images/pingmian/192.png",
+            "alt": "部分海报设计 作品 7"
+          },
+          {
+            "src": "/images/pingmian/193.png",
+            "alt": "部分海报设计 作品 8"
+          },
+          {
+            "src": "/images/pingmian/2323.png",
+            "alt": "部分海报设计 作品 9"
+          },
+          {
+            "src": "/images/pingmian/23435.png",
+            "alt": "部分海报设计 作品 10"
+          },
+          {
+            "src": "/images/pingmian/234567.png",
+            "alt": "部分海报设计 作品 11"
+          },
+          {
+            "src": "/images/pingmian/2345678976.png",
+            "alt": "部分海报设计 作品 12"
+          },
+          {
+            "src": "/images/pingmian/243535.png",
+            "alt": "部分海报设计 作品 13"
+          },
+          {
+            "src": "/images/pingmian/3222.png",
+            "alt": "部分海报设计 作品 14"
+          },
+          {
+            "src": "/images/pingmian/324.png",
+            "alt": "部分海报设计 作品 15"
+          },
+          {
+            "src": "/images/pingmian/3243.png",
+            "alt": "部分海报设计 作品 16"
+          },
+          {
+            "src": "/images/pingmian/3454634.png",
+            "alt": "部分海报设计 作品 17"
+          },
+          {
+            "src": "/images/pingmian/34567.png",
+            "alt": "部分海报设计 作品 18"
+          },
+          {
+            "src": "/images/pingmian/3546575645.png",
+            "alt": "部分海报设计 作品 19"
+          },
+          {
+            "src": "/images/pingmian/4235465.png",
+            "alt": "部分海报设计 作品 20"
+          },
+          {
+            "src": "/images/pingmian/432233.png",
+            "alt": "部分海报设计 作品 21"
+          },
+          {
+            "src": "/images/pingmian/433121.png",
+            "alt": "部分海报设计 作品 22"
+          },
+          {
+            "src": "/images/pingmian/434211123.png",
+            "alt": "部分海报设计 作品 23"
+          },
+          {
+            "src": "/images/pingmian/43567876.png",
+            "alt": "部分海报设计 作品 24"
+          },
+          {
+            "src": "/images/pingmian/475636.png",
+            "alt": "部分海报设计 作品 25"
+          },
+          {
+            "src": "/images/pingmian/54324354.png",
+            "alt": "部分海报设计 作品 26"
+          },
+          {
+            "src": "/images/pingmian/567876.png",
+            "alt": "部分海报设计 作品 27"
+          },
+          {
+            "src": "/images/pingmian/56787654.png",
+            "alt": "部分海报设计 作品 28"
+          },
+          {
+            "src": "/images/pingmian/63634645.png",
+            "alt": "部分海报设计 作品 29"
+          },
+          {
+            "src": "/images/pingmian/6542.png",
+            "alt": "部分海报设计 作品 30"
+          },
+          {
+            "src": "/images/pingmian/65542343546.png",
+            "alt": "部分海报设计 作品 31"
+          },
+          {
+            "src": "/images/pingmian/75654.png",
+            "alt": "部分海报设计 作品 32"
+          },
+          {
+            "src": "/images/pingmian/77477.png",
+            "alt": "部分海报设计 作品 33"
+          },
+          {
+            "src": "/images/pingmian/786757555.png",
+            "alt": "部分海报设计 作品 34"
+          },
+          {
+            "src": "/images/pingmian/rgdrgre.jpg",
+            "alt": "部分海报设计 作品 35"
+          },
+          {
+            "src": "/images/pingmian/小夕素材(2).jpg",
+            "alt": "部分海报设计 作品 36"
+          },
+          {
+            "src": "/images/pingmian/小夕素材(3).jpg",
+            "alt": "部分海报设计 作品 37"
+          },
+          {
+            "src": "/images/pingmian/小夕素材(10).jpg",
+            "alt": "部分海报设计 作品 38"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "22",
+    "category": "插画设计",
+    "en": {
+      "title": "Dear Home Variety KV Design",
+      "description": "KV illustration works presented in gallery format."
+    },
+    "cn": {
+      "title": "亲爱的家网综KV设计",
+      "description": "插画设计作品"
+    },
+    "thumbnail": "/images/qinaidejia/kv.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Illustration",
+      "KV Design",
+      "Visual Design"
+    ],
+    "media": [
+      {
+        "type": "gallery",
+        "title": "作品图集",
+        "images": [
+          {
+            "src": "/images/qinaidejia/kv.jpg",
+            "alt": "亲爱的家网综KV设计 作品 1"
+          },
+          {
+            "src": "/images/qinaidejia/kv02.jpg",
+            "alt": "亲爱的家网综KV设计 作品 2"
+          },
+          {
+            "src": "/images/qinaidejia/2342.png",
+            "alt": "亲爱的家网综KV设计 作品 3"
+          },
+          {
+            "src": "/images/qinaidejia/2435.png",
+            "alt": "亲爱的家网综KV设计 作品 4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "23",
+    "category": "品牌 VIS",
+    "en": {
+      "title": "SWUSH Smoothie Brand Design",
+      "description": "Brand visual identity design for SWUSH Smoothie."
+    },
+    "cn": {
+      "title": "自助果昔机品牌设计",
+      "description": "swush smoothie品牌设计"
+    },
+    "thumbnail": "/images/swush989.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Branding",
+      "Logo Design",
+      "Visual Identity"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/swush989.jpg",
+        "alt": "swush smoothie品牌设计成果"
+      }
+    ]
+  },
+  {
+    "id": "24",
+    "category": "WEB",
+    "en": {
+      "title": "InstaChef Website Design",
+      "description": "Overseas AutoKitchen self-service vending business."
+    },
+    "cn": {
+      "title": "InstaChef网站设计",
+      "description": "海外Autokitchen自助售餐机业务"
+    },
+    "thumbnail": "/images/2345.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Web Design",
+      "Brand Site",
+      "Video"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/2345.jpg",
+        "alt": "InstaChef网站长图"
+      },
+      {
+        "type": "video",
+        "provider": "mp4",
+        "src": "/videos/IC.mp4",
+        "title": "InstaChef 视频"
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "category": "WEB",
+    "en": {
+      "title": "ChefGenie Website Design",
+      "description": "Software system website."
+    },
+    "cn": {
+      "title": "ChefGenie网站设计",
+      "description": "软件系统网站"
+    },
+    "thumbnail": "/images/chef24.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Web Design",
+      "System Design",
+      "Video"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/chef24.jpg",
+        "alt": "ChefGenie网站长图"
+      },
+      {
+        "type": "video",
+        "provider": "mp4",
+        "src": "/videos/chef.mp4",
+        "title": "ChefGenie 视频"
+      }
+    ]
+  },
+  {
+    "id": "26",
+    "category": "WEB",
+    "en": {
+      "title": "Google Ads Landing Page Design",
+      "description": "Paid ads landing page design for higher conversion."
+    },
+    "cn": {
+      "title": "Google广告落地页设计",
+      "description": "付费广告落地页设计｜提高转化率"
+    },
+    "thumbnail": "/images/421.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Landing Page",
+      "Performance Marketing",
+      "Conversion"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/421.jpg",
+        "alt": "Google广告落地页长图"
+      },
+      {
+        "type": "video",
+        "provider": "mp4",
+        "src": "/videos/jiajia.mp4",
+        "title": "Google广告落地页视频"
+      }
+    ]
+  },
+  {
+    "id": "27",
+    "category": "产品",
+    "en": {
+      "title": "Smart Cooking Machine A Series",
+      "description": "Smart Cooking Machine A Series product showcase."
+    },
+    "cn": {
+      "title": "智能炒菜机A系列",
+      "description": "智能炒菜机A系列产品展示"
+    },
+    "thumbnail": "/images/product/instaChefPro A/instaChefProA-2.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Industrial Design",
+      "Product Design",
+      "Visual Presentation"
+    ],
+    "media": [
+      {
+        "type": "gallery",
+        "title": "产品图集",
+        "images": [
+          {
+            "src": "/images/product/instaChefPro A/instaChefProA-2.png",
+            "alt": "智能炒菜机A系列 作品 1"
+          },
+          {
+            "src": "/images/product/instaChefPro A/instaChefProA-2竖.png",
+            "alt": "智能炒菜机A系列 作品 2"
+          },
+          {
+            "src": "/images/product/instaChefPro A/instaChefProA-4.png",
+            "alt": "智能炒菜机A系列 作品 3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "28",
+    "category": "产品",
+    "en": {
+      "title": "Smart Cooking Machine K Series",
+      "description": "Smart Cooking Machine K Series product showcase."
+    },
+    "cn": {
+      "title": "智能炒菜机K系列",
+      "description": "智能炒菜机K系列产品展示"
+    },
+    "thumbnail": "/images/product/instaChefPro K/K3正.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Industrial Design",
+      "Product Design",
+      "Visual Presentation"
+    ],
+    "media": [
+      {
+        "type": "gallery",
+        "title": "产品图集",
+        "images": [
+          {
+            "src": "/images/product/instaChefPro K/20250522-215603.jpeg",
+            "alt": "智能炒菜机K系列 作品 1"
+          },
+          {
+            "src": "/images/product/instaChefPro K/20250522-215606.jpeg",
+            "alt": "智能炒菜机K系列 作品 2"
+          },
+          {
+            "src": "/images/product/instaChefPro K/20250522-215610.jpeg",
+            "alt": "智能炒菜机K系列 作品 3"
+          },
+          {
+            "src": "/images/product/instaChefPro K/K3.png",
+            "alt": "智能炒菜机K系列 作品 4"
+          },
+          {
+            "src": "/images/product/instaChefPro K/K3正.png",
+            "alt": "智能炒菜机K系列 作品 5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "29",
+    "category": "产品",
+    "en": {
+      "title": "Smart Cooking Machine F Series",
+      "description": "Smart Cooking Machine F Series product showcase."
+    },
+    "cn": {
+      "title": "智能炒菜机F系列",
+      "description": "智能炒菜机F系列产品展示"
+    },
+    "thumbnail": "/images/product/instaChefPro F/F.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Industrial Design",
+      "Product Design",
+      "Visual Presentation"
+    ],
+    "media": [
+      {
+        "type": "gallery",
+        "title": "产品图集",
+        "images": [
+          {
+            "src": "/images/product/instaChefPro F/F-1.png",
+            "alt": "智能炒菜机F系列 作品 1"
+          },
+          {
+            "src": "/images/product/instaChefPro F/F-2.png",
+            "alt": "智能炒菜机F系列 作品 2"
+          },
+          {
+            "src": "/images/product/instaChefPro F/F.png",
+            "alt": "智能炒菜机F系列 作品 3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "30",
+    "category": "产品",
+    "en": {
+      "title": "Autokitchen",
+      "description": "Autokitchen product showcase."
+    },
+    "cn": {
+      "title": "Autokitchen",
+      "description": "Autokitchen产品展示"
+    },
+    "thumbnail": "/images/product/Autokitchen/1.3daishebei.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Industrial Design",
+      "Product Design",
+      "Visual Presentation"
+    ],
+    "media": [
+      {
+        "type": "gallery",
+        "title": "产品图集",
+        "images": [
+          {
+            "src": "/images/product/Autokitchen/1.3daishebei.jpg",
+            "alt": "Autokitchen 作品 1"
+          },
+          {
+            "src": "/images/product/Autokitchen/1.5.jpg",
+            "alt": "Autokitchen 作品 2"
+          },
+          {
+            "src": "/images/product/Autokitchen/1.523.jpg",
+            "alt": "Autokitchen 作品 3"
+          },
+          {
+            "src": "/images/product/Autokitchen/20250723-095409.png",
+            "alt": "Autokitchen 作品 4"
+          },
+          {
+            "src": "/images/product/Autokitchen/20251113-134855.jpg",
+            "alt": "Autokitchen 作品 5"
+          },
+          {
+            "src": "/images/product/Autokitchen/234.jpg",
+            "alt": "Autokitchen 作品 6"
+          },
+          {
+            "src": "/images/product/Autokitchen/4323.jpg",
+            "alt": "Autokitchen 作品 7"
+          },
+          {
+            "src": "/images/product/Autokitchen/image4.png",
+            "alt": "Autokitchen 作品 8"
+          },
+          {
+            "src": "/images/product/Autokitchen/image5.png",
+            "alt": "Autokitchen 作品 9"
+          },
+          {
+            "src": "/images/product/Autokitchen/image6.png",
+            "alt": "Autokitchen 作品 10"
+          },
+          {
+            "src": "/images/product/Autokitchen/image8.png",
+            "alt": "Autokitchen 作品 11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "31",
+    "category": "B2B UI/UX",
+    "en": {
+      "title": "B2B | CRM System",
+      "description": "B2B CRM system design and interaction showcase."
+    },
+    "cn": {
+      "title": "B2B｜CRM系统",
+      "description": "B2B CRM系统设计与交互展示"
+    },
+    "thumbnail": "/images/5423435.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "CRM",
+      "B2B UX",
+      "Dashboard"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/5423435.jpg",
+        "alt": "B2B CRM系统长图"
+      },
+      {
+        "type": "video",
+        "provider": "mp4",
+        "src": "/videos/b3b42.mp4",
+        "title": "B2B CRM系统视频"
+      }
+    ]
+  },
+  {
+    "id": "32",
+    "category": "B2B UI/UX",
+    "en": {
+      "title": "B2B | Smart Cooker Console",
+      "description": "B2B smart cooking machine operation screen design."
+    },
+    "cn": {
+      "title": "B2B｜智能炒菜机操作屏",
+      "description": "B2B智能炒菜机操作屏设计"
+    },
+    "thumbnail": "/images/B2B2/234232222.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "B2B UX",
+      "HMI",
+      "Product Interface"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/B2B2/234232222.jpg",
+        "alt": "B2B UIUX 主图"
+      },
+      {
+        "type": "gallery",
+        "title": "UIUX",
+        "layout": "row",
+        "columns": 3,
+        "compact": true,
+        "images": [
+          {
+            "src": "/images/B2B2/012k.gif",
+            "alt": "B2B 操作演示 1"
+          },
+          {
+            "src": "/images/B2B2/3131.gif",
+            "alt": "B2B 操作演示 2"
+          },
+          {
+            "src": "/images/B2B2/k43.gif",
+            "alt": "B2B 操作演示 3"
+          },
+          {
+            "src": "/images/B2B2/312.png",
+            "alt": "B2B 操作演示 4"
+          }
+        ]
+      }
+    ]
+  }
+
+  ,
+  {
+    "id": "33",
+    "category": "B2B UI/UX",
+    "en": {
+      "title": "B2B | SHUO Visual",
+      "description": "B2B interface / visual design exploration."
+    },
+    "cn": {
+      "title": "B2B｜SHUO 视觉方案",
+      "description": "B2B 界面与视觉方案展示"
+    },
+    "thumbnail": "/images/B2B1/SHUO.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "B2B UX",
+      "Visual Design",
+      "Interface"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/B2B1/SHUO.png",
+        "alt": "B2B SHUO 视觉方案"
+      }
+    ]
+  },
+  {
+    "id": "34",
+    "category": "插画设计",
+    "en": {
+      "title": "Anime Illustration Series",
+      "description": "Illustration series presented in gallery format."
+    },
+    "cn": {
+      "title": "日漫插画系列",
+      "description": "插画作品（图集展示）"
+    },
+    "thumbnail": "/images/riman/23.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Illustration",
+      "Character",
+      "Visual"
+    ],
+    "media": [
+      {
+        "type": "gallery",
+        "title": "作品图集",
+        "layout": "row",
+        "columns": 3,
+        "compact": true,
+        "images": [
+          {
+            "src": "/images/riman/23.png",
+            "alt": "日漫插画 作品 1"
+          },
+          {
+            "src": "/images/riman/234.png",
+            "alt": "日漫插画 作品 2"
+          },
+          {
+            "src": "/images/riman/23432.png",
+            "alt": "日漫插画 作品 3"
+          },
+          {
+            "src": "/images/riman/345.png",
+            "alt": "日漫插画 作品 4"
+          },
+          {
+            "src": "/images/riman/5635.png",
+            "alt": "日漫插画 作品 5"
+          },
+          {
+            "src": "/images/riman/567.png",
+            "alt": "日漫插画 作品 6"
+          },
+          {
+            "src": "/images/riman/87654.png",
+            "alt": "日漫插画 作品 7"
+          },
+          {
+            "src": "/images/riman/8987.png",
+            "alt": "日漫插画 作品 8"
+          },
+          {
+            "src": "/images/riman/987654.png",
+            "alt": "日漫插画 作品 9"
+          },
+          {
+            "src": "/images/riman/98789.png",
+            "alt": "日漫插画 作品 10"
+          }
+        ]
+      }
+    ]
   }
 ]

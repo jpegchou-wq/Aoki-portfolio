@@ -1,7 +1,17 @@
 /** @type {import('next').NextConfig} */
+const isGithubPages = process.env.GITHUB_ACTIONS === 'true' || process.env.GITHUB_PAGES === 'true';
+const repo = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.split('/')[1] : 'Aoki-portfolio';
+
 const nextConfig = {
-  output: 'export',
+  output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
   reactStrictMode: true,
+  ...(isGithubPages
+    ? {
+        basePath: `/${repo}`,
+        assetPrefix: `/${repo}/`,
+        trailingSlash: true,
+      }
+    : {}),
   images: {
     unoptimized: true
   }

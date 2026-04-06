@@ -14,20 +14,20 @@ export default function Contact() {
 
   return (
     <Layout>
-      <div className="pt-32 pb-24 min-h-screen overflow-hidden relative">
+      <div className="pt-24 md:pt-32 pb-16 md:pb-24 min-h-screen overflow-hidden relative">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_9%_14%,rgba(71,186,255,0.18),transparent_30%),radial-gradient(circle_at_88%_15%,rgba(255,92,188,0.13),transparent_38%),radial-gradient(circle_at_42%_100%,rgba(108,136,255,0.12),transparent_42%)]" />
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
             <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-button text-xs font-semibold text-black/70 uppercase tracking-widest mb-6">
               <Sparkles size={12} />
               <span>Connect</span>
             </div>
-            <h1 className="text-5xl md:text-8xl font-semibold tracking-[-0.04em] text-black mb-6">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-semibold tracking-[-0.04em] text-black mb-4 sm:mb-6">
               {t('contact.title')}
             </h1>
             <p className="max-w-2xl mx-auto text-base sm:text-lg text-black/70 leading-relaxed">
@@ -44,9 +44,9 @@ export default function Contact() {
               viewport={{ once: true }}
               className="w-full space-y-8"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 {/* Phone */}
-                <div className="glass-card p-6 rounded-[1.75rem] flex items-center space-x-5 group hover:-translate-y-1 transition-transform border-white/65">
+                <div className="glass-card p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[1.75rem] flex items-center space-x-4 sm:space-x-5 group hover:-translate-y-1 transition-transform border-white/65">
                   <div className="w-14 h-14 bg-white/70 rounded-2xl flex items-center justify-center text-black/55 group-hover:bg-black group-hover:text-white transition-all duration-500">
                     <Phone size={24} strokeWidth={1.5} />
                   </div>
@@ -57,7 +57,7 @@ export default function Contact() {
                 </div>
 
                 {/* Email */}
-                <div className="glass-card p-6 rounded-[1.75rem] flex items-center space-x-5 group hover:-translate-y-1 transition-transform border-white/65">
+                <div className="glass-card p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[1.75rem] flex items-center space-x-4 sm:space-x-5 group hover:-translate-y-1 transition-transform border-white/65">
                   <div className="w-14 h-14 bg-white/70 rounded-2xl flex items-center justify-center text-black/55 group-hover:bg-black group-hover:text-white transition-all duration-500">
                     <Mail size={24} strokeWidth={1.5} />
                   </div>
@@ -69,9 +69,9 @@ export default function Contact() {
               </div>
 
               {/* QR Codes Section */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 {/* WeChat QR */}
-                <div className="glass-card p-6 rounded-[2rem] text-center space-y-4 border-white/65">
+                <div className="glass-card p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] text-center space-y-4 border-white/65">
                   <div className="flex items-center justify-center space-x-2 text-black/45 mb-2">
                     <MessageCircle size={16} strokeWidth={1.5} />
                     <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase">{t('contact.wechat')}</h4>
@@ -87,7 +87,7 @@ export default function Contact() {
                 </div>
 
                 {/* WhatsApp QR */}
-                <div className="glass-card p-6 rounded-[2rem] text-center space-y-4 border-white/65">
+                <div className="glass-card p-5 sm:p-6 rounded-[1.5rem] sm:rounded-[2rem] text-center space-y-4 border-white/65">
                   <div className="flex items-center justify-center space-x-2 text-black/45 mb-2">
                     <Phone size={16} strokeWidth={1.5} />
                     <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase">{t('contact.whatsapp')}</h4>

@@ -13,6 +13,7 @@ const HeroSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const frameRef = useRef<number | null>(null);
   const [pointer, setPointer] = useState({ x: 50, y: 50 });
+  const [activeFocus, setActiveFocus] = useState<'brand' | 'ux' | 'growth' | 'tech'>('brand');
 
   useEffect(() => {
     return () => {
@@ -46,6 +47,62 @@ const HeroSection: React.FC = () => {
 
   const offsetX = (pointer.x - 50) * 0.3;
   const offsetY = (pointer.y - 50) * 0.3;
+  const focusMap = {
+    en: {
+      brand: {
+        label: 'Brand Visual',
+        title: 'Brand Narrative & Visual System',
+        description: 'From strategy to campaign assets, building a consistent visual language across channels.',
+        score: 96,
+      },
+      ux: {
+        label: 'UI/UX',
+        title: 'Product Experience & Interaction',
+        description: 'Designing clean flows and clear information architecture for complex digital products.',
+        score: 94,
+      },
+      growth: {
+        label: 'Growth Design',
+        title: 'Marketing Conversion Design',
+        description: 'Using landing page structure, ad creatives, and testing mindset to improve conversion.',
+        score: 91,
+      },
+      tech: {
+        label: 'Design x Tech',
+        title: 'Cross-functional Delivery',
+        description: 'Bridging design and engineering to reduce communication loss and speed up execution.',
+        score: 89,
+      },
+    },
+    cn: {
+      brand: {
+        label: '品牌视觉',
+        title: '品牌叙事与视觉系统',
+        description: '从策略到传播物料，构建跨触点一致的品牌视觉语言。',
+        score: 96,
+      },
+      ux: {
+        label: 'UI/UX',
+        title: '产品体验与交互设计',
+        description: '在复杂业务里梳理清晰流程与信息结构，提升可用性与效率。',
+        score: 94,
+      },
+      growth: {
+        label: '增长设计',
+        title: '营销转化导向设计',
+        description: '通过落地页结构、广告素材与实验迭代，持续提升转化表现。',
+        score: 91,
+      },
+      tech: {
+        label: '设计 x 技术',
+        title: '跨职能协同落地',
+        description: '打通设计与开发协作链路，减少沟通损耗并提升交付速度。',
+        score: 89,
+      },
+    },
+  } as const;
+  const active = focusMap[language === 'en' ? 'en' : 'cn'][activeFocus];
+  const focusKeys: Array<'brand' | 'ux' | 'growth' | 'tech'> = ['brand', 'ux', 'growth', 'tech'];
 
   return (
     <section
@@ -128,8 +185,34 @@ const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.35 }}
               className="text-sm sm:text-lg text-black/70 max-w-xl leading-relaxed mb-8 sm:mb-10"
             >
-              构建一个流动的品牌生态，凭借在视觉美学与市场洞察中的沉淀，能将静态的品牌基因，通过视觉设计，转化为用户可感知、可触摸的数字体验。追求思考到平面到屏幕像素的无损美学输出。
+              {data.bio}
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="flex flex-wrap gap-2 mb-8"
+            >
+              {focusKeys.map((key) => {
+                const item = focusMap[language === 'en' ? 'en' : 'cn'][key];
+                const activeClass =
+                  activeFocus === key
+                    ? 'bg-black text-white border-black shadow-md'
+                    : 'bg-white/55 text-black/70 border-white/70 hover:bg-white/80';
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    onMouseEnter={() => setActiveFocus(key)}
+                    onClick={() => setActiveFocus(key)}
+                    className={`px-4 py-2 rounded-full border text-sm transition-all ${activeClass}`}
+                  >
+                    {item.label}
+                  </button>
+                );
+              })}
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -158,62 +241,57 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="relative mx-auto w-full max-w-xl lg:max-w-none mt-2 sm:mt-0"
           >
-            <div className="glass-card rounded-[2rem] p-4 md:p-5 border-white/60 shadow-[0_20px_55px_rgba(22,30,60,0.18)]">
-              <div className="relative overflow-hidden rounded-[1.45rem] h-[250px] sm:h-[330px] md:h-[380px] bg-[linear-gradient(140deg,rgba(255,255,255,0.65),rgba(255,255,255,0.18))]">
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      'radial-gradient(circle at 20% 20%, rgba(34,196,255,0.4), transparent 35%), radial-gradient(circle at 85% 15%, rgba(255,97,199,0.38), transparent 38%), radial-gradient(circle at 55% 75%, rgba(79,122,255,0.32), transparent 42%)',
-                    transform: `translate3d(${offsetX * -0.25}px, ${offsetY * -0.25}px, 0)`,
-                  }}
-                />
-                <div className="absolute top-4 left-4 right-4 h-10 rounded-xl bg-white/55 backdrop-blur-md border border-white/60 flex items-center px-3 gap-2">
-                  <span className="h-2.5 w-2.5 rounded-full bg-rose-300" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
+            <div className="glass-card rounded-[2rem] p-5 md:p-6 border-white/60 shadow-[0_20px_55px_rgba(22,30,60,0.18)]">
+              <div className="flex items-center gap-4 sm:gap-5 mb-5">
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-white/60 bg-white/30">
+                  <Image
+                    src={personalData.avatar}
+                    alt={data.name}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
-                <div className="absolute bottom-4 left-4 right-4 glass-card rounded-2xl p-4">
-                  <p className="text-xs text-black/70 uppercase tracking-[0.18em] mb-2">Desktop Mockup</p>
-                  <p className="text-lg font-medium text-black">Visual hierarchy, storytelling, and premium UI direction.</p>
+                <div>
+                  <p className="text-[11px] tracking-[0.16em] uppercase text-black/50 mb-1">
+                    {language === 'en' ? 'UI/UX Focus' : 'UI/UX 设计聚焦'}
+                  </p>
+                  <h2 className="text-lg sm:text-xl font-semibold text-black/90 leading-tight">
+                    {active.title}
+                  </h2>
+                </div>
+              </div>
+              <p className="text-sm sm:text-base text-black/70 leading-relaxed mb-6">
+                {active.description}
+              </p>
+              <div className="mb-5">
+                <div className="flex items-center justify-between text-xs text-black/55 mb-2">
+                  <span>{language === 'en' ? 'Focus Match' : '能力匹配度'}</span>
+                  <span>{active.score}%</span>
+                </div>
+                <div className="h-2 rounded-full bg-black/10 overflow-hidden">
+                  <motion.div
+                    key={activeFocus}
+                    initial={{ width: 0 }}
+                    animate={{ width: `${active.score}%` }}
+                    transition={{ duration: 0.55, ease: 'easeOut' }}
+                    className="h-full rounded-full bg-gradient-to-r from-cyan-500 via-sky-500 to-fuchsia-500"
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                <div className="rounded-xl bg-white/45 border border-white/60 px-4 py-3">
+                  <p className="text-black/50 mb-1">{language === 'en' ? 'Email' : '邮箱'}</p>
+                  <p className="text-black/85">{data.email}</p>
+                </div>
+                <div className="rounded-xl bg-white/45 border border-white/60 px-4 py-3">
+                  <p className="text-black/50 mb-1">{language === 'en' ? 'Phone' : '电话'}</p>
+                  <p className="text-black/85">{data.phone}</p>
                 </div>
               </div>
             </div>
-
-            <motion.div
-              animate={reduceMotion ? {} : { y: [0, -8, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-              className="hidden sm:block absolute -bottom-4 -right-1 sm:-right-6 w-[150px] sm:w-[190px] md:w-[220px] glass-card rounded-[1.6rem] p-3 md:p-4 border-white/60 shadow-[0_12px_28px_rgba(14,24,48,0.18)]"
-              style={{ transform: `translate3d(${offsetX * -0.15}px, ${offsetY * -0.15}px, 0)` }}
-            >
-              <div className="rounded-[1.1rem] h-[210px] sm:h-[250px] md:h-[280px] border border-white/50 bg-[linear-gradient(160deg,rgba(255,255,255,0.65),rgba(255,255,255,0.18))] p-3">
-                <div className="h-5 w-14 rounded-full bg-black/10 mb-3" />
-                <div className="h-24 rounded-xl bg-white/60 mb-3" />
-                <div className="h-3 rounded-full bg-black/15 mb-2" />
-                <div className="h-3 w-4/5 rounded-full bg-black/10 mb-2" />
-                <div className="h-8 rounded-xl bg-white/70 mt-4" />
-                <p className="text-[10px] md:text-xs text-black/65 tracking-[0.12em] uppercase mt-3">Mobile Mockup</p>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.35, ease: [0.23, 1, 0.32, 1] }}
-          className="absolute top-[6.5rem] right-4 md:right-8 hidden xl:block w-28 h-28 rounded-[1.25rem] p-1 glass-card overflow-hidden group border-white/55"
-        >
-          <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden">
-            <Image
-              src={personalData.avatar}
-              alt={data.name}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
-              priority
-            />
-          </div>
-        </motion.div>
       </div>
 
       <motion.div

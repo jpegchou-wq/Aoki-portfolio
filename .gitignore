@@ -9,6 +9,7 @@
 # next.js
 /.next/
 /out/
+.next.bak.*/
 
 # production
 /build
@@ -24,6 +25,12 @@ yarn-error.log*
 
 # local env files
 .env*.local
+
+# Trae
+.trae/
+
+# Local large sources
+assets-src/
 
 # vercel
 .vercel
