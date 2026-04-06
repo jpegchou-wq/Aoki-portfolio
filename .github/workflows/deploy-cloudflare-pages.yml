@@ -23,7 +23,7 @@ jobs:
         run: npm ci
 
       - name: Build (Static Export)
-        run: npm run build
+        run: DEPLOY_TARGET=cloudflare-pages npm run build
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1

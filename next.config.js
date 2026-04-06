@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
-const isGithubPages = process.env.GITHUB_ACTIONS === 'true' || process.env.GITHUB_PAGES === 'true';
+const deployTarget = process.env.DEPLOY_TARGET;
+const isGithubPages = deployTarget === 'github-pages' || process.env.GITHUB_PAGES === 'true';
 const repo = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.split('/')[1] : 'Aoki-portfolio';
 
 const nextConfig = {
