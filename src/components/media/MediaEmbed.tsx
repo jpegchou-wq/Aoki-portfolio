@@ -63,23 +63,38 @@ export default function MediaEmbed({ item }: { item: MediaItem }) {
   }
 
   if (item.type === 'gallery') {
-    const columnsClass =
-      item.columns === 4 ? 'sm:grid-cols-4' : item.columns === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2';
     const useRowLayout = item.layout === 'row';
+    const layout = item.layout ?? 'masonry';
+
+    const masonryColumnsClass =
+      item.columns === 4
+        ? 'sm:columns-2 lg:columns-3 xl:columns-4'
+        : item.columns === 3
+          ? 'sm:columns-2 lg:columns-3'
+          : 'sm:columns-2';
+
+    const rowColumnsClass =
+      item.columns === 4 ? 'sm:grid-cols-4' : item.columns === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2';
 
     return (
       <section className="glass-card rounded-[2rem] p-6 sm:p-8">
         <h3 className="text-lg font-semibold text-black/80 mb-5">{item.title ?? '海报系列'}</h3>
-        <div className={useRowLayout ? `grid grid-cols-1 ${columnsClass} gap-4` : 'columns-1 sm:columns-2 gap-4 space-y-4'}>
+        <div
+          className={
+            useRowLayout
+              ? `grid grid-cols-1 ${rowColumnsClass} gap-4`
+              : `columns-1 ${masonryColumnsClass} gap-4 [column-fill:_balance]`
+          }
+        >
           {item.images.map((image, index) => (
             <div
               key={`${image.src}-${index}`}
-              className={`${useRowLayout ? '' : 'break-inside-avoid'} overflow-hidden rounded-[1.25rem] bg-black/5 border border-black/[0.04]`}
+              className={`${useRowLayout ? '' : 'break-inside-avoid mb-4'} overflow-hidden rounded-[1.25rem] bg-black/5 border border-black/[0.04]`}
             >
               <img
                 src={image.src}
                 alt={image.alt ?? ''}
-                className={`${item.compact ? 'block w-full max-h-44 object-contain' : 'block w-full h-auto'}`}
+                className={`${useRowLayout && item.compact ? 'block w-full max-h-44 object-contain' : 'block w-full h-auto object-contain'}`}
                 loading="lazy"
               />
             </div>
