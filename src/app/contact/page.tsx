@@ -30,9 +30,6 @@ export default function Contact() {
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-semibold tracking-[-0.04em] text-black mb-4 sm:mb-6">
               {t('contact.title')}
             </h1>
-            <p className="max-w-2xl mx-auto text-base sm:text-lg text-black/70 leading-relaxed">
-              Let&apos;s build expressive, high-conversion digital experiences with clarity and craft.
-            </p>
           </motion.div>
 
           <div className="max-w-5xl mx-auto">

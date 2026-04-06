@@ -24,19 +24,19 @@ const ProjectCard = ({ project, language }: { project: any; language: string }) 
             className="object-cover object-top group-hover:scale-110 transition-transform duration-1000 ease-out"
           />
         </div>
-        <div className="p-8 pt-2">
+        <div className="p-5 sm:p-8 pt-2">
           <div className="flex items-center justify-between mb-3">
             <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-sky-700/70 bg-sky-100/55 px-3 py-1 rounded-full border border-white/60">
               {project.category}
             </span>
           </div>
-          <h3 className="text-xl font-semibold text-black/85 mb-3 group-hover:text-black transition-colors">{data.title}</h3>
+          <h3 className="text-lg sm:text-xl font-semibold text-black/85 mb-3 group-hover:text-black transition-colors">{data.title}</h3>
           <p className="text-black/60 text-sm mb-6 line-clamp-2 font-light leading-relaxed">{data.description}</p>
           <div className="flex flex-wrap gap-1.5">
             {project.technologies.map((tech: string) => (
               <span
                 key={tech}
-                className="px-3 py-1.5 bg-white/65 text-black/65 text-[10px] font-medium rounded-lg border border-white/60"
+                className="px-2.5 sm:px-3 py-1.5 bg-white/65 text-black/65 text-[10px] font-medium rounded-lg border border-white/60"
               >
                 {tech}
               </span>
@@ -143,7 +143,7 @@ export default function Projects() {
           {/* Projects Grid */}
           <motion.div 
             layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8"
           >
             <AnimatePresence mode="popLayout">
               {displayedProjects.map((project) => (

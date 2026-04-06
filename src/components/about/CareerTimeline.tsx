@@ -23,10 +23,10 @@ export default function CareerTimeline({
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="glass-card rounded-[2rem] p-7 sm:p-9 md:p-10 overflow-hidden border-white/65">
-      <div className="flex items-end justify-between gap-6 mb-10">
-        <h3 className="text-3xl font-semibold text-black/90 tracking-tight">{title}</h3>
-        <div className="text-xs text-black/45 tracking-[0.2em] uppercase font-semibold">Timeline</div>
+    <section className="glass-card rounded-[2rem] p-5 sm:p-9 md:p-10 overflow-hidden border-white/65">
+      <div className="flex items-end justify-between gap-6 mb-8 sm:mb-10">
+        <h3 className="text-2xl sm:text-3xl font-semibold text-black/90 tracking-tight">{title}</h3>
+        <div className="hidden sm:block text-xs text-black/45 tracking-[0.2em] uppercase font-semibold">Timeline</div>
       </div>
 
       <div className="relative">
@@ -49,7 +49,7 @@ export default function CareerTimeline({
                 <button
                   type="button"
                   onClick={() => setOpenIndex(hasDetail ? (isOpen ? null : index) : null)}
-                  className="w-full text-left rounded-[1.75rem] bg-white/55 border border-white/70 backdrop-blur-md px-6 sm:px-7 py-6 transition-all duration-500 hover:bg-white/70 hover:-translate-y-1"
+                  className="w-full text-left rounded-[1.75rem] bg-white/55 border border-white/70 backdrop-blur-md px-5 sm:px-7 py-5 sm:py-6 transition-all duration-500 hover:bg-white/70 hover:-translate-y-1"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-5 sm:gap-6">
                     <div className="min-w-0">

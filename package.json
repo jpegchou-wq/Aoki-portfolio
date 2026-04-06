@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Professional portfolio website for Zhou Wenjing",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

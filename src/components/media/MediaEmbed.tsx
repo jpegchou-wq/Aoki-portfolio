@@ -31,6 +31,7 @@ export type MediaItem =
       images: Array<{
         src: string;
         alt?: string;
+        widthRatio?: number;
       }>;
     }
   | {
@@ -74,7 +75,11 @@ export default function MediaEmbed({ item }: { item: MediaItem }) {
           : 'sm:columns-2';
 
     const rowColumnsClass =
-      item.columns === 4 ? 'sm:grid-cols-4' : item.columns === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2';
+      item.columns === 4
+        ? 'sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+        : item.columns === 3
+          ? 'sm:grid-cols-2 lg:grid-cols-3'
+          : 'sm:grid-cols-2';
 
     return (
       <section className="glass-card rounded-[2rem] p-6 sm:p-8">
@@ -83,18 +88,26 @@ export default function MediaEmbed({ item }: { item: MediaItem }) {
           className={
             useRowLayout
               ? `grid grid-cols-1 ${rowColumnsClass} gap-4`
-              : `columns-1 ${masonryColumnsClass} gap-4 [column-fill:_balance]`
+              : `columns-1 ${masonryColumnsClass} gap-3 sm:gap-4 [column-fill:_balance]`
           }
         >
           {item.images.map((image, index) => (
+            
             <div
               key={`${image.src}-${index}`}
-              className={`${useRowLayout ? '' : 'break-inside-avoid mb-4'} overflow-hidden rounded-[1.25rem] bg-black/5 border border-black/[0.04]`}
+              className={`${useRowLayout ? '' : 'break-inside-avoid mb-3 sm:mb-4'} overflow-hidden rounded-[1.25rem] bg-black/5 border border-black/[0.04]`}
             >
               <img
                 src={image.src}
                 alt={image.alt ?? ''}
-                className={`${useRowLayout && item.compact ? 'block w-full max-h-44 object-contain' : 'block w-full h-auto object-contain'}`}
+                style={
+                  typeof image.widthRatio === 'number' && image.widthRatio > 0 && image.widthRatio < 1
+                    ? { width: `${image.widthRatio * 100}%` }
+                    : undefined
+                }
+                className={`${useRowLayout && item.compact ? 'block w-full max-h-44 object-contain' : 'block w-full h-auto object-contain'}${
+                  typeof image.widthRatio === 'number' && image.widthRatio > 0 && image.widthRatio < 1 ? ' mx-auto' : ''
+                }`}
                 loading="lazy"
               />
             </div>

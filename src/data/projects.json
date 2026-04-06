@@ -62,6 +62,33 @@
     ]
   },
   {
+    "id": "36",
+    "category": "B2C UI/UX",
+    "en": {
+      "title": "B2C | UI/UX Showcase",
+      "description": "B2C UI/UX design showcase."
+    },
+    "cn": {
+      "title": "B2C｜UI/UX 设计展示",
+      "description": "B2C UI/UX 设计作品展示"
+    },
+    "thumbnail": "/images/324556666.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "UI/UX",
+      "Mobile",
+      "Figma"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/324556666.jpg",
+        "alt": "B2C UI/UX showcase"
+      }
+    ]
+  },
+  {
     "id": "4",
     "category": "品牌 VIS",
     "en": {
@@ -528,6 +555,8 @@
       {
         "type": "gallery",
         "title": "作品图集",
+        "layout": "row",
+        "columns": 3,
         "images": [
           {
             "src": "/videos/sheyingshexiang/tuji/08208da764a9885de14d7c00f908fd.JPG",
@@ -840,8 +869,316 @@
           {
             "src": "/images/pingmian/小夕素材(10).jpg",
             "alt": "部分海报设计 作品 38"
+          },
+          {
+            "src": "/images/pingmian/a24h4.png",
+            "alt": "部分海报设计 作品 39"
+          },
+          {
+            "src": "/images/pingmian/a4252.png",
+            "alt": "部分海报设计 作品 40"
+          },
+          {
+            "src": "/images/pingmian/a431.png",
+            "alt": "部分海报设计 作品 41"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "37",
+    "category": "市场运营",
+    "en": {
+      "title": "InstaChef@surbana jurong",
+      "description": "Marketing visual content showcase."
+    },
+    "cn": {
+      "title": "InstaChef@surbana jurong",
+      "description": "市场运营物料展示"
+    },
+    "thumbnail": "/images/surbana%20jurong/subaa.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Marketing",
+      "Visual",
+      "Campaign"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/surbana%20jurong/subaa.jpg",
+        "alt": "InstaChef@surbana jurong"
+      }
+    ]
+  },
+  {
+    "id": "38",
+    "category": "市场运营",
+    "en": {
+      "title": "ESG Food Festival",
+      "description": "Marketing visual content showcase."
+    },
+    "cn": {
+      "title": "ESG美食节",
+      "description": "市场运营物料展示"
+    },
+    "thumbnail": "/images/1232.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Marketing",
+      "Visual",
+      "Campaign"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/1232.jpg",
+        "alt": "ESG美食节"
+      }
+    ]
+  },
+  {
+    "id": "39",
+    "category": "市场运营",
+    "en": {
+      "title": "Google Ads Franchise Landing Page",
+      "description": "Marketing landing page visual showcase."
+    },
+    "cn": {
+      "title": "Google广告加盟落地页",
+      "description": "市场运营落地页与物料展示"
+    },
+    "thumbnail": "/images/32421.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Landing Page",
+      "Google Ads",
+      "Marketing"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/32421.jpg",
+        "alt": "Google广告加盟落地页"
+      }
+    ]
+  },
+  {
+    "id": "40",
+    "category": "市场运营",
+    "en": {
+      "title": "K Series Product Brochure",
+      "description": "Product brochure marketing showcase."
+    },
+    "cn": {
+      "title": "K系列产品手册",
+      "description": "市场运营产品手册展示"
+    },
+    "thumbnail": "/images/kxilie.jpg",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Marketing",
+      "Brochure",
+      "Visual"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/images/kxilie.jpg",
+        "alt": "K系列产品手册"
+      }
+    ]
+  },
+  {
+    "id": "41",
+    "category": "市场运营",
+    "en": {
+      "title": "Design Collateral",
+      "description": "Marketing and design collateral gallery."
+    },
+    "cn": {
+      "title": "设计物料",
+      "description": "市场运营设计物料图集展示"
+    },
+    "thumbnail": "/images/wuliao/23412.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Marketing",
+      "Visual",
+      "Collateral"
+    ],
+    "media": [
+      {
+        "type": "gallery",
+        "title": "作品图集",
+        "layout": "masonry",
+        "columns": 3,
+        "images": [
+          {
+            "src": "/images/wuliao/23412.png",
+            "alt": "设计物料 作品 1"
+          },
+          {
+            "src": "/images/wuliao/1234565432.png",
+            "alt": "设计物料 作品 2"
+          },
+          {
+            "src": "/images/wuliao/12435654.png",
+            "alt": "设计物料 作品 3"
+          },
+          {
+            "src": "/images/wuliao/12452.png",
+            "alt": "设计物料 作品 4"
+          },
+          {
+            "src": "/images/wuliao/213565321.jpg",
+            "alt": "设计物料 作品 5"
+          },
+          {
+            "src": "/images/wuliao/2342.png",
+            "alt": "设计物料 作品 6"
+          },
+          {
+            "src": "/images/wuliao/243523.png",
+            "alt": "设计物料 作品 7"
+          },
+          {
+            "src": "/images/wuliao/25235.png",
+            "alt": "设计物料 作品 8"
+          },
+          {
+            "src": "/images/wuliao/542345.png",
+            "alt": "设计物料 作品 9"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "42",
+    "category": "市场运营",
+    "en": {
+      "title": "Japan Market Collateral",
+      "description": "Japan market promotional collateral showcase."
+    },
+    "cn": {
+      "title": "日本市场宣传资料",
+      "description": "日本市场宣传资料图集展示"
+    },
+    "thumbnail": "/images/riben02.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Marketing",
+      "Collateral",
+      "Visual"
+    ],
+    "media": [
+      {
+        "type": "gallery",
+        "title": "作品图集",
+        "layout": "masonry",
+        "columns": 3,
+        "images": [
+          {
+            "src": "/images/riben02.png",
+            "alt": "日本市场宣传资料 作品 1"
+          },
+          {
+            "src": "/images/riben.jpg",
+            "alt": "日本市场宣传资料 作品 2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "43",
+    "category": "摄影摄像",
+    "en": {
+      "title": "K Series | School Scenario",
+      "description": "School scenario videography showcase."
+    },
+    "cn": {
+      "title": "K系列学校场景",
+      "description": "摄影摄像作品展示"
+    },
+    "thumbnail": "/images/xuexiaoo.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Videography",
+      "Editing",
+      "Camera"
+    ],
+    "media": [
+      {
+        "type": "video",
+        "src": "/videos/xuexiaochufang.mp4",
+        "poster": "/images/xuexiaoo.png",
+        "alt": "K系列学校场景"
+      }
+    ]
+  },
+  {
+    "id": "44",
+    "category": "摄影摄像",
+    "en": {
+      "title": "Autokitchen Tutorial",
+      "description": "Product tutorial videography showcase."
+    },
+    "cn": {
+      "title": "Autokitchen教程",
+      "description": "摄影摄像作品展示"
+    },
+    "thumbnail": "/images/shiyongg.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Videography",
+      "Tutorial",
+      "Editing"
+    ],
+    "media": [
+      {
+        "type": "video",
+        "src": "/videos/jiaocheng.mp4",
+        "poster": "/images/shiyongg.png",
+        "alt": "Autokitchen教程"
+      }
+    ]
+  },
+  {
+    "id": "45",
+    "category": "摄影摄像",
+    "en": {
+      "title": "K Series | Back Kitchen Scenario",
+      "description": "Back kitchen scenario videography showcase."
+    },
+    "cn": {
+      "title": "K系列后厨场景",
+      "description": "摄影摄像作品展示"
+    },
+    "thumbnail": "/images/houchuu.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Videography",
+      "Editing",
+      "Camera"
+    ],
+    "media": [
+      {
+        "type": "video",
+        "src": "/videos/houchu.mp4",
+        "poster": "/images/houchuu.png",
+        "alt": "K系列后厨场景"
       }
     ]
   },
@@ -1216,6 +1553,44 @@
     ]
   },
   {
+    "id": "33",
+    "category": "产品",
+    "en": {
+      "title": "Smoothie",
+      "description": "Smoothie product showcase."
+    },
+    "cn": {
+      "title": "Smoothie",
+      "description": "Smoothie 产品展示"
+    },
+    "thumbnail": "/images/product/Smoothie/sw%C3%BCsh22.png",
+    "link": "#",
+    "github": "#",
+    "technologies": [
+      "Industrial Design",
+      "Product Design",
+      "Visual Presentation"
+    ],
+    "media": [
+      {
+        "type": "gallery",
+        "title": "产品图集",
+        "layout": "masonry",
+        "columns": 3,
+        "images": [
+          {
+            "src": "/images/product/Smoothie/sw%C3%BCsh22.png",
+            "alt": "Smoothie 作品 1"
+          },
+          {
+            "src": "/images/product/Smoothie/sw%C3%BCsh5643.png",
+            "alt": "Smoothie 作品 2"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "31",
     "category": "B2B UI/UX",
     "en": {
@@ -1276,25 +1651,23 @@
       {
         "type": "gallery",
         "title": "UIUX",
-        "layout": "row",
+        "layout": "masonry",
         "columns": 3,
-        "compact": true,
         "images": [
           {
             "src": "/images/B2B2/012k.gif",
-            "alt": "B2B 操作演示 1"
+            "alt": "B2B 操作演示 1",
+            "widthRatio": 0.5
           },
           {
             "src": "/images/B2B2/3131.gif",
-            "alt": "B2B 操作演示 2"
+            "alt": "B2B 操作演示 2",
+            "widthRatio": 0.5
           },
           {
             "src": "/images/B2B2/k43.gif",
-            "alt": "B2B 操作演示 3"
-          },
-          {
-            "src": "/images/B2B2/312.png",
-            "alt": "B2B 操作演示 4"
+            "alt": "B2B 操作演示 3",
+            "widthRatio": 0.5
           }
         ]
       }
@@ -1323,9 +1696,8 @@
       {
         "type": "gallery",
         "title": "作品图集",
-        "layout": "row",
+        "layout": "masonry",
         "columns": 3,
-        "compact": true,
         "images": [
           {
             "src": "/images/riman/23.png",
@@ -1394,9 +1766,8 @@
       {
         "type": "gallery",
         "title": "作品图集",
-        "layout": "row",
+        "layout": "masonry",
         "columns": 2,
-        "compact": true,
         "images": [
           {
             "src": "/images/B2B3/B2B3FENG.png",

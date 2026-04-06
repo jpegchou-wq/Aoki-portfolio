@@ -109,7 +109,7 @@ const HeroSection: React.FC = () => {
       ref={sectionRef}
       onMouseMove={handlePointerMove}
       onMouseLeave={handlePointerLeave}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-12 md:pt-32 md:pb-20"
+      className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-20 pb-12 md:pt-32 md:pb-20"
     >
       <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_20%,rgba(38,173,255,0.2),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(255,74,163,0.18),transparent_42%),radial-gradient(circle_at_50%_100%,rgba(95,130,255,0.14),transparent_40%)]" />
 
@@ -149,7 +149,7 @@ const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-2 glass-button rounded-full px-4 py-2 mb-6 text-sm tracking-wide text-black/80"
+              className="inline-flex items-center gap-2 glass-button rounded-full px-4 py-2 mb-5 sm:mb-6 text-xs sm:text-sm tracking-wide text-black/80"
             >
               <motion.span
                 animate={reduceMotion ? {} : { rotate: [0, 16, -10, 0] }}
@@ -165,7 +165,7 @@ const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.1 }}
-              className="text-4xl leading-[0.98] sm:text-6xl md:text-7xl lg:text-8xl font-semibold tracking-[-0.04em] text-black mb-4 sm:mb-5"
+              className="text-3xl leading-[0.98] sm:text-6xl md:text-7xl lg:text-8xl font-semibold tracking-[-0.04em] text-black mb-4 sm:mb-5"
             >
               {data.name}
             </motion.h1>
@@ -174,7 +174,7 @@ const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
-              className="text-lg sm:text-2xl md:text-3xl text-black/85 max-w-2xl leading-snug mb-6 sm:mb-8"
+              className="text-base sm:text-2xl md:text-3xl text-black/85 max-w-2xl leading-snug mb-6 sm:mb-8"
             >
               {data.title}
             </motion.p>
@@ -183,7 +183,7 @@ const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="text-sm sm:text-lg text-black/70 max-w-xl leading-relaxed mb-8 sm:mb-10"
+              className="text-[13px] sm:text-lg text-black/70 max-w-xl leading-relaxed mb-8 sm:mb-10"
             >
               {data.bio}
             </motion.p>
@@ -192,7 +192,7 @@ const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
-              className="flex flex-wrap gap-2 mb-8"
+              className="flex flex-wrap gap-2 mb-7 sm:mb-8"
             >
               {focusKeys.map((key) => {
                 const item = focusMap[language === 'en' ? 'en' : 'cn'][key];
@@ -206,7 +206,7 @@ const HeroSection: React.FC = () => {
                     type="button"
                     onMouseEnter={() => setActiveFocus(key)}
                     onClick={() => setActiveFocus(key)}
-                    className={`px-4 py-2 rounded-full border text-sm transition-all ${activeClass}`}
+                    className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border text-xs sm:text-sm transition-all ${activeClass}`}
                   >
                     {item.label}
                   </button>
@@ -222,13 +222,13 @@ const HeroSection: React.FC = () => {
             >
               <a
                 href="/projects"
-                className="px-8 py-3.5 glass-button rounded-full text-black font-medium shadow-sm hover:shadow-md hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40"
+                className="px-6 sm:px-8 py-3.5 w-full sm:w-auto text-center glass-button rounded-full text-black font-medium shadow-sm hover:shadow-md hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40"
               >
                 {t('hero.cta')}
               </a>
               <a
                 href="/contact"
-                className="px-8 py-3.5 vision-button rounded-full text-black/90 font-medium hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30"
+                className="px-6 sm:px-8 py-3.5 w-full sm:w-auto text-center vision-button rounded-full text-black/90 font-medium hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30"
               >
                 {t('hero.contact')}
               </a>
@@ -241,9 +241,9 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="relative mx-auto w-full max-w-xl lg:max-w-none mt-2 sm:mt-0"
           >
-            <div className="glass-card rounded-[2rem] p-5 md:p-6 border-white/60 shadow-[0_20px_55px_rgba(22,30,60,0.18)]">
+            <div className="glass-card rounded-[2rem] p-4 sm:p-5 md:p-6 border-white/60 shadow-[0_20px_55px_rgba(22,30,60,0.18)]">
               <div className="flex items-center gap-4 sm:gap-5 mb-5">
-                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-white/60 bg-white/30">
+                <div className="relative w-16 h-16 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-white/60 bg-white/30">
                   <Image
                     src={personalData.avatar}
                     alt={data.name}
@@ -282,7 +282,7 @@ const HeroSection: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                 <div className="rounded-xl bg-white/45 border border-white/60 px-4 py-3">
                   <p className="text-black/50 mb-1">{language === 'en' ? 'Email' : '邮箱'}</p>
-                  <p className="text-black/85">{data.email}</p>
+                  <p className="text-black/85 break-all">{data.email}</p>
                 </div>
                 <div className="rounded-xl bg-white/45 border border-white/60 px-4 py-3">
                   <p className="text-black/50 mb-1">{language === 'en' ? 'Phone' : '电话'}</p>
@@ -298,7 +298,7 @@ const HeroSection: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="hidden sm:block absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <div className="w-6 h-10 rounded-full border border-black/20 flex justify-center p-1 bg-white/30 backdrop-blur-sm">
           <motion.div
