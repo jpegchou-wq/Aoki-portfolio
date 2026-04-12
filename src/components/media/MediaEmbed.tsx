@@ -65,6 +65,8 @@ export default function MediaEmbed({ item }: { item: MediaItem }) {
           loading="lazy"
           decoding="async"
           fetchPriority="low"
+          draggable={false}
+          onContextMenu={(event) => event.preventDefault()}
         />
       </div>
     );
@@ -118,6 +120,8 @@ export default function MediaEmbed({ item }: { item: MediaItem }) {
                 loading="lazy"
                 decoding="async"
                 fetchPriority="low"
+                draggable={false}
+                onContextMenu={(event) => event.preventDefault()}
               />
             </div>
           ))}

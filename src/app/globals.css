@@ -23,6 +23,12 @@ body {
   @apply font-sans antialiased;
 }
 
+img {
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
 @layer components {
   .glass-card {
     @apply bg-white/45 backdrop-blur-2xl border border-white/55 shadow-[0_12px_40px_rgba(18,28,56,0.14)];
