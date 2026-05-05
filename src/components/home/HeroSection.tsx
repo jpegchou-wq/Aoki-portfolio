@@ -1,313 +1,108 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import { motion, useReducedMotion } from 'framer-motion';
+import React from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import personalData from '../../data/personal.json';
 import { useLanguage } from '@/context/LanguageContext';
+import Magnetic from '../layout/Magnetic';
+import TextReveal from '../layout/TextReveal';
 
 const HeroSection: React.FC = () => {
-  const { language, t } = useLanguage();
+  const { language } = useLanguage();
   const data = language === 'en' ? personalData.en : personalData.cn;
-  const reduceMotion = useReducedMotion();
-  const sectionRef = useRef<HTMLElement>(null);
-  const frameRef = useRef<number | null>(null);
-  const [pointer, setPointer] = useState({ x: 50, y: 50 });
-  const [activeFocus, setActiveFocus] = useState<'brand' | 'ux' | 'growth' | 'tech'>('brand');
-
-  useEffect(() => {
-    return () => {
-      if (frameRef.current) {
-        cancelAnimationFrame(frameRef.current);
-      }
-    };
-  }, []);
-
-  const handlePointerMove = (event: React.MouseEvent<HTMLElement>) => {
-    if (reduceMotion || window.matchMedia('(pointer: coarse)').matches || !sectionRef.current) {
-      return;
-    }
-
-    const rect = sectionRef.current.getBoundingClientRect();
-    const nextX = ((event.clientX - rect.left) / rect.width) * 100;
-    const nextY = ((event.clientY - rect.top) / rect.height) * 100;
-
-    if (frameRef.current) {
-      cancelAnimationFrame(frameRef.current);
-    }
-
-    frameRef.current = requestAnimationFrame(() => {
-      setPointer({ x: Math.max(0, Math.min(100, nextX)), y: Math.max(0, Math.min(100, nextY)) });
-    });
-  };
-
-  const handlePointerLeave = () => {
-    setPointer({ x: 50, y: 50 });
-  };
-
-  const offsetX = (pointer.x - 50) * 0.3;
-  const offsetY = (pointer.y - 50) * 0.3;
-  const focusMap = {
-    en: {
-      brand: {
-        label: 'Brand Visual',
-        title: 'Brand Narrative & Visual System',
-        description: 'From strategy to campaign assets, building a consistent visual language across channels.',
-        score: 96,
-      },
-      ux: {
-        label: 'UI/UX',
-        title: 'Product Experience & Interaction',
-        description: 'Designing clean flows and clear information architecture for complex digital products.',
-        score: 94,
-      },
-      growth: {
-        label: 'Growth Design',
-        title: 'Marketing Conversion Design',
-        description: 'Using landing page structure, ad creatives, and testing mindset to improve conversion.',
-        score: 91,
-      },
-      tech: {
-        label: 'Design x Tech',
-        title: 'Cross-functional Delivery',
-        description: 'Bridging design and engineering to reduce communication loss and speed up execution.',
-        score: 89,
-      },
-    },
-    cn: {
-      brand: {
-        label: '品牌视觉',
-        title: '品牌叙事与视觉系统',
-        description: '从策略到传播物料，构建跨触点一致的品牌视觉语言。',
-        score: 96,
-      },
-      ux: {
-        label: 'UI/UX',
-        title: '产品体验与交互设计',
-        description: '在复杂业务里梳理清晰流程与信息结构，提升可用性与效率。',
-        score: 94,
-      },
-      growth: {
-        label: '增长设计',
-        title: '营销转化导向设计',
-        description: '通过落地页结构、广告素材与实验迭代，持续提升转化表现。',
-        score: 91,
-      },
-      tech: {
-        label: '设计 x 技术',
-        title: '跨职能协同落地',
-        description: '打通设计与开发协作链路，减少沟通损耗并提升交付速度。',
-        score: 89,
-      },
-    },
-  } as const;
-  const active = focusMap[language === 'en' ? 'en' : 'cn'][activeFocus];
-  const focusKeys: Array<'brand' | 'ux' | 'growth' | 'tech'> = ['brand', 'ux', 'growth', 'tech'];
+  
+  const { scrollY } = useScroll();
+  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+  const y2 = useTransform(scrollY, [0, 500], [0, -150]);
+  const rotate = useTransform(scrollY, [0, 500], [0, 15]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <section
-      ref={sectionRef}
-      onMouseMove={handlePointerMove}
-      onMouseLeave={handlePointerLeave}
-      className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-20 pb-12 md:pt-32 md:pb-20"
-    >
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_20%,rgba(38,173,255,0.2),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(255,74,163,0.18),transparent_42%),radial-gradient(circle_at_50%_100%,rgba(95,130,255,0.14),transparent_40%)]" />
-
-      <div className="absolute inset-0 z-0">
-        <motion.div
-          animate={
-            reduceMotion
-              ? {}
-              : {
-                  x: [0, 30, 0],
-                  y: [0, 20, 0],
-                }
-          }
-          transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -top-20 left-[5%] h-[18rem] w-[18rem] md:h-[28rem] md:w-[28rem] rounded-full bg-cyan-300/30 blur-[80px] md:blur-[120px]"
-          style={{ transform: `translate3d(${offsetX * 0.35}px, ${offsetY * 0.35}px, 0)` }}
-        />
-        <motion.div
-          animate={
-            reduceMotion
-              ? {}
-              : {
-                  x: [0, -35, 0],
-                  y: [0, 30, 0],
-                }
-          }
-          transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-[-10%] right-[-8%] h-[16rem] w-[16rem] md:h-[24rem] md:w-[24rem] rounded-full bg-fuchsia-300/25 blur-[90px] md:blur-[120px]"
-          style={{ transform: `translate3d(${-offsetX * 0.35}px, ${-offsetY * 0.35}px, 0)` }}
-        />
-      </div>
-
-      <div className="container mx-auto px-4 md:px-6 z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 sm:gap-10 lg:gap-8 items-center">
-          <div className="text-left">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-12">
+      {/* Background elements with parallax */}
+      <motion.div 
+        style={{ y: y1, rotate }}
+        className="absolute top-[10%] right-[-5%] w-[40vw] h-[40vw] bg-neon/10 rounded-full blur-[120px] pointer-events-none" 
+      />
+      
+      <div className="asymmetric-container relative z-10">
+        <div className="flex flex-col lg:flex-row items-start lg:items-end gap-8 lg:gap-0">
+          
+          {/* Main Title - Asymmetrical & Bold */}
+          <div className="w-full lg:w-2/3">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-2 glass-button rounded-full px-4 py-2 mb-5 sm:mb-6 text-xs sm:text-sm tracking-wide text-black/80"
+              style={{ y: y2 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <motion.span
-                animate={reduceMotion ? {} : { rotate: [0, 16, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, repeatDelay: 1.5 }}
-                aria-hidden="true"
-              >
-                👋
-              </motion.span>
-              <span>{t('hero.greeting')}</span>
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.1 }}
-              className="text-3xl leading-[0.98] sm:text-6xl md:text-7xl lg:text-8xl font-semibold tracking-[-0.04em] text-black mb-4 sm:mb-5"
-            >
-              {data.name}
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.25 }}
-              className="text-base sm:text-2xl md:text-3xl text-black/85 max-w-2xl leading-snug mb-6 sm:mb-8"
-            >
-              {data.title}
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.35 }}
-              className="text-[13px] sm:text-lg text-black/70 max-w-xl leading-relaxed mb-8 sm:mb-10"
-            >
-              {data.bio}
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              className="flex flex-wrap gap-2 mb-7 sm:mb-8"
-            >
-              {focusKeys.map((key) => {
-                const item = focusMap[language === 'en' ? 'en' : 'cn'][key];
-                const activeClass =
-                  activeFocus === key
-                    ? 'bg-black text-white border-black shadow-md'
-                    : 'bg-white/55 text-black/70 border-white/70 hover:bg-white/80';
-                return (
-                  <button
-                    key={key}
-                    type="button"
-                    onMouseEnter={() => setActiveFocus(key)}
-                    onClick={() => setActiveFocus(key)}
-                    className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border text-xs sm:text-sm transition-all ${activeClass}`}
-                  >
-                    {item.label}
-                  </button>
-                );
-              })}
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.45 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
-            >
-              <a
-                href="/projects"
-                className="px-6 sm:px-8 py-3.5 w-full sm:w-auto text-center glass-button rounded-full text-black font-medium shadow-sm hover:shadow-md hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/40"
-              >
-                {t('hero.cta')}
-              </a>
-              <a
-                href="/contact"
-                className="px-6 sm:px-8 py-3.5 w-full sm:w-auto text-center vision-button rounded-full text-black/90 font-medium hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/30"
-              >
-                {t('hero.contact')}
-              </a>
+              <span className="font-mono text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4 block">
+                {language === 'en' ? 'Visual Designer & Developer' : '全栈视觉设计师'}
+              </span>
+              <h1 className="font-display text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.85] tracking-tighter text-neutral-900">
+                {data.name.split(' ').map((part, i) => (
+                  <span key={i} className={i === 1 ? 'block ml-[0.1em] text-outline' : 'block'}>
+                    {part}
+                  </span>
+                ))}
+              </h1>
             </motion.div>
           </div>
 
+          {/* Bio - Offset & Smaller */}
+          <div className="w-full lg:w-1/3 lg:mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="relative"
+            >
+              <div className="absolute -left-6 top-0 w-px h-full bg-neutral-300 hidden lg:block" />
+              <TextReveal 
+                text={data.bio} 
+                className="text-lg md:text-xl text-neutral-600 leading-relaxed max-w-sm" 
+                delay={0.5}
+              />
+              
+              <div className="mt-8 flex items-center gap-4">
+                <div className="h-px w-12 bg-neon" />
+                <Magnetic strength={0.4}>
+                  <button className="font-mono text-sm uppercase tracking-widest hover:text-neon transition-colors">
+                    {language === 'en' ? 'Scroll to explore' : '向下探索'}
+                  </button>
+                </Magnetic>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Decorative elements - Brutalist influence */}
+        <div className="grid grid-cols-12 gap-4 mt-24">
+          <motion.div 
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1.5, delay: 0.6 }}
+            className="col-span-8 h-px bg-neutral-900 origin-left" 
+          />
+          <div className="col-span-4 flex justify-end items-center gap-2">
+            <div className="w-2 h-2 bg-neon rounded-full animate-pulse" />
+            <span className="font-mono text-[10px] uppercase text-neutral-400">Available for projects</span>
+          </div>
+        </div>
+
+        {/* Floating experimental typography or mixed media with parallax */}
+        <div className="relative mt-12 h-32 hidden md:block">
           <motion.div
-            initial={{ opacity: 0, y: 26 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            className="relative mx-auto w-full max-w-xl lg:max-w-none mt-2 sm:mt-0"
+            style={{ x: y1, opacity, WebkitTextStroke: '1px black', color: 'transparent' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.1 }}
+            transition={{ duration: 2, delay: 1 }}
+            className="absolute right-0 top-0 font-display text-[15rem] font-bold italic select-none pointer-events-none whitespace-nowrap"
           >
-            <div className="glass-card rounded-[2rem] p-4 sm:p-5 md:p-6 border-white/60 shadow-[0_20px_55px_rgba(22,30,60,0.18)]">
-              <div className="flex items-center gap-4 sm:gap-5 mb-5">
-                <div className="relative w-16 h-16 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-white/60 bg-white/30">
-                  <Image
-                    src={personalData.avatar}
-                    alt={data.name}
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-                <div>
-                  <p className="text-[11px] tracking-[0.16em] uppercase text-black/50 mb-1">
-                    {language === 'en' ? 'UI/UX Focus' : 'UI/UX 设计聚焦'}
-                  </p>
-                  <h2 className="text-lg sm:text-xl font-semibold text-black/90 leading-tight">
-                    {active.title}
-                  </h2>
-                </div>
-              </div>
-              <p className="text-sm sm:text-base text-black/70 leading-relaxed mb-6">
-                {active.description}
-              </p>
-              <div className="mb-5">
-                <div className="flex items-center justify-between text-xs text-black/55 mb-2">
-                  <span>{language === 'en' ? 'Focus Match' : '能力匹配度'}</span>
-                  <span>{active.score}%</span>
-                </div>
-                <div className="h-2 rounded-full bg-black/10 overflow-hidden">
-                  <motion.div
-                    key={activeFocus}
-                    initial={{ width: 0 }}
-                    animate={{ width: `${active.score}%` }}
-                    transition={{ duration: 0.55, ease: 'easeOut' }}
-                    className="h-full rounded-full bg-gradient-to-r from-cyan-500 via-sky-500 to-fuchsia-500"
-                  />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                <div className="rounded-xl bg-white/45 border border-white/60 px-4 py-3">
-                  <p className="text-black/50 mb-1">{language === 'en' ? 'Email' : '邮箱'}</p>
-                  <p className="text-black/85 break-all">{data.email}</p>
-                </div>
-                <div className="rounded-xl bg-white/45 border border-white/60 px-4 py-3">
-                  <p className="text-black/50 mb-1">{language === 'en' ? 'Phone' : '电话'}</p>
-                  <p className="text-black/85">{data.phone}</p>
-                </div>
-              </div>
-            </div>
+            EXPERIMENTAL
           </motion.div>
         </div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="hidden sm:block absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <div className="w-6 h-10 rounded-full border border-black/20 flex justify-center p-1 bg-white/30 backdrop-blur-sm">
-          <motion.div
-            animate={{ y: [0, 16, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-1 h-2 bg-black/40 rounded-full"
-          />
-        </div>
-      </motion.div>
     </section>
   );
 };

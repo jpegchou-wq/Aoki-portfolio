@@ -3,47 +3,67 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 16, 20, 31;
-  --background-start-rgb: 245, 249, 255;
-  --background-end-rgb: 255, 255, 255;
-  --brand-cyan: 71, 186, 255;
-  --brand-pink: 255, 92, 188;
-  --brand-indigo: 108, 136, 255;
+  --foreground-rgb: 23, 23, 23;
+  --background-rgb: 245, 245, 243;
+  --neon-lime: 204, 255, 0;
 }
 
 body {
-  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Segoe UI", sans-serif;
   color: rgb(var(--foreground-rgb));
-  background:
-    radial-gradient(circle at 14% 10%, rgba(var(--brand-cyan), 0.18), transparent 34%),
-    radial-gradient(circle at 84% 22%, rgba(var(--brand-pink), 0.14), transparent 38%),
-    radial-gradient(circle at 50% 110%, rgba(var(--brand-indigo), 0.14), transparent 35%),
-    linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  background-color: rgb(var(--background-rgb));
   scroll-behavior: smooth;
-  @apply font-sans antialiased;
+  @apply font-sans antialiased selection:bg-neon selection:text-black;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Grainy Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 img {
   -webkit-user-drag: none;
   -webkit-touch-callout: none;
   user-select: none;
+  @apply grayscale-[0.2] hover:grayscale-0 transition-all duration-700;
 }
 
 @layer components {
-  .glass-card {
-    @apply bg-white/45 backdrop-blur-2xl border border-white/55 shadow-[0_12px_40px_rgba(18,28,56,0.14)];
+  .brutalist-border {
+    @apply border-2 border-neutral-900;
   }
   
-  .glass-nav {
-    @apply bg-white/35 backdrop-blur-xl border-b border-white/35;
+  .neon-shadow {
+    @apply shadow-[4px_4px_0px_0px_rgba(204,255,0,1)];
   }
-  
-  .glass-button {
-    @apply bg-white/50 backdrop-blur-lg border border-white/60 hover:bg-white/70 transition-all duration-300;
+
+  .asymmetric-container {
+    @apply max-w-7xl mx-auto px-6 md:px-12;
   }
-  
-  .vision-button {
-    @apply bg-black/5 hover:bg-black/10 backdrop-blur-sm border border-black/10 transition-all duration-300;
+
+  .text-outline {
+    -webkit-text-stroke: 1.5px rgb(var(--foreground-rgb));
+    color: transparent;
+  }
+
+  .text-outline-white {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    color: transparent;
   }
 }
 

@@ -9,19 +9,33 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'AlibabaPuHuiTi', 'Noto Sans SC', 'sans-serif'],
+        sans: ['var(--font-inter)', 'AlibabaPuHuiTi', 'Noto Sans SC', 'sans-serif'],
+        display: ['var(--font-syne)', 'var(--font-space-grotesk)', 'sans-serif'],
+        mono: ['var(--font-mono)', 'monospace'],
       },
       colors: {
+        neon: '#ccff00',
+        neutral: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+          950: '#0a0a0a',
+        },
         brand: {
-          light: '#f8f9fa',
-          dark: '#1a1a1a',
-          purple: '#d8b4fe',
-          "purple-dark": '#a855f7',
+          light: '#f5f5f3',
+          dark: '#121212',
         },
       },
       backgroundImage: {
-        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
-        'vision-gradient': 'linear-gradient(to bottom, #f3f4f6, #ffffff, #f3e8ff)',
+        'grain': "url('/images/grain.png')",
+        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02))',
       },
       backdropBlur: {
         'xs': '2px',

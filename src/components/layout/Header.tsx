@@ -5,19 +5,11 @@ import Link from 'next/link';
 import { Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import Magnetic from './Magnetic';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const { language, setLanguage, t } = useLanguage();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
     { name: t('nav.projects'), href: '/projects' },
@@ -30,79 +22,104 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="fixed w-full z-50 flex justify-center px-3 sm:px-4 pt-3 md:pt-6">
-      <motion.nav 
-        initial={false}
-        animate={{
-          width: scrolled ? 'auto' : '100%',
-          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.4)' : 'rgba(255, 255, 255, 0.1)',
-          padding: scrolled ? '10px 14px' : '12px 16px',
-        }}
-        className={`max-w-7xl flex justify-between items-center rounded-full backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]`}
-      >
-        <Link href="/projects" className="text-lg sm:text-xl font-semibold tracking-tight mr-3 sm:mr-8 bg-black/80 bg-clip-text text-transparent">
-          AOKI
-        </Link>
+    <header className="fixed w-full z-50 px-6 py-8">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/* Logo - Sharp and Minimal */}
+        <Magnetic strength={0.2}>
+          <Link href="/" className="group relative">
+            <span className="font-display text-2xl font-bold tracking-tighter transition-transform group-hover:skew-x-12 block">
+              AOKI<span className="text-neon">.</span>
+            </span>
+            <div className="absolute -bottom-1 left-0 w-0 h-px bg-neutral-900 transition-all group-hover:w-full" />
+          </Link>
+        </Magnetic>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-1">
+        {/* Desktop Menu - Brutalist & Experimental */}
+        <div className="hidden md:flex items-center space-x-12">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="px-4 py-2 text-sm font-medium text-black/80 hover:text-black hover:bg-black/5 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35"
-            >
-              {link.name}
-            </Link>
+            <Magnetic key={link.href} strength={0.3}>
+              <Link
+                href={link.href}
+                className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500 hover:text-neutral-900 transition-colors relative group"
+              >
+                <span className="relative z-10">{link.name}</span>
+                <motion.div 
+                  className="absolute -inset-x-2 -inset-y-1 bg-neon opacity-0 group-hover:opacity-100 -z-0"
+                  initial={false}
+                  transition={{ duration: 0.2 }}
+                />
+              </Link>
+            </Magnetic>
           ))}
           
-          <div className="h-4 w-[1px] bg-black/10 mx-4" />
-          
-          <button
-            onClick={toggleLanguage}
-            className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-black/80 hover:text-black hover:bg-black/5 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35"
-          >
-            <Globe size={14} />
-            <span>{language === 'en' ? '中文' : 'EN'}</span>
-          </button>
+          <Magnetic strength={0.2}>
+            <button
+              onClick={toggleLanguage}
+              className="font-mono text-[10px] uppercase tracking-[0.2em] px-3 py-1 border border-neutral-300 hover:border-neutral-900 transition-colors"
+            >
+              {language === 'en' ? 'CN' : 'EN'}
+            </button>
+          </Magnetic>
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center space-x-2">
-           <button
-            onClick={toggleLanguage}
-            className="p-2 text-black/80 hover:text-black transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35 rounded-lg"
-          >
-            <Globe size={20} />
-          </button>
+        <div className="md:hidden">
           <button
-            className="p-2 text-black/80 hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35 rounded-lg"
+            className="p-2 text-neutral-900 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
           </button>
         </div>
-      </motion.nav>
+      </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay - Experimental Layout */}
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            className="md:hidden fixed top-20 left-4 right-4 glass-card rounded-3xl p-6 flex flex-col items-center space-y-4 z-[60]"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 bg-brand-light z-[60] flex flex-col justify-center p-12"
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="w-full text-center py-3 text-lg font-medium text-black/80 hover:text-black hover:bg-black/5 rounded-2xl transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35"
-                onClick={() => setIsOpen(false)}
+            <button 
+              className="absolute top-8 right-6 p-2"
+              onClick={() => setIsOpen(false)}
+            >
+              <X size={24} strokeWidth={1} />
+            </button>
+
+            <div className="space-y-8">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <Link
+                    href={link.href}
+                    className="font-display text-5xl font-bold tracking-tighter hover:text-neon transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-24 pt-8 border-t border-neutral-200">
+              <button
+                onClick={() => {
+                  toggleLanguage();
+                  setIsOpen(false);
+                }}
+                className="font-mono text-xs uppercase tracking-widest text-neutral-500"
               >
-                {link.name}
-              </Link>
-            ))}
+                Switch to {language === 'en' ? 'Chinese' : 'English'}
+              </button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -7,86 +7,118 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import projectsData from '../../data/projects.json';
 import { useLanguage } from '@/context/LanguageContext';
+import TextReveal from '../layout/TextReveal';
 
 const FeaturedProjects: React.FC = () => {
   const { language, t } = useLanguage();
-  const featuredProjects = projectsData.slice(0, 3);
+  const featuredProjects = projectsData.slice(0, 4); // Take 4 for a better asymmetrical grid
 
   return (
-    <section className="py-32">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+    <section className="py-40 bg-neutral-900 text-white overflow-hidden">
+      <div className="asymmetric-container">
+        <div className="flex flex-col md:flex-row justify-between items-start mb-32 gap-12">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="max-w-2xl"
+            className="max-w-3xl"
           >
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-black/90 mb-6">
-              {t('projects.title')}
-            </h2>
-            <p className="text-lg text-black/40 font-light leading-relaxed">
-              {t('projects.subtitle')}
-            </p>
+            <span className="font-mono text-xs uppercase tracking-[0.4em] text-neon mb-6 block">
+              Selected Works
+            </span>
+            <TextReveal
+              text={language === 'en' ? 'Digital Narratives & Brand Systems' : '数字叙事 与 品牌系统'}
+              className="font-display text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-white"
+            />
           </motion.div>
+          
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
             viewport={{ once: true }}
+            className="md:pt-24"
           >
             <Link
               href="/projects"
-              className="group flex items-center space-x-2 px-8 py-4 vision-button rounded-full text-black font-medium"
+              className="group inline-flex items-center gap-4 font-mono text-sm uppercase tracking-widest border-b border-white/20 pb-2 hover:border-neon transition-colors"
             >
               <span>{t('projects.viewAll')}</span>
-              <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Link>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Asymmetrical Project Grid */}
+        <div className="space-y-40">
           {featuredProjects.map((project, index) => {
             const data = language === 'en' ? project.en : project.cn;
+            const isEven = index % 2 === 0;
+
             return (
-              <Link key={project.id} href={`/projects/${project.id}`} className="block">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1, ease: [0.23, 1, 0.32, 1] }}
-                  viewport={{ once: true }}
-                  className="group glass-card rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
-                >
-                  <div className="relative h-72 overflow-hidden m-4 rounded-[1.5rem]">
-                    <Image
-                      src={project.thumbnail}
-                      alt={data.title}
-                      fill
-                      className="object-cover object-top group-hover:scale-110 transition-transform duration-1000 ease-out"
-                    />
-                  </div>
-                  <div className="p-10 pt-4">
-                    <div className="flex items-center mb-3">
-                      <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-purple-500/60 bg-purple-500/5 px-3 py-1 rounded-full border border-purple-500/10">
-                        {project.category}
-                      </span>
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true, margin: "-10%" }}
+                className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-24`}
+              >
+                {/* Project Image - Large & Impactful */}
+                <div className="w-full lg:w-3/5">
+                  <Link href={`/projects/${project.id}`} className="block relative aspect-[4/3] overflow-hidden group">
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                      className="w-full h-full"
+                    >
+                      <Image
+                        src={project.thumbnail}
+                        alt={data.title}
+                        fill
+                        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+                      />
+                    </motion.div>
+                    
+                    {/* Unique Hover Overlay - Noise/Grain Reveal */}
+                    <div className="absolute inset-0 bg-neon opacity-0 group-hover:opacity-20 transition-opacity mix-blend-overlay pointer-events-none" />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center -rotate-12 group-hover:rotate-0 transition-transform duration-500">
+                        <ArrowUpRight size={32} className="text-black" />
+                      </div>
                     </div>
-                    <h3 className="text-2xl font-semibold text-black/80 mb-3 group-hover:text-black transition-colors">{data.title}</h3>
-                    <p className="text-black/40 mb-8 line-clamp-2 font-light leading-relaxed">{data.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-4 py-2 bg-black/[0.03] text-black/50 text-xs font-medium rounded-xl border border-black/[0.02]"
-                        >
+                  </Link>
+                </div>
+
+                {/* Project Info - Offset & Minimal */}
+                <div className="w-full lg:w-2/5">
+                  <div className="max-w-md">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-400 mb-4 block">
+                      {project.category} / {(project as any).year || '2024'}
+                    </span>
+                    <h3 className="font-display text-4xl md:text-5xl font-bold tracking-tighter mb-6 hover:text-neon transition-colors">
+                      <Link href={`/projects/${project.id}`}>{data.title}</Link>
+                    </h3>
+                    <p className="text-neutral-400 text-lg leading-relaxed mb-8">
+                      {data.description}
+                    </p>
+                    <div className="flex flex-wrap gap-x-6 gap-y-2 mb-12">
+                      {project.technologies.slice(0, 3).map((tech) => (
+                        <span key={tech} className="font-mono text-[10px] uppercase tracking-widest text-neutral-500">
                           {tech}
                         </span>
                       ))}
                     </div>
+                    <Link
+                      href={`/projects/${project.id}`}
+                      className="inline-block px-8 py-3 border border-white/20 hover:border-neon hover:text-neon font-mono text-xs uppercase tracking-widest transition-all"
+                    >
+                      View Project
+                    </Link>
                   </div>
-                </motion.div>
-              </Link>
+                </div>
+              </motion.div>
             );
           })}
         </div>

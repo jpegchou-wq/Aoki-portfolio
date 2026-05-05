@@ -16,23 +16,18 @@ export default function Home() {
   return (
     <Layout>
       <HeroSection />
+      
+      <FeaturedProjects />
 
-      <div className="pt-8">
+      <SkillsOverview />
+
+      <div className="py-40 border-t border-neutral-200">
         <CapabilitySections />
       </div>
 
-      <section className="py-24">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <CareerTimeline
-              title={t('about.education')}
-              items={data.education.map((edu: any) => ({
-                title: edu.school,
-                subtitle: edu.degree,
-                duration: edu.duration,
-              }))}
-            />
-
+      <section className="py-40 border-t border-neutral-200">
+        <div className="asymmetric-container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
             <CareerTimeline
               title={t('about.experience')}
               items={data.experience.map((exp: any) => ({
@@ -43,15 +38,18 @@ export default function Home() {
                 tags: exp.tags,
               }))}
             />
+            
+            <CareerTimeline
+              title={t('about.education')}
+              items={data.education.map((edu: any) => ({
+                title: edu.school,
+                subtitle: edu.degree,
+                duration: edu.duration,
+              }))}
+            />
           </div>
         </div>
       </section>
-
-      <div className="bg-black/[0.02] py-12">
-        <SkillsOverview />
-      </div>
-
-      <FeaturedProjects />
     </Layout>
   );
 }

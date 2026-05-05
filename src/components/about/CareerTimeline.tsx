@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Plus } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 
 export type TimelineItem = {
   title: string;
@@ -23,91 +23,85 @@ export default function CareerTimeline({
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="glass-card rounded-[2rem] p-5 sm:p-9 md:p-10 overflow-hidden border-white/65">
-      <div className="flex items-end justify-between gap-6 mb-8 sm:mb-10">
-        <h3 className="text-2xl sm:text-3xl font-semibold text-black/90 tracking-tight">{title}</h3>
-        <div className="hidden sm:block text-xs text-black/45 tracking-[0.2em] uppercase font-semibold">Timeline</div>
+    <div className="space-y-12">
+      <div className="flex items-end justify-between border-b-2 border-neutral-900 pb-4 mb-12">
+        <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tighter uppercase">{title}</h3>
+        <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">History</span>
       </div>
 
-      <div className="relative">
-        <div className="absolute left-4 top-0 bottom-0 w-px bg-black/[0.12]" />
-        <div className="space-y-4">
-          {normalized.map((item, index) => {
-            const hasDetail = Boolean(item.description);
-            const isOpen = openIndex === index;
-            return (
-              <motion.div
-                key={`${item.title}-${index}`}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: index * 0.05, ease: [0.23, 1, 0.32, 1] }}
-                viewport={{ once: true }}
-                className="relative pl-12"
-              >
-                <div className="absolute left-[9px] top-7 w-[14px] h-[14px] rounded-full bg-white/90 border border-black/[0.15] shadow-sm" />
+      <div className="space-y-16 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-px bg-neutral-200" />
+        
+        {normalized.map((item, index) => {
+          const hasDetail = Boolean(item.description);
+          const isOpen = openIndex === index;
+          
+          return (
+            <motion.div
+              key={`${item.title}-${index}`}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="relative pl-12 group"
+            >
+              {/* Dot */}
+              <div className={`absolute left-[-4.5px] top-1.5 w-[10px] h-[10px] rounded-full border-2 transition-colors ${isOpen ? 'bg-neon border-neutral-900' : 'bg-white border-neutral-300 group-hover:border-neutral-900'}`} />
 
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(hasDetail ? (isOpen ? null : index) : null)}
-                  className="w-full text-left rounded-[1.75rem] bg-white/55 border border-white/70 backdrop-blur-md px-5 sm:px-7 py-5 sm:py-6 transition-all duration-500 hover:bg-white/70 hover:-translate-y-1"
-                >
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-5 sm:gap-6">
-                    <div className="min-w-0">
-                      <div className="text-xl font-semibold text-black/90 leading-snug">{item.title}</div>
-                      {item.subtitle && (
-                        <div className="mt-2 text-black/65 font-light leading-relaxed">{item.subtitle}</div>
-                      )}
-                      {Array.isArray(item.tags) && item.tags.length > 0 && (
-                        <div className="mt-4 flex flex-wrap gap-2">
-                          {item.tags.map((tag) => (
-                            <span
-                              key={`${item.title}-${tag}`}
-                              className="px-3 py-1 rounded-full bg-white/65 border border-white/70 text-[10px] tracking-widest uppercase text-black/65"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0">
-                      {item.duration && (
-                        <div className="text-[11px] text-black/45 font-semibold tracking-widest uppercase">{item.duration}</div>
-                      )}
-                      {hasDetail && (
-                        <motion.div
-                          animate={{ rotate: isOpen ? 45 : 0, opacity: isOpen ? 1 : 0.5 }}
-                          transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
-                          className="w-10 h-10 rounded-2xl bg-white/70 border border-white/70 flex items-center justify-center"
-                        >
-                          <Plus size={16} className="text-black/60" />
-                        </motion.div>
-                      )}
-                    </div>
+              <div className="space-y-4">
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                  <div className="space-y-1">
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+                      {item.duration}
+                    </span>
+                    <h4 className="font-display text-xl md:text-2xl font-bold tracking-tight text-neutral-900">
+                      {item.title}
+                    </h4>
+                    <p className="font-mono text-sm text-neutral-500 uppercase tracking-widest">
+                      {item.subtitle}
+                    </p>
                   </div>
 
-                  <AnimatePresence initial={false}>
-                    {hasDetail && isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.45, ease: [0.23, 1, 0.32, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pt-6 text-black/70 font-light leading-relaxed whitespace-pre-line">
-                          {item.description}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </button>
-              </motion.div>
-            );
-          })}
-        </div>
+                  {hasDetail && (
+                    <button
+                      onClick={() => setOpenIndex(isOpen ? null : index)}
+                      className={`p-2 border rounded-full transition-all ${isOpen ? 'bg-neutral-900 text-white border-neutral-900' : 'bg-transparent text-neutral-400 border-neutral-200 hover:border-neutral-900 hover:text-neutral-900'}`}
+                    >
+                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                    </button>
+                  )}
+                </div>
+
+                {Array.isArray(item.tags) && item.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-x-6 gap-y-2">
+                    {item.tags.map((tag) => (
+                      <span key={tag} className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                <AnimatePresence>
+                  {hasDetail && isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <p className="pt-4 text-neutral-500 leading-relaxed max-w-2xl whitespace-pre-line text-sm md:text-base">
+                        {item.description}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
-    </section>
+    </div>
   );
 }

@@ -124,7 +124,7 @@
         "title": "品牌视觉与多媒体叙事 (Brand & Visual Communication)",
         "core": "核心点：多个国家品牌心智、全案落地。",
         "items": [
-          "品牌视觉体系 (VI)：具备 0-1 的品牌视觉开发能力，熟练使用（AI/PS）主导过覆盖新加坡、美国、欧洲、日本等市场的品牌形象建设，应用 C4D 建立管理产品库，确保全球化营销物料的统一。",
+          "品牌视觉体系 (VI)：具备 0-1 的品牌视觉开发能力，熟练使用（AI/PS）主导过覆盖新加坡、美国、欧洲、日本等市场的品牌形象建设，建立并管理设计资料产品库，确保全球化营销物料的统一。",
           "摄影与后期剪辑：具备产品拍摄（撰写脚本）与视频制作能力（PR/AE/剪映），擅长通过动态影像叙事提升 B2B 和 B2C 产品的科技感与溢价力。",
           "线上运营线下活动：不限于社交媒体广告/Google 广告、App Banner/点餐屏幕等电子广告海报设计。",
           "展会设计：拥有国内展会和大型国际展会（亚洲 FLA）（亚洲 FHA）（美国 NAMA Show）（美国 NRA Show）（Smart Retail Tech Expo 2025 ExCeL London）策划参与设计经验，涵盖从内容策划到排版印刷到展位视觉的闭环落地。"
@@ -162,9 +162,5 @@
     ]
   },
   "avatar": "/images/aoki.png",
-  "socials": {
-    "github": "https://github.com/zhouwenjing",
-    "linkedin": "https://linkedin.com/in/zhouwenjing",
-    "twitter": "https://twitter.com/zhouwenjing"
-  }
+  "socials": {}
 }
