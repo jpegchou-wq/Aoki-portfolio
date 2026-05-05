@@ -82,36 +82,32 @@ export default function Projects() {
 
   return (
     <Layout>
-      <div className="pt-40 pb-40">
-        <div className="asymmetric-container">
+      <div className="pt-32 pb-32">
+        <div className="container mx-auto px-6">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="mb-32"
+            transition={{ duration: 0.8 }}
+            className="mb-24"
           >
-            <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-neutral-400 mb-6 block">
-              Archive
-            </span>
-            <TextReveal
-              text={language === 'en' ? 'Works' : '作品集'}
-              className="font-display text-6xl md:text-[10rem] font-bold tracking-tighter leading-none mb-12 text-neutral-900"
-            />
-            <p className="max-w-2xl text-xl text-neutral-500 leading-relaxed">
+            <h1 className="text-4xl md:text-6xl font-bold text-neutral-900 mb-8 tracking-tight">
+              {language === 'en' ? 'Projects Archive' : '作品集'}
+            </h1>
+            <p className="max-w-2xl text-lg text-neutral-500 leading-relaxed">
               {t('projects.subtitle')}
             </p>
           </motion.div>
 
-          {/* Filter Bar - Brutalist */}
-          <div className="mb-20 flex flex-wrap gap-4 border-b border-neutral-200 pb-12">
+          {/* Clean Filter Bar */}
+          <div className="mb-16 flex flex-wrap gap-2">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setFilter(cat.id)}
-                className={`font-mono text-[10px] uppercase tracking-widest px-4 py-2 border transition-all ${
+                className={`text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full transition-all ${
                   filter === cat.id 
-                    ? 'bg-neutral-900 text-white border-neutral-900' 
-                    : 'bg-transparent text-neutral-400 border-transparent hover:text-neutral-900'
+                    ? 'bg-neutral-900 text-white' 
+                    : 'bg-neutral-50 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-900'
                 }`}
               >
                 {cat.label}
@@ -119,16 +115,16 @@ export default function Projects() {
             ))}
           </div>
 
-          {/* Projects Grid - Asymmetrical feeling with different aspect ratios if we wanted, but keeping it clean for now */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+          {/* Clean Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             <AnimatePresence mode="popLayout">
               {visibleItems.map((project, index) => (
                 <motion.div
                   key={project._key ?? project.id}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.8, delay: (index % 3) * 0.1 }}
+                  transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
                 >
                   <ProjectCard project={project} language={language} />
                 </motion.div>
@@ -137,11 +133,11 @@ export default function Projects() {
           </div>
 
           {canLoadMore && (
-            <div className="mt-32 flex justify-center">
+            <div className="mt-24 flex justify-center">
               <button
                 type="button"
                 onClick={() => setVisibleCount((prev) => prev + 12)}
-                className="font-mono text-xs uppercase tracking-widest px-12 py-4 border border-neutral-200 hover:border-neutral-900 hover:bg-neutral-900 hover:text-white transition-all"
+                className="px-12 py-4 bg-neutral-900 text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-colors"
               >
                 {language === 'en' ? 'Load more' : '加载更多'}
               </button>

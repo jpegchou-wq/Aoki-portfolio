@@ -31,95 +31,91 @@ export default function ProjectDetailClient({ project }: { project: ProjectData 
   const detail = content.detail;
 
   return (
-    <div className="pt-40 pb-40">
-      <div className="asymmetric-container">
+    <div className="pt-32 pb-32">
+      <div className="container mx-auto px-6 max-w-5xl">
         {/* Back Link */}
-        <div className="mb-20">
+        <div className="mb-16">
           <Link
             href="/projects"
-            className="group inline-flex items-center gap-4 font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-400 hover:text-neutral-900 transition-colors"
+            className="group inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-neutral-900 transition-colors"
           >
-            <ArrowLeft size={14} className="group-hover:-translate-x-2 transition-transform" />
+            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
             <span>{t('projectDetail.back')}</span>
           </Link>
         </div>
 
-        {/* Project Header - Asymmetrical */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-32">
+        {/* Project Header - Clean & Centered */}
+        <div className="mb-24">
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            className="lg:col-span-7"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-neutral-400 mb-6 block">
+            <span className="text-sm font-medium text-neutral-400 mb-4 block">
               {project.category}
             </span>
-            <h1 className="font-display text-5xl md:text-8xl font-bold tracking-tighter leading-none mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold text-neutral-900 mb-8 tracking-tight">
               {content.title}
             </h1>
-            <p className="text-xl md:text-2xl text-neutral-500 leading-relaxed max-w-2xl">
-              {content.description}
-            </p>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="lg:col-span-5"
-          >
-            <div className="p-8 border-2 border-neutral-900 space-y-8">
-              <div>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 block mb-4">Tools & Stack</span>
-                <div className="flex flex-wrap gap-4">
-                  {project.technologies.map((tech) => (
-                    <span key={tech} className="font-mono text-[10px] uppercase tracking-widest px-3 py-1 bg-neutral-100">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-8 border-t border-neutral-100">
+              <div className="md:col-span-2">
+                <p className="text-lg text-neutral-500 leading-relaxed">
+                  {content.description}
+                </p>
               </div>
-              
-              {detail?.role && (
-                <div>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 block mb-4">{t('projectDetail.role')}</span>
-                  <p className="text-sm text-neutral-600 leading-relaxed whitespace-pre-line">
-                    {detail.role}
-                  </p>
-                </div>
-              )}
+              <div className="space-y-6">
+                {project.technologies.length > 0 && (
+                  <div>
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-3">Tools</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <span key={tech} className="text-xs px-2 py-1 bg-neutral-50 text-neutral-600 rounded">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {detail?.role && (
+                  <div>
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-3">{t('projectDetail.role')}</h4>
+                    <p className="text-sm text-neutral-500 leading-relaxed">
+                      {detail.role}
+                    </p>
+                  </div>
+                )}
+              </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Hero Image */}
+        {/* Hero Image - Clean rounded */}
         <motion.div 
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.4 }}
-          className="relative aspect-[16/9] border-2 border-neutral-900 mb-40 overflow-hidden"
+          transition={{ duration: 1, delay: 0.2 }}
+          className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-sm mb-32"
         >
-          <Image src={project.thumbnail} alt={content.title} fill className="object-cover grayscale hover:grayscale-0 transition-all duration-1000" priority />
+          <Image src={project.thumbnail} alt={content.title} fill className="object-cover" priority />
         </motion.div>
 
         {/* Media / Outcomes Section */}
         {Array.isArray(project.media) && project.media.length > 0 && (
-          <section className="space-y-40">
-            <div className="flex flex-col md:flex-row justify-between items-end gap-12 border-b border-neutral-200 pb-12">
-              <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tighter">
+          <section className="space-y-24">
+            <div className="border-b border-neutral-100 pb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">
                 {language === 'en' ? 'Project Outcomes' : '项目成果'}
               </h2>
-              <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-neutral-400">01 — {project.media.length < 10 ? `0${project.media.length}` : project.media.length}</span>
             </div>
             
-            <div className="space-y-32">
+            <div className="space-y-24">
               {project.media.map((item, idx) => (
                 <motion.div 
                   key={idx}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1 }}
+                  transition={{ duration: 0.8 }}
                   viewport={{ once: true }}
                 >
                   <MediaEmbed item={item} />

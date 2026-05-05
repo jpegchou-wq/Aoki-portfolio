@@ -22,32 +22,27 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="fixed w-full z-50 px-6 py-8">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+    <header className="fixed w-full z-50 px-6 py-6 md:py-10">
+      <div className="container mx-auto flex justify-between items-center">
         {/* Logo - Sharp and Minimal */}
         <Magnetic strength={0.2}>
           <Link href="/" className="group relative">
-            <span className="font-display text-2xl font-bold tracking-tighter transition-transform group-hover:skew-x-12 block">
-              AOKI<span className="text-neon">.</span>
+            <span className="text-2xl font-bold tracking-tight transition-transform group-hover:skew-x-12 block text-neutral-900">
+              AOKI<span className="text-neutral-400">.</span>
             </span>
-            <div className="absolute -bottom-1 left-0 w-0 h-px bg-neutral-900 transition-all group-hover:w-full" />
           </Link>
         </Magnetic>
 
-        {/* Desktop Menu - Brutalist & Experimental */}
-        <div className="hidden md:flex items-center space-x-12">
+        {/* Desktop Menu - Clean & Minimal */}
+        <div className="hidden md:flex items-center space-x-10">
           {navLinks.map((link) => (
             <Magnetic key={link.href} strength={0.3}>
               <Link
                 href={link.href}
-                className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500 hover:text-neutral-900 transition-colors relative group"
+                className="text-sm font-bold uppercase tracking-widest text-neutral-400 hover:text-neutral-900 transition-colors relative group"
               >
                 <span className="relative z-10">{link.name}</span>
-                <motion.div 
-                  className="absolute -inset-x-2 -inset-y-1 bg-neon opacity-0 group-hover:opacity-100 -z-0"
-                  initial={false}
-                  transition={{ duration: 0.2 }}
-                />
+                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neutral-900 transition-all group-hover:w-full" />
               </Link>
             </Magnetic>
           ))}
@@ -55,7 +50,7 @@ const Header: React.FC = () => {
           <Magnetic strength={0.2}>
             <button
               onClick={toggleLanguage}
-              className="font-mono text-[10px] uppercase tracking-[0.2em] px-3 py-1 border border-neutral-300 hover:border-neutral-900 transition-colors"
+              className="text-xs font-bold uppercase tracking-widest px-4 py-2 border border-neutral-100 rounded-full hover:border-neutral-900 transition-colors text-neutral-900"
             >
               {language === 'en' ? 'CN' : 'EN'}
             </button>

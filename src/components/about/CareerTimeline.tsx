@@ -23,14 +23,11 @@ export default function CareerTimeline({
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="space-y-12">
-      <div className="flex items-end justify-between border-b-2 border-neutral-900 pb-4 mb-12">
-        <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tighter uppercase">{title}</h3>
-        <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">History</span>
-      </div>
+    <div className="space-y-10">
+      <h3 className="text-2xl font-bold text-neutral-900 mb-10">{title}</h3>
 
-      <div className="space-y-16 relative">
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-neutral-200" />
+      <div className="space-y-12 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-px bg-neutral-100" />
         
         {normalized.map((item, index) => {
           const hasDetail = Boolean(item.description);
@@ -39,25 +36,25 @@ export default function CareerTimeline({
           return (
             <motion.div
               key={`${item.title}-${index}`}
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="relative pl-12 group"
+              className="relative pl-10 group"
             >
               {/* Dot */}
-              <div className={`absolute left-[-4.5px] top-1.5 w-[10px] h-[10px] rounded-full border-2 transition-colors ${isOpen ? 'bg-neon border-neutral-900' : 'bg-white border-neutral-300 group-hover:border-neutral-900'}`} />
+              <div className={`absolute left-[-4px] top-1.5 w-2 h-2 rounded-full transition-colors ${isOpen ? 'bg-neutral-900' : 'bg-neutral-200 group-hover:bg-neutral-400'}`} />
 
-              <div className="space-y-4">
-                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+              <div className="space-y-3">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
                   <div className="space-y-1">
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-300">
                       {item.duration}
                     </span>
-                    <h4 className="font-display text-xl md:text-2xl font-bold tracking-tight text-neutral-900">
+                    <h4 className="text-lg font-bold text-neutral-900">
                       {item.title}
                     </h4>
-                    <p className="font-mono text-sm text-neutral-500 uppercase tracking-widest">
+                    <p className="text-sm font-medium text-neutral-400 uppercase tracking-wide">
                       {item.subtitle}
                     </p>
                   </div>
@@ -65,22 +62,12 @@ export default function CareerTimeline({
                   {hasDetail && (
                     <button
                       onClick={() => setOpenIndex(isOpen ? null : index)}
-                      className={`p-2 border rounded-full transition-all ${isOpen ? 'bg-neutral-900 text-white border-neutral-900' : 'bg-transparent text-neutral-400 border-neutral-200 hover:border-neutral-900 hover:text-neutral-900'}`}
+                      className={`p-2 rounded-full transition-all ${isOpen ? 'bg-neutral-900 text-white' : 'bg-neutral-50 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-900'}`}
                     >
-                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                      {isOpen ? <Minus size={14} /> : <Plus size={14} />}
                     </button>
                   )}
                 </div>
-
-                {Array.isArray(item.tags) && item.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-x-6 gap-y-2">
-                    {item.tags.map((tag) => (
-                      <span key={tag} className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
 
                 <AnimatePresence>
                   {hasDetail && isOpen && (
@@ -88,10 +75,10 @@ export default function CareerTimeline({
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <p className="pt-4 text-neutral-500 leading-relaxed max-w-2xl whitespace-pre-line text-sm md:text-base">
+                      <p className="pt-2 text-neutral-500 leading-relaxed max-w-2xl whitespace-pre-line text-sm">
                         {item.description}
                       </p>
                     </motion.div>

@@ -25,16 +25,11 @@ export default function CapabilitySections() {
   const [activeId, setActiveId] = useState<string>(capabilities[0]?.id ?? '');
 
   return (
-    <section className="py-24">
-      <div className="asymmetric-container">
-        <div className="mb-20">
-          <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-neutral-400 mb-6 block">
-            Capabilities
-          </span>
-          <h2 className="font-display text-5xl md:text-7xl font-bold tracking-tighter leading-none">
-            {language === 'en' ? 'Core Capabilities' : '核心能力'}
-          </h2>
-        </div>
+    <section className="py-12">
+      <div className="max-w-4xl">
+        <h2 className="text-3xl font-bold text-neutral-900 mb-12">
+          {language === 'en' ? 'Core Capabilities' : '核心能力'}
+        </h2>
 
         <div className="space-y-4">
           {capabilities.map((cap, index) => {
@@ -42,21 +37,21 @@ export default function CapabilitySections() {
             return (
               <div 
                 key={cap.id}
-                className={`border-2 transition-all duration-500 ${isActive ? 'border-neutral-900 bg-neutral-900 text-white' : 'border-neutral-200 bg-transparent text-neutral-900 hover:border-neutral-900'}`}
+                className={`rounded-2xl transition-all duration-300 ${isActive ? 'bg-neutral-900 text-white' : 'bg-neutral-50 text-neutral-900 hover:bg-neutral-100'}`}
               >
                 <button
                   type="button"
                   onClick={() => setActiveId(isActive ? '' : cap.id)}
-                  className="w-full text-left p-8 md:p-12 flex items-center justify-between group"
+                  className="w-full text-left p-6 md:p-8 flex items-center justify-between group"
                 >
-                  <div className="flex items-center gap-8 md:gap-16">
-                    <span className="font-mono text-xs text-neutral-400">0{index + 1}</span>
-                    <h3 className="font-display text-2xl md:text-4xl font-bold tracking-tight">
+                  <div className="flex items-center gap-6">
+                    <span className="text-xs font-bold text-neutral-400">0{index + 1}</span>
+                    <h3 className="text-xl font-bold">
                       {cap.title}
                     </h3>
                   </div>
-                  <div className={`shrink-0 w-12 h-12 border rounded-full flex items-center justify-center transition-all ${isActive ? 'border-neon bg-neon text-black rotate-180' : 'border-neutral-200 group-hover:border-neutral-900'}`}>
-                    {isActive ? <Minus size={20} /> : <Plus size={20} />}
+                  <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all ${isActive ? 'bg-white/10 rotate-180' : 'bg-neutral-200'}`}>
+                    {isActive ? <Minus size={16} /> : <Plus size={16} />}
                   </div>
                 </button>
 
@@ -66,19 +61,19 @@ export default function CapabilitySections() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="px-8 md:px-12 pb-12">
-                        <div className="pl-0 md:pl-28 max-w-4xl">
-                          <p className={`text-xl mb-12 ${isActive ? 'text-neon' : 'text-neutral-500'}`}>
+                      <div className="px-6 md:px-8 pb-8">
+                        <div className="pl-12">
+                          <p className={`text-lg mb-8 ${isActive ? 'text-neutral-300' : 'text-neutral-500'}`}>
                             {cap.core}
                           </p>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {cap.items.map((text, i) => (
-                              <div key={i} className="space-y-4">
-                                <div className="h-px w-8 bg-neutral-700" />
-                                <p className="text-sm md:text-base text-neutral-400 leading-relaxed">
+                              <div key={i} className="flex gap-3">
+                                <div className="w-1 h-1 rounded-full bg-neutral-500 mt-2.5 shrink-0" />
+                                <p className="text-sm text-neutral-400 leading-relaxed">
                                   {text}
                                 </p>
                               </div>

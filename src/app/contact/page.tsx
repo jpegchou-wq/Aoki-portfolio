@@ -14,85 +14,73 @@ export default function Contact() {
 
   return (
     <Layout>
-      <div className="pt-40 pb-40">
-        <div className="asymmetric-container">
+      <div className="pt-32 pb-32">
+        <div className="container mx-auto px-6 max-w-5xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="mb-32"
+            transition={{ duration: 0.8 }}
+            className="mb-24"
           >
-            <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-neutral-400 mb-6 block">
-              Connect
-            </span>
-            <TextReveal
-              text={language === 'en' ? "Let&apos;s Talk" : '取得联系'}
-              className="font-display text-6xl md:text-[10rem] font-bold tracking-tighter leading-none mb-12 text-neutral-900"
-            />
+            <h1 className="text-4xl md:text-6xl font-bold text-neutral-900 mb-8 tracking-tight">
+              {language === 'en' ? "Let&apos;s Talk" : '取得联系'}
+            </h1>
+            <p className="max-w-2xl text-lg text-neutral-500 leading-relaxed">
+              {language === 'en' 
+                ? "Have a project in mind or just want to say hi? Feel free to reach out."
+                : "有项目想法或者只是想打个招呼？随时欢迎联系我。"}
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            {/* Contact Info - Brutalist Grid */}
-            <div className="lg:col-span-7 space-y-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 }}
-                  className="p-12 border-2 border-neutral-900 group hover:bg-neutral-900 transition-colors"
-                >
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-neutral-500 mb-4 block">Email</span>
-                  <a href={`mailto:${data.email}`} className="font-display text-2xl font-bold group-hover:text-neon transition-colors break-all">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            {/* Contact Info - Clean List */}
+            <div className="space-y-12">
+              <div className="space-y-8">
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-neutral-300 mb-3">Email</h4>
+                  <a href={`mailto:${data.email}`} className="text-2xl font-medium text-neutral-900 hover:text-neutral-600 transition-colors break-all">
                     {data.email}
                   </a>
-                </motion.div>
+                </div>
                 
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="p-12 border-2 border-neutral-900 group hover:bg-neutral-900 transition-colors"
-                >
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-neutral-500 mb-4 block">Phone</span>
-                  <p className="font-display text-2xl font-bold group-hover:text-neon transition-colors">
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-neutral-300 mb-3">Phone</h4>
+                  <p className="text-2xl font-medium text-neutral-900">
                     {data.phone}
                   </p>
-                </motion.div>
+                </div>
+              </div>
+
+              <div className="pt-12 border-t border-neutral-100">
+                <p className="text-neutral-500 mb-8 leading-relaxed">
+                  Currently open to new projects and collaborations. Let&apos;s create something unique together.
+                </p>
               </div>
             </div>
 
-            {/* QR Codes - Mixed Media */}
-            <div className="lg:col-span-5 space-y-8">
-              <div className="grid grid-cols-2 gap-8">
-                <div className="space-y-4">
-                  <div className="aspect-square relative border-2 border-neutral-900 p-4">
-                    <Image 
-                      src={data.wechat_qr}
-                      alt="WeChat"
-                      fill
-                      className="object-contain p-4 grayscale hover:grayscale-0 transition-all"
-                    />
-                  </div>
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-center text-neutral-400">WeChat</p>
+            {/* QR Codes - Clean Side by Side */}
+            <div className="grid grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <div className="aspect-square relative rounded-2xl overflow-hidden bg-neutral-50 p-6 border border-neutral-100">
+                  <Image 
+                    src={data.wechat_qr}
+                    alt="WeChat"
+                    fill
+                    className="object-contain p-6"
+                  />
                 </div>
-                <div className="space-y-4">
-                  <div className="aspect-square relative border-2 border-neutral-900 p-4">
-                    <Image 
-                      src={data.whatsapp_qr}
-                      alt="WhatsApp"
-                      fill
-                      className="object-contain p-4 grayscale hover:grayscale-0 transition-all"
-                    />
-                  </div>
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-center text-neutral-400">WhatsApp</p>
-                </div>
+                <p className="text-xs font-bold uppercase tracking-widest text-center text-neutral-400">WeChat</p>
               </div>
-              
-              <div className="p-8 bg-neon text-black">
-                <p className="font-mono text-xs uppercase tracking-widest font-bold mb-4">Available for Freelance</p>
-                <p className="text-sm leading-relaxed">
-                  Currently open to new projects and collaborations. Let&apos;s create something unique together.
-                </p>
+              <div className="space-y-4">
+                <div className="aspect-square relative rounded-2xl overflow-hidden bg-neutral-50 p-6 border border-neutral-100">
+                  <Image 
+                    src={data.whatsapp_qr}
+                    alt="WhatsApp"
+                    fill
+                    className="object-contain p-6"
+                  />
+                </div>
+                <p className="text-xs font-bold uppercase tracking-widest text-center text-neutral-400">WhatsApp</p>
               </div>
             </div>
           </div>
