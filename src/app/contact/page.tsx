@@ -6,7 +6,6 @@ import personalData from '@/data/personal.json';
 import { useLanguage } from '@/context/LanguageContext';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import TextReveal from '@/components/layout/TextReveal';
 import Magnetic from '@/components/layout/Magnetic';
 
 export default function Contact() {
@@ -15,35 +14,29 @@ export default function Contact() {
 
   return (
     <Layout>
-      <div className="pt-40 pb-40">
+      <div className="page-shell">
         <div className="asymmetric-container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="mb-32"
-          >
-            <div className="flex items-center gap-4 mb-8">
-              <span className="text-xs font-bold uppercase tracking-widest text-neon bg-neutral-900 px-3 py-1 rounded-sm">HELLO</span>
-              <span className="text-xs font-bold uppercase tracking-[0.4em] text-neutral-400">Get in touch</span>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="page-hero">
+            <div className="page-kicker">{t('contact.hello')}</div>
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <h1 className="page-title">
+              {language === 'en' ? "Let's" : '保持'}
+              <span className="text-outline block lg:inline lg:ml-8">{t('contact.connect')}</span>
+              </h1>
             </div>
-            <h1 className="experimental-title text-neutral-900">
-              Let&apos;s<span className="text-outline block lg:inline lg:ml-8">Connect</span>
-            </h1>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
-            {/* Contact Info - Avant-garde List */}
-            <div className="lg:col-span-7 space-y-16">
-              <div className="space-y-12">
+          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1.1fr)_380px] lg:gap-16">
+            <div className="space-y-8">
+              <div className="detail-card space-y-10">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-300 mb-6">Email</h4>
+                  <h4 className="panel-label">{t('contact.email')}</h4>
                   <Magnetic strength={0.1}>
-                    <a href={`mailto:${data.email}`} className="text-3xl md:text-5xl lg:text-6xl font-bold text-neutral-900 hover:text-neon transition-colors tracking-tighter break-all">
+                    <a href={`mailto:${data.email}`} className="email-display break-all text-[2rem] transition-colors hover:text-neon md:text-[3.4rem] lg:text-[4.2rem]">
                       {data.email}
                     </a>
                   </Magnetic>
@@ -54,49 +47,59 @@ export default function Contact() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.1 }}
                 >
-                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-300 mb-6">Phone</h4>
-                  <p className="text-3xl md:text-5xl font-bold text-neutral-900 tracking-tighter">
+                  <h4 className="panel-label">{t('contact.phone')}</h4>
+                  <p className="section-title text-3xl md:text-5xl">
                     {data.phone}
                   </p>
                 </motion.div>
-              </div>
 
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="pt-16 border-t border-neutral-100 max-w-lg"
-              >
-                <p className="text-xl text-neutral-500 leading-relaxed italic">
-                  &ldquo;Currently open to new projects and collaborations. Let&apos;s create something unique together.&rdquo;
-                </p>
-                
-                <div className="mt-12 flex flex-wrap gap-8">
-                  {Object.entries(personalData.socials as Record<string, string>).map(([key, url], i) => (
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="border-t border-black/10 pt-8"
+                >
+                  <div className="mt-2 flex flex-wrap gap-4">
+                  {Object.entries(personalData.socials as Record<string, string>).map(([key, url]) => (
                     <Magnetic key={key} strength={0.2}>
                       <a 
                         href={url} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-neutral-900 transition-colors border-b border-transparent hover:border-neon pb-1"
+                        className="meta-pill hover:border-brand-dark hover:text-brand-dark"
                       >
                         {key}
                       </a>
                     </Magnetic>
                   ))}
+                  </div>
+                </motion.div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div className="detail-card space-y-3">
+                  <span className="panel-label">{t('contact.responseRhythm')}</span>
+                  <p className="panel-title mt-1 text-xl md:text-2xl">
+                    {t('contact.responseValue')}
+                  </p>
                 </div>
-              </motion.div>
+                <div className="detail-card space-y-3">
+                  <span className="panel-label">{t('contact.bestFit')}</span>
+                  <p className="panel-title mt-1 text-xl md:text-2xl">
+                    {t('contact.bestFitValue')}
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* QR Codes - Refined Mixed Media */}
-            <div className="lg:col-span-5 grid grid-cols-2 gap-8 lg:pt-12">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:pt-2">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
                 className="space-y-6"
               >
-                <div className="aspect-square relative rounded-3xl overflow-hidden bg-neutral-50 p-8 border border-neutral-100 group">
+                <div className="detail-card group aspect-square relative overflow-hidden rounded-[2rem] p-6">
                   <Image 
                     src={data.wechat_qr}
                     alt="WeChat"
@@ -105,7 +108,7 @@ export default function Contact() {
                   />
                   <div className="absolute inset-0 bg-neon/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-center text-neutral-400">WeChat ID</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-center text-neutral-400">{t('contact.wechatId')}</p>
               </motion.div>
 
               <motion.div 
@@ -114,7 +117,7 @@ export default function Contact() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="space-y-6 lg:mt-12"
               >
-                <div className="aspect-square relative rounded-3xl overflow-hidden bg-neutral-50 p-8 border border-neutral-100 group">
+                <div className="detail-card group aspect-square relative overflow-hidden rounded-[2rem] p-6">
                   <Image 
                     src={data.whatsapp_qr}
                     alt="WhatsApp"
@@ -129,12 +132,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <style jsx>{`
-        .text-outline {
-          -webkit-text-stroke: 1.5px #171717;
-          color: transparent;
-        }
-      `}</style>
     </Layout>
   );
 }

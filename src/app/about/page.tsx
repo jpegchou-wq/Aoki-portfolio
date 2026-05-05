@@ -2,143 +2,149 @@
 
 import React from 'react';
 import Layout from '@/components/layout/Layout';
-import CapabilitySections from '@/components/about/CapabilitySections';
-import CareerTimeline from '@/components/about/CareerTimeline';
-import SkillsOverview from '@/components/home/SkillsOverview';
 import personalData from '@/data/personal.json';
 import { useLanguage } from '@/context/LanguageContext';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import TextReveal from '@/components/layout/TextReveal';
 import Magnetic from '@/components/layout/Magnetic';
+import CareerTimeline from '@/components/about/CareerTimeline';
+import CapabilitySections from '@/components/about/CapabilitySections';
 
 export default function About() {
   const { language, t } = useLanguage();
   const data = language === 'en' ? personalData.en : personalData.cn;
+  
+  const { scrollY } = useScroll();
+  const imgY = useTransform(scrollY, [0, 1000], [0, 150]);
 
-  const timelineItems = React.useMemo(() => {
-    const experience = (data.experience ?? []).map((exp: any) => ({
-      title: exp.position,
-      subtitle: exp.company,
-      duration: exp.duration,
-      description: exp.description,
-      tags: exp.tags,
-    }));
-
-    const education = (data.education ?? []).map((edu: any) => ({
-      title: edu.school,
-      subtitle: edu.degree,
-      duration: edu.duration,
-      tags: [language === 'en' ? 'Education' : '教育背景'],
-    }));
-
-    return [...experience, ...education];
-  }, [data.education, data.experience, language]);
+  const timelineItems = data.experience.map((exp: any) => ({
+    title: exp.position,
+    subtitle: exp.company,
+    duration: exp.duration,
+    description: exp.description,
+    tags: exp.tags,
+  }));
 
   return (
     <Layout>
-      <div className="pt-40 pb-40">
+      <div className="page-shell">
         <div className="asymmetric-container">
-          {/* About Hero - Avant-garde & Asymmetrical */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start mb-40">
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.2 }}
-              className="lg:col-span-5"
-            >
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.1)] group">
-                <Image
-                  src={personalData.avatar}
-                  alt={data.name}
-                  fill
-                  priority
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-neon/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
-              </div>
-              
-              <div className="mt-8 flex items-center gap-4">
-                <div className="w-12 h-[1px] bg-neutral-200" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-neutral-400">Profile Image</span>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.2, delay: 0.2 }}
-              className="lg:col-span-7 lg:pt-12"
-            >
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-xs font-bold uppercase tracking-widest text-neon bg-neutral-900 px-3 py-1 rounded-sm">BIO</span>
-                <span className="text-xs font-bold uppercase tracking-[0.4em] text-neutral-400">The Designer</span>
-              </div>
-              
-              <h1 className="experimental-title text-neutral-900">
-                {data.name.split(' ').map((part, i) => (
-                  <span key={i} className={`block ${i === 1 ? 'lg:ml-24 text-outline' : ''}`}>
-                    {part}
-                  </span>
-                ))}
+          <div className="page-hero">
+            <div className="page-kicker">
+              {t('aboutPage.archive')}
+            </div>
+            <div className="flex flex-col gap-6">
+              <h1 className="page-title">
+                {language === 'en' ? 'About' : '关于我'}
+                <span className="text-outline block lg:ml-12 lg:inline">Aoki</span>
               </h1>
-
-              <div className="max-w-2xl">
-                <TextReveal
-                  text={data.bio}
-                  className="text-xl md:text-2xl text-neutral-500 leading-relaxed mb-12"
-                  delay={0.3}
-                />
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 mb-16 border-t border-neutral-100 pt-12">
-                  <div>
-                    <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-300 mb-4">Location</h4>
-                    <p className="text-xl font-bold text-neutral-900 tracking-tight">{t('about.location')}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-300 mb-4">Email</h4>
-                    <p className="text-xl font-bold text-neutral-900 tracking-tight break-all">{data.email}</p>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-6">
-                  <Magnetic strength={0.2}>
-                    <Link href="/projects" className="neon-button">
-                      {t('hero.cta')}
-                    </Link>
-                  </Magnetic>
-                  <Magnetic strength={0.2}>
-                    <Link href="/contact" className="px-10 py-4 border border-neutral-200 text-neutral-900 rounded-full text-sm font-bold uppercase tracking-widest hover:border-neutral-900 transition-colors">
-                      {t('hero.contact')}
-                    </Link>
-                  </Magnetic>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          <div className="py-40 border-t border-neutral-100">
-            <CapabilitySections />
-          </div>
-
-          <div className="py-40 border-t border-neutral-100">
-            <div className="max-w-4xl">
-              <CareerTimeline title={t('about.experience')} items={timelineItems} />
             </div>
           </div>
 
-          <div className="py-40 border-t border-neutral-100">
-            <SkillsOverview />
+          <div className="mb-28 grid grid-cols-1 items-start gap-14 lg:grid-cols-[minmax(320px,0.78fr)_minmax(0,1.2fr)] lg:gap-16">
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+              className="relative"
+            >
+              <motion.div 
+                style={{ y: imgY }}
+                className="brutalist-frame relative aspect-[4/5] overflow-hidden rounded-[2.5rem] p-4"
+              >
+                <div className="relative h-full w-full overflow-hidden rounded-[2rem]">
+                  <Image
+                    src={personalData.avatar}
+                    alt={data.name}
+                    fill
+                    priority
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-neon/10 mix-blend-overlay opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+                </div>
+              </motion.div>
+              
+              <div className="mt-8 flex items-center gap-4">
+                <span className="meta-pill">PERSONAL ARCHIVE — 001</span>
+                <span className="font-mono-tech text-neutral-400">{data.title}</span>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:pt-6"
+            >
+              <div className="mb-10 flex flex-wrap gap-4">
+                <span className="meta-pill">{t('about.location')}</span>
+                <span className="meta-pill">{t('aboutPage.marketTags')}</span>
+                <span className="meta-pill">{language === 'en' ? 'UI / UX / VIS' : 'UI / UX / VIS'}</span>
+              </div>
+
+              <div className="detail-card mb-8">
+                <p className="section-title text-2xl font-medium leading-tight text-brand-dark/85 md:text-4xl">
+                  {data.bio}
+                </p>
+              </div>
+
+              <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div className="detail-card space-y-3">
+                  <span className="panel-label">{t('aboutPage.currentLocation')}</span>
+                  <p className="panel-title mt-1">{t('about.location')}</p>
+                </div>
+                <div className="detail-card space-y-3">
+                  <span className="panel-label">{t('aboutPage.digitalChannel')}</span>
+                  <p className="email-display mt-1 break-all text-[1.55rem] md:text-[2rem]">{data.email}</p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-6">
+                <Magnetic strength={0.3}>
+                  <Link href="/projects" className="neon-button">
+                    {t('hero.cta')}
+                  </Link>
+                </Magnetic>
+                <Magnetic strength={0.2}>
+                  <Link href="/contact" className="ghost-button">
+                    {t('hero.contact')}
+                  </Link>
+                </Magnetic>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="border-t border-black/10 py-20 md:py-24">
+            <div className="detail-card">
+              <CapabilitySections />
+            </div>
+          </div>
+
+          <div className="border-t border-black/10 py-20 md:py-24">
+            <div className="max-w-5xl">
+              <div className="detail-card">
+                <CareerTimeline title={t('about.experience')} items={timelineItems} />
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-black/10 py-20 md:py-24">
+            <div className="max-w-5xl">
+              <div className="detail-card">
+                <CareerTimeline
+                  title={t('about.education')}
+                  items={data.education.map((edu: any) => ({
+                    title: edu.school,
+                    subtitle: edu.degree,
+                    duration: edu.duration,
+                  }))}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <style jsx>{`
-        .text-outline {
-          -webkit-text-stroke: 1.5px #171717;
-          color: transparent;
-        }
-      `}</style>
     </Layout>
   );
 }

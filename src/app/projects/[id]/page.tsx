@@ -1,6 +1,7 @@
 import Layout from '@/components/layout/Layout';
-import ProjectDetailClient, { type ProjectData } from '@/components/projects/ProjectDetailClient';
+import ProjectDetailClient from '@/components/projects/ProjectDetailClient';
 import projectsData from '@/data/projects.json';
+import type { ProjectData } from '@/types/project';
 import { notFound } from 'next/navigation';
 
 export function generateStaticParams() {
@@ -17,4 +18,3 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
     </Layout>
   );
 }
-

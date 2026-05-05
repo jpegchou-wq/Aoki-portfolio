@@ -1,6 +1,7 @@
 import Layout from '@/components/layout/Layout';
-import LabDetailClient, { type LabData } from '@/components/labs/LabDetailClient';
+import LabDetailClient from '@/components/labs/LabDetailClient';
 import labsData from '@/data/labs.json';
+import type { LabData } from '@/types/lab';
 import { notFound } from 'next/navigation';
 
 export function generateStaticParams() {
@@ -17,4 +18,3 @@ export default function LabDetailPage({ params }: { params: { id: string } }) {
     </Layout>
   );
 }
-

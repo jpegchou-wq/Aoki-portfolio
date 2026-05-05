@@ -14,28 +14,15 @@ const config: Config = {
         mono: ['var(--font-mono)', 'monospace'],
       },
       colors: {
-        neon: '#ccff00',
-        neutral: {
-          50: '#fafafa',
-          100: '#f5f5f5',
-          200: '#e5e5e5',
-          300: '#d4d4d4',
-          400: '#a3a3a3',
-          500: '#737373',
-          600: '#525252',
-          700: '#404040',
-          800: '#262626',
-          900: '#171717',
-          950: '#0a0a0a',
-        },
+        neon: '#0030e0',
         brand: {
-          light: '#f5f5f3',
-          dark: '#121212',
+          light: '#ffffff',
+          dark: '#171717',
+          grey: '#f5f5f7',
         },
       },
       backgroundImage: {
-        'grain': "url('/images/grain.png')",
-        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02))',
+        'noise': "url('/images/noise.png')",
       },
       backdropBlur: {
         'xs': '2px',

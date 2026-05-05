@@ -1,29 +1,13 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useLanguage } from '@/context/LanguageContext';
-import MediaEmbed, { type MediaItem } from '@/components/media/MediaEmbed';
 import { ArrowLeft } from 'lucide-react';
-
-type LocalizedDetail = {
-  intro?: string;
-  role?: string;
-  highlights?: string[];
-};
-
-export type ProjectData = {
-  id: string;
-  category: string;
-  thumbnail: string;
-  technologies: string[];
-  year?: string;
-  en: { title: string; description: string; detail?: LocalizedDetail };
-  cn: { title: string; description: string; detail?: LocalizedDetail };
-  media?: MediaItem[];
-};
+import type { ProjectData } from '@/types/project';
+import { useLanguage } from '@/context/LanguageContext';
+import MediaEmbed from '@/components/media/MediaEmbed';
 
 export default function ProjectDetailClient({ project }: { project: ProjectData }) {
   const { language, t } = useLanguage();
@@ -31,91 +15,123 @@ export default function ProjectDetailClient({ project }: { project: ProjectData 
   const detail = content.detail;
 
   return (
-    <div className="pt-32 pb-32">
-      <div className="container mx-auto px-6 max-w-5xl">
-        {/* Back Link */}
-        <div className="mb-16">
+    <div className="page-shell">
+      <div className="asymmetric-container">
+        <div className="page-hero">
           <Link
             href="/projects"
-            className="group inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-neutral-900 transition-colors"
+            className="group mb-10 inline-flex items-center gap-2 font-mono-tech text-neutral-400 transition-colors hover:text-brand-dark"
           >
-            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+            <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" />
             <span>{t('projectDetail.back')}</span>
           </Link>
-        </div>
 
-        {/* Project Header - Clean & Centered */}
-        <div className="mb-24">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="text-sm font-medium text-neutral-400 mb-4 block">
-              {project.category}
-            </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-neutral-900 mb-8 tracking-tight">
-              {content.title}
-            </h1>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-8 border-t border-neutral-100">
-              <div className="md:col-span-2">
-                <p className="text-lg text-neutral-500 leading-relaxed">
-                  {content.description}
-                </p>
-              </div>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.2fr)_320px] lg:items-end">
+            <div>
+              <div className="page-kicker mb-4">{project.category}</div>
+              <h1 className="page-title">{content.title}</h1>
+              <p className="page-summary mt-6">{content.description}</p>
+            </div>
+
+            <div className="detail-card">
               <div className="space-y-6">
                 {project.technologies.length > 0 && (
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-3">Tools</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <span key={tech} className="text-xs px-2 py-1 bg-neutral-50 text-neutral-600 rounded">
+                    <h4 className="mb-3 font-mono-tech text-neutral-400">{t('projectDetail.tools')}</h4>
+                    <div className="flex flex-wrap gap-3">
+                      {project.technologies.map((tech: string) => (
+                        <span key={tech} className="meta-pill">
                           {tech}
                         </span>
                       ))}
                     </div>
                   </div>
                 )}
+
                 {detail?.role && (
-                  <div>
-                    <h4 className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-3">{t('projectDetail.role')}</h4>
-                    <p className="text-sm text-neutral-500 leading-relaxed">
+                  <div className="border-t border-black/10 pt-5">
+                    <h4 className="mb-3 font-mono-tech text-neutral-400">{t('projectDetail.role')}</h4>
+                    <p className="text-sm leading-relaxed text-neutral-600 md:text-base">
                       {detail.role}
                     </p>
                   </div>
                 )}
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Hero Image - Clean rounded */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-sm mb-32"
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className="brutalist-frame mb-16 rounded-[2.5rem] p-3 md:mb-24 md:p-4"
         >
-          <Image src={project.thumbnail} alt={content.title} fill className="object-cover" priority />
+          <div className="relative aspect-[16/11] overflow-hidden rounded-[2rem] md:aspect-[16/9]">
+            <Image src={project.thumbnail} alt={content.title} fill className="object-cover" priority />
+          </div>
         </motion.div>
 
-        {/* Media / Outcomes Section */}
-        {Array.isArray(project.media) && project.media.length > 0 && (
-          <section className="space-y-24">
-            <div className="border-b border-neutral-100 pb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">
-                {language === 'en' ? 'Project Outcomes' : '项目成果'}
-              </h2>
+        {(detail?.intro || detail?.highlights?.length || detail?.process?.length) && (
+          <section className="mb-16 grid grid-cols-1 gap-6 md:mb-24 lg:grid-cols-[minmax(0,1fr)_minmax(280px,0.9fr)]">
+            {detail?.intro ? (
+              <div className="detail-card">
+                <div className="page-kicker mb-4">{t('projectDetail.overview')}</div>
+                <p className="text-base leading-relaxed text-neutral-600 md:text-lg whitespace-pre-line">
+                  {detail.intro}
+                </p>
+              </div>
+            ) : (
+              <div className="detail-card">
+                <div className="page-kicker mb-4">{t('projectDetail.overview')}</div>
+                <p className="text-base leading-relaxed text-neutral-600 md:text-lg">
+                  {content.description}
+                </p>
+              </div>
+            )}
+
+            <div className="detail-stack">
+              {detail?.highlights?.length ? (
+                <div className="detail-card">
+                  <div className="page-kicker mb-4">{t('projectDetail.highlights')}</div>
+                  <ul className="space-y-4">
+                    {detail.highlights.map((text: string, idx: number) => (
+                      <li key={`${text}-${idx}`} className="flex gap-3">
+                        <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-neon" />
+                        <span className="text-sm leading-relaxed text-neutral-600 md:text-base">{text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
+              {detail?.process?.length ? (
+                <div className="detail-card">
+                  <div className="page-kicker mb-4">{t('projectDetail.process')}</div>
+                  <div className="space-y-4">
+                    {detail.process.map((line: string, idx: number) => (
+                      <div key={`${line}-${idx}`} className="flex gap-4 border-t border-black/10 pt-4 first:border-t-0 first:pt-0">
+                        <span className="font-mono-tech text-neutral-300">0{idx + 1}</span>
+                        <p className="text-sm leading-relaxed text-neutral-600 md:text-base">{line}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
             </div>
-            
-            <div className="space-y-24">
+          </section>
+        )}
+
+        {Array.isArray(project.media) && project.media.length > 0 && (
+          <section className="space-y-8 md:space-y-12">
+            <div className="page-kicker">{t('projectDetail.outcomes')}</div>
+            <div className="grid grid-cols-1 gap-6 md:gap-8">
               {project.media.map((item, idx) => (
-                <motion.div 
-                  key={idx}
-                  initial={{ opacity: 0, y: 30 }}
+                <motion.div
+                  key={`${project.id}-media-${idx}`}
+                  initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
+                  transition={{ duration: 0.75 }}
                   viewport={{ once: true }}
                 >
                   <MediaEmbed item={item} />

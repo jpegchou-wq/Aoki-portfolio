@@ -35,7 +35,18 @@ const translations = {
     },
     skills: {
       title: 'Core Tools & Stack',
-      subtitle: 'Toolbox'
+      subtitle: 'Toolbox',
+      description: 'Systems-minded design across interface architecture, visual identity, motion, and AI-assisted production workflows.',
+      knowledgeBase: 'Knowledge Base',
+      expertise: 'Expertise',
+      stack: 'Stack',
+      coreExpertise: 'Core Expertise',
+      capability: 'Capability',
+      method: 'Method',
+      research: 'Research',
+      systems: 'Systems',
+      visualDirection: 'Visual Direction',
+      prototype: 'Prototype'
     },
     projects: {
       title: 'Featured Projects',
@@ -51,7 +62,13 @@ const translations = {
       web: 'WEB',
       brand: 'Branding',
       photo: 'Photography',
-      product: 'Product'
+      product: 'Product',
+      worksArchive: 'Works / Archives',
+      selectedWork: 'Selected Work',
+      inFocus: 'In Focus',
+      openArchive: 'Open Full Archive',
+      openCase: 'Open Case',
+      viewCaseStudy: 'View case study'
     },
     projectDetail: {
       back: 'Back to Projects',
@@ -59,7 +76,10 @@ const translations = {
       role: 'Role',
       highlights: 'Highlights',
       process: 'Process',
-      media: 'Media'
+      media: 'Media',
+      tools: 'Tools',
+      toolsMethods: 'Tools & Methods',
+      outcomes: 'Project Outcomes'
     },
     contact: {
       title: 'Get In Touch',
@@ -71,7 +91,56 @@ const translations = {
       whatsapp: 'WhatsApp',
       send: 'Send Message',
       success: 'Message sent successfully!',
-      required: 'Required'
+      required: 'Required',
+      hello: 'HELLO / Get in touch',
+      connect: 'Connect',
+      responseRhythm: 'Response rhythm',
+      bestFit: 'Best fit',
+      wechatId: 'WeChat ID'
+      ,
+      summary: 'Open to visual systems, UI/UX collaboration, launch pages, and artistic digital work with a strong narrative point of view.',
+      responseValue: 'Clear, quick, and collaborative.',
+      bestFitValue: 'UI/UX / Brand / Launch'
+    },
+    home: {
+      storyMap: 'Story Map',
+      portfolioExperience: 'Portfolio Experience',
+      exploreNarrative: 'Explore it like a narrative space.',
+      exploreNarrativeSummary: 'This homepage is organized as a route instead of a stack: each chapter reveals a different side of my work, from cases and systems to methods and career signals.',
+      caseArchive: 'Case Archive',
+      capabilityModules: 'Capability Modules',
+      howIWork: 'How I Work',
+      experienceStory: 'Experience Story',
+      currentSignal: 'Current Signal',
+      currentSignalTitle: 'Visual designer with product instincts and launch awareness.',
+      currentSignalSummary: 'The intersection of visual systems, interactive products, motion storytelling, and AI-assisted workflows defines the direction of this portfolio.',
+      openProjects: 'Open projects',
+      readProfile: 'Read profile',
+      startContact: 'Start contact',
+      routeCaseArchive: 'Shipped products, brand systems, visual launches.',
+      routeCapabilityModules: 'UI/UX, motion instincts, systems thinking.',
+      routeHowIWork: 'Research, structure, visual direction, delivery.',
+      routeExperienceStory: 'Career arcs across brand, product and growth.',
+      experienceHeading: 'A practice built across brand, product, and launch.',
+      experienceSummary: 'Instead of treating experience as a resume block, this section frames it as a trajectory: how strategy, craft, and collaboration became one working system.'
+    },
+    aboutPage: {
+      archive: 'Personal Profile / Archive',
+      currentLocation: 'Current Location',
+      digitalChannel: 'Digital Channel',
+      marketTags: 'Brand / Product / Launch'
+    },
+    labs: {
+      heroKicker: 'LAB / Experimental Space',
+      heroTitle: 'Future',
+      heroOutline: 'Concepts',
+      heroSummary: 'A sandbox for speculative interfaces, mixed-media directions, and art-led digital experiments.',
+      note: 'Lab Note',
+      viewExperiment: 'View Experiment',
+      back: 'Back to Labs'
+    },
+    common: {
+      role: 'Role'
     }
   },
   cn: {
@@ -98,7 +167,18 @@ const translations = {
     },
     skills: {
       title: '核心工具与技术栈汇总',
-      subtitle: '技能清单'
+      subtitle: '技能清单',
+      description: '以系统化思维连接界面架构、品牌表达、动态感知与 AI 协同工作流。',
+      knowledgeBase: '知识体系',
+      expertise: '能力',
+      stack: '栈',
+      coreExpertise: '核心能力',
+      capability: '能力模块',
+      method: '方法',
+      research: '研究',
+      systems: '系统',
+      visualDirection: '视觉方向',
+      prototype: '原型'
     },
     projects: {
       title: '精选项目',
@@ -114,7 +194,13 @@ const translations = {
       web: 'WEB',
       brand: '品牌 VIS',
       photo: '摄影摄像',
-      product: '产品'
+      product: '产品',
+      worksArchive: '作品档案',
+      selectedWork: '精选作品',
+      inFocus: '聚焦',
+      openArchive: '查看完整档案',
+      openCase: '打开案例',
+      viewCaseStudy: '查看案例详情'
     },
     projectDetail: {
       back: '返回项目',
@@ -122,7 +208,10 @@ const translations = {
       role: '角色定位',
       highlights: '项目亮点',
       process: '过程与方法',
-      media: '媒体展示'
+      media: '媒体展示',
+      tools: '工具',
+      toolsMethods: '工具与方法',
+      outcomes: '项目成果'
     },
     contact: {
       title: '保持联系',
@@ -134,7 +223,56 @@ const translations = {
       whatsapp: 'WhatsApp',
       send: '发送消息',
       success: '消息已成功发送！',
-      required: '必填'
+      required: '必填',
+      hello: '你好 / 联系我',
+      connect: '联系',
+      responseRhythm: '回复节奏',
+      bestFit: '适配项目',
+      wechatId: '微信'
+      ,
+      summary: '可合作方向包括视觉系统、UI/UX 协作、专题落地页，以及具有明确叙事视角的艺术化数字项目。',
+      responseValue: '清晰、快速、可协作。',
+      bestFitValue: 'UI/UX / 品牌 / 落地'
+    },
+    home: {
+      storyMap: '故事地图',
+      portfolioExperience: '作品集体验',
+      exploreNarrative: '像探索叙事空间一样浏览它。',
+      exploreNarrativeSummary: '这个首页不再是简单的顺排模块，而像一条路线。每个章节展示我工作的不同侧面，从案例与系统，到方法与职业轨迹。',
+      caseArchive: '案例档案',
+      capabilityModules: '能力模块',
+      howIWork: '工作方式',
+      experienceStory: '经历叙事',
+      currentSignal: '当前信号',
+      currentSignalTitle: '具备产品直觉与落地意识的视觉设计师。',
+      currentSignalSummary: '视觉系统、交互产品、动态叙事与 AI 协同工作流的交叉点，构成了这个作品集的核心方向。',
+      openProjects: '查看项目',
+      readProfile: '阅读简介',
+      startContact: '开始联系',
+      routeCaseArchive: '已落地产品、品牌系统与传播视觉。',
+      routeCapabilityModules: 'UI/UX、动态直觉与系统化思维。',
+      routeHowIWork: '研究、结构、视觉方向与落地协作。',
+      routeExperienceStory: '品牌、产品与增长之间的职业路径。',
+      experienceHeading: '在品牌、产品与落地之间建立起来的实践。',
+      experienceSummary: '这里不把经历当作简历条目，而是把它整理成一条轨迹：策略、表达与协作如何逐渐组合成同一套工作系统。'
+    },
+    aboutPage: {
+      archive: '个人档案 / 资料库',
+      currentLocation: '所在地',
+      digitalChannel: '联系邮箱',
+      marketTags: '品牌 / 产品 / 市场'
+    },
+    labs: {
+      heroKicker: '实验 / 体验空间',
+      heroTitle: '未来',
+      heroOutline: '概念',
+      heroSummary: '用于存放推测性界面、混合媒介方向与艺术主导数字实验的沙盒区域。',
+      note: '实验笔记',
+      viewExperiment: '查看实验',
+      back: '返回实验'
+    },
+    common: {
+      role: '角色'
     }
   }
 };
