@@ -59,9 +59,9 @@ const CustomCursor: React.FC = () => {
           backgroundColor: cursorType === 'image' ? '#ccff00' : '#ffffff',
           borderRadius: cursorType === 'text' ? '2px' : '50%',
           width: cursorType === 'text' ? '2px' : '32px',
-          height: cursorType === 'text' ? '32px' : '32px',
+          height: cursorType === 'text' ? '40px' : '32px',
         }}
-        transition={{ type: 'spring', damping: 20, stiffness: 200 }}
+        transition={{ type: 'spring', damping: 25, stiffness: 300, mass: 0.5 }}
         className="w-full h-full flex items-center justify-center overflow-hidden"
       >
         {cursorType === 'image' && (
@@ -70,7 +70,7 @@ const CustomCursor: React.FC = () => {
             animate={{ opacity: 1 }}
             className="text-[4px] font-bold text-black uppercase tracking-tighter"
           >
-            VIEW
+            DISCOVER
           </motion.span>
         )}
       </motion.div>
