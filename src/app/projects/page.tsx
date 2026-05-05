@@ -15,44 +15,29 @@ const ProjectCard = ({ project, language }: { project: any; language: string }) 
   
   return (
     <Link href={project.href ?? `/projects/${project.id}`} className="block group">
-      <div className="relative aspect-[4/3] overflow-hidden border border-neutral-200 group-hover:border-neutral-900 transition-colors">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500">
         <motion.div
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="w-full h-full"
         >
           <Image
             src={project.thumbnail}
             alt={data.title}
             fill
-            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+            className="object-cover transition-all duration-700"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </motion.div>
         
-        {/* Overlay Info on Hover - Experimental Reveal */}
-        <div className="absolute inset-0 bg-neutral-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            whileHover={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="font-mono text-[10px] uppercase tracking-widest text-neon mb-2 block">
-              {project.category}
-            </span>
-            <h3 className="font-display text-3xl font-bold tracking-tight text-white leading-tight">
-              {data.title}
-            </h3>
-          </motion.div>
-        </div>
+        {/* Soft Overlay */}
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
       </div>
       
-      {/* Visible Info always - Sharp & Minimal */}
-      <div className="mt-6 flex justify-between items-start border-t border-neutral-100 pt-4">
-        <div>
-          <h3 className="font-display text-lg font-bold group-hover:text-neon transition-colors">{data.title}</h3>
-          <p className="font-mono text-[9px] text-neutral-400 uppercase tracking-widest mt-1">{project.category}</p>
-        </div>
+      {/* Visible Info always - Original Clean Style */}
+      <div className="mt-6">
+        <h3 className="font-display text-lg font-bold text-neutral-900 group-hover:text-neutral-600 transition-colors">{data.title}</h3>
+        <p className="font-sans text-sm text-neutral-400 mt-1">{project.category}</p>
       </div>
     </Link>
   );

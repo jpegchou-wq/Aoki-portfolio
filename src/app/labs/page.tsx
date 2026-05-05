@@ -48,38 +48,23 @@ export default function Labs() {
                     viewport={{ once: true }}
                     className="space-y-8"
                   >
-                    <div className="relative aspect-[4/3] overflow-hidden border border-neutral-200">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-500">
                       <Image
                         src={lab.thumbnail}
                         alt={data.title}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        className="object-cover transition-all duration-700"
                       />
-                      <div className="absolute top-4 right-4 bg-neon text-black font-mono text-[10px] uppercase tracking-widest px-3 py-1">
-                        Exp. {lab.id}
-                      </div>
                     </div>
                     
-                    <div className="space-y-4">
-                      <div className="flex flex-wrap gap-4">
-                        {lab.technologies.map((tech) => (
-                          <span key={tech} className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
-                            #{tech}
-                          </span>
-                        ))}
-                      </div>
-                      <h3 className="font-display text-3xl md:text-4xl font-bold tracking-tight group-hover:text-neon transition-colors">
+                    <div className="space-y-3">
+                      <h3 className="font-display text-2xl font-bold text-neutral-900 group-hover:text-neutral-600 transition-colors">
                         {data.title}
                       </h3>
-                      <p className="text-neutral-500 leading-relaxed max-w-md">
+                      <p className="text-neutral-400 text-sm leading-relaxed max-w-md">
                         {data.description}
                       </p>
-                      <div className="pt-4">
-                        <span className="font-mono text-[10px] uppercase tracking-[0.3em] border-b border-neutral-200 group-hover:border-neon transition-colors">
-                          View Experiment
-                        </span>
-                      </div>
                     </div>
                   </motion.div>
                 </Link>

@@ -77,17 +77,12 @@ const FeaturedProjects: React.FC = () => {
                         src={project.thumbnail}
                         alt={data.title}
                         fill
-                        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+                        className="object-cover transition-all duration-1000"
                       />
                     </motion.div>
                     
-                    {/* Unique Hover Overlay - Noise/Grain Reveal */}
-                    <div className="absolute inset-0 bg-neon opacity-0 group-hover:opacity-20 transition-opacity mix-blend-overlay pointer-events-none" />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center -rotate-12 group-hover:rotate-0 transition-transform duration-500">
-                        <ArrowUpRight size={32} className="text-black" />
-                      </div>
-                    </div>
+                    {/* Glass Style Overlay - Similar to Original Design */}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-700" />
                   </Link>
                 </div>
 
