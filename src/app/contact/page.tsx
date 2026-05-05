@@ -26,7 +26,7 @@ export default function Contact() {
               Connect
             </span>
             <TextReveal
-              text={language === 'en' ? "Let's Talk" : '取得联系'}
+              text={language === 'en' ? "Let&apos;s Talk" : '取得联系'}
               className="font-display text-6xl md:text-[10rem] font-bold tracking-tighter leading-none mb-12 text-neutral-900"
             />
           </motion.div>
@@ -91,7 +91,7 @@ export default function Contact() {
               <div className="p-8 bg-neon text-black">
                 <p className="font-mono text-xs uppercase tracking-widest font-bold mb-4">Available for Freelance</p>
                 <p className="text-sm leading-relaxed">
-                  Currently open to new projects and collaborations. Let's create something unique together.
+                  Currently open to new projects and collaborations. Let&apos;s create something unique together.
                 </p>
               </div>
             </div>

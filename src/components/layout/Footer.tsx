@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
           {/* Social Links & Info */}
           <div className="flex flex-col justify-end">
             <div className="flex flex-wrap gap-x-12 gap-y-4 mb-8">
-              {Object.entries(personalData.socials).map(([key, url]) => (
+              {Object.entries(personalData.socials as Record<string, string>).map(([key, url]) => (
                 <a 
                   key={key}
                   href={url}
