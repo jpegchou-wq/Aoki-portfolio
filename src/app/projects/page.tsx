@@ -10,12 +10,14 @@ import labsData from '@/data/labs.json';
 import { useLanguage } from '@/context/LanguageContext';
 import TextReveal from '@/components/layout/TextReveal';
 
-const ProjectCard = ({ project, language }: { project: any; language: string }) => {
+const ProjectCard = ({ project, language, index }: { project: any; language: string; index: number }) => {
   const data = language === 'en' ? project.en : project.cn;
+  // Create asymmetrical heights based on index
+  const aspectClass = index % 3 === 0 ? 'aspect-[4/5]' : index % 3 === 1 ? 'aspect-[3/4]' : 'aspect-[1/1]';
   
   return (
-    <Link href={project.href ?? `/projects/${project.id}`} className="block group">
-      <div className="relative aspect-[4/5] overflow-hidden border border-neutral-200 group-hover:border-neutral-900 transition-colors">
+    <Link href={project.href ?? `/projects/${project.id}`} className={`block group ${index % 2 === 0 ? 'md:mt-12' : ''}`}>
+      <div className={`relative ${aspectClass} overflow-hidden border border-neutral-200 group-hover:border-neutral-900 transition-colors`}>
         <motion.div
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
@@ -146,7 +148,7 @@ export default function Projects() {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.8, delay: (index % 3) * 0.1 }}
                 >
-                  <ProjectCard project={project} language={language} />
+                  <ProjectCard project={project} language={language} index={index} />
                 </motion.div>
               ))}
             </AnimatePresence>
