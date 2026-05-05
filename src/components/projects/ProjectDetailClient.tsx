@@ -53,7 +53,7 @@ export default function ProjectDetailClient({ project }: { project: ProjectData 
             className="lg:col-span-7"
           >
             <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-neutral-400 mb-6 block">
-              {project.category} / {project.year || '2024'}
+              {project.category}
             </span>
             <h1 className="font-display text-5xl md:text-8xl font-bold tracking-tighter leading-none mb-12">
               {content.title}

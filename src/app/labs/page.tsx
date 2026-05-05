@@ -44,16 +44,17 @@ export default function Labs() {
                   <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: index * 0.1 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
                     viewport={{ once: true }}
                     className="space-y-8"
                   >
-                    <div className="relative aspect-[4/3] overflow-hidden border-2 border-neutral-900">
+                    <div className="relative aspect-[4/3] overflow-hidden border border-neutral-200">
                       <Image
                         src={lab.thumbnail}
                         alt={data.title}
                         fill
-                        className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                       />
                       <div className="absolute top-4 right-4 bg-neon text-black font-mono text-[10px] uppercase tracking-widest px-3 py-1">
                         Exp. {lab.id}

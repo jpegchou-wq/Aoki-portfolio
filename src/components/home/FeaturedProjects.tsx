@@ -95,7 +95,7 @@ const FeaturedProjects: React.FC = () => {
                 <div className="w-full lg:w-2/5">
                   <div className="max-w-md">
                     <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-400 mb-4 block">
-                      {project.category} / {(project as any).year || '2024'}
+                      {project.category}
                     </span>
                     <h3 className="font-display text-4xl md:text-5xl font-bold tracking-tighter mb-6 hover:text-neon transition-colors">
                       <Link href={`/projects/${project.id}`}>{data.title}</Link>
